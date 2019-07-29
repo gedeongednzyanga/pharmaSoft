@@ -1,0 +1,10 @@
+D:\DAVID\PROJETBDD\PharmacieSoft\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\PharmacieSoft\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.csprojResolveAssemblyReference.cache
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.pdb
