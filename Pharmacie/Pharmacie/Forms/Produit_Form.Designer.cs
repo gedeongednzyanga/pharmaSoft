@@ -31,17 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produit_Form));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+<<<<<<< HEAD
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+=======
+            this.stockTxt = new System.Windows.Forms.TextBox();
+            this.categCombo = new System.Windows.Forms.ComboBox();
+            this.formeCombo = new System.Windows.Forms.ComboBox();
+            this.dosageTxt = new System.Windows.Forms.TextBox();
+>>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+=======
+            this.designationTxt = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+>>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,62 +76,72 @@
             this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 3;
             this.button1.Text = "Nouveau";
+<<<<<<< HEAD
             this.button1.UseVisualStyleBackColor = false;
+=======
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+>>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.stockTxt);
+            this.groupBox1.Controls.Add(this.categCombo);
+            this.groupBox1.Controls.Add(this.formeCombo);
+            this.groupBox1.Controls.Add(this.dosageTxt);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.designationTxt);
             this.groupBox1.Location = new System.Drawing.Point(8, 47);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(514, 212);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // textBox3
+            // stockTxt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(152, 168);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(343, 27);
-            this.textBox3.TabIndex = 15;
+            this.stockTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockTxt.Location = new System.Drawing.Point(152, 168);
+            this.stockTxt.Name = "stockTxt";
+            this.stockTxt.Size = new System.Drawing.Size(343, 27);
+            this.stockTxt.TabIndex = 15;
             // 
+<<<<<<< HEAD
             // comboBox2
+=======
+            // categCombo
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(152, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(343, 25);
-            this.comboBox2.TabIndex = 14;
+            this.categCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categCombo.FormattingEnabled = true;
+            this.categCombo.Location = new System.Drawing.Point(152, 134);
+            this.categCombo.Name = "categCombo";
+            this.categCombo.Size = new System.Drawing.Size(343, 25);
+            this.categCombo.TabIndex = 14;
+            this.categCombo.SelectedIndexChanged += new System.EventHandler(this.categCombo_SelectedIndexChanged);
             // 
-            // comboBox1
+            // formeCombo
+>>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(343, 25);
-            this.comboBox1.TabIndex = 13;
+            this.formeCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formeCombo.FormattingEnabled = true;
+            this.formeCombo.Location = new System.Drawing.Point(152, 98);
+            this.formeCombo.Name = "formeCombo";
+            this.formeCombo.Size = new System.Drawing.Size(343, 25);
+            this.formeCombo.TabIndex = 13;
             // 
-            // textBox2
+            // dosageTxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(152, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(343, 27);
-            this.textBox2.TabIndex = 12;
+            this.dosageTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dosageTxt.Location = new System.Drawing.Point(152, 62);
+            this.dosageTxt.Name = "dosageTxt";
+            this.dosageTxt.Size = new System.Drawing.Size(343, 27);
+            this.dosageTxt.TabIndex = 12;
             // 
             // label7
             // 
@@ -186,13 +208,25 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Désignation";
             // 
-            // textBox1
+            // designationTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(152, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(343, 27);
-            this.textBox1.TabIndex = 7;
+            this.designationTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.designationTxt.Location = new System.Drawing.Point(152, 25);
+            this.designationTxt.Name = "designationTxt";
+            this.designationTxt.Size = new System.Drawing.Size(343, 27);
+            this.designationTxt.TabIndex = 7;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(253, 28);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(176, 50);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Enregistrer";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button2
             // 
@@ -212,8 +246,13 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
+<<<<<<< HEAD
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(8, 268);
+=======
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Location = new System.Drawing.Point(8, 265);
+>>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(514, 100);
             this.groupBox2.TabIndex = 7;
@@ -271,6 +310,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produit";
+            this.Load += new System.EventHandler(this.Produit_Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -283,17 +323,17 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox designationTxt;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox dosageTxt;
+        private System.Windows.Forms.ComboBox formeCombo;
+        private System.Windows.Forms.ComboBox categCombo;
+        private System.Windows.Forms.TextBox stockTxt;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
