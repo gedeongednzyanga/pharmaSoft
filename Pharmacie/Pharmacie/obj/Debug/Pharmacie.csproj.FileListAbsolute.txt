@@ -445,3 +445,4 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Ph
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.exe.licenses
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.Agents.resources
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Agent_Form.resources
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Login_Form.resources

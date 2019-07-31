@@ -106,6 +106,12 @@
     <Compile Include="Forms\Approvisionnement_Form.Designer.cs">
       <DependentUpon>Approvisionnement_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Produit_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Approvisionnement_Form.resx">
       <DependentUpon>Approvisionnement_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produit_Form.resx">
       <DependentUpon>Produit_Form.cs</DependentUpon>
