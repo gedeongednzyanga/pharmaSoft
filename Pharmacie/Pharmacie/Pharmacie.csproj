@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DynamicClasses.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +198,20 @@
     <Content Include="Icons\icons8_User_25px.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_20px_1.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ManageSingleConnexion\ManageSingleConnexion.csproj">
+      <Project>{faf6cc16-c486-4351-a191-0a744e6f4880}</Project>
+      <Name>ManageSingleConnexion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ParametreConnexionLib\ParametreConnexionLib.csproj">
+      <Project>{e0fe350e-c3e1-43da-a402-763aa5fd5502}</Project>
+      <Name>ParametreConnexionLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ProduitLib\ProduitLib.csproj">
+      <Project>{49f5b67d-bf1c-4ae8-8145-0a8f6c83675b}</Project>
+      <Name>ProduitLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
