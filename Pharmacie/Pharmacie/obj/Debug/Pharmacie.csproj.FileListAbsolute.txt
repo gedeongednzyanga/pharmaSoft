@@ -214,3 +214,6 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\Pharmacie\Pharmacie\obj\De
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\Pharmacie.exe.config
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.exe
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.pdb
+D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\bin\Debug\Pharmacie.exe.config
+D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.exe
+D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.pdb
