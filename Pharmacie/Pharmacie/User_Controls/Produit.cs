@@ -68,8 +68,7 @@ namespace Pharmacie.User_Controls
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Produit_Form frmp = new Produit_Form();
-            frmp.ShowDialog();
+           
         }
 
         private void Produit_Load(object sender, EventArgs e)
@@ -108,11 +107,25 @@ namespace Pharmacie.User_Controls
                 MessageBox.Show("Errot"+ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        void ShowFiche(object formR)
+        {
+            Repports fiche = formR as Repports;
+            fiche.TopLevel = false;
+            fiche.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(fiche);
+            panel1.Show();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
+            ShowFiche(new Repports());
+        }
 
-
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(this.groupBox2);
+            panel1.Show();
         }
     }
 }

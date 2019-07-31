@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produit_Form));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,13 +54,17 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(63, 28);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(78, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 50);
+            this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 3;
             this.button1.Text = "Nouveau";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -89,17 +94,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(343, 27);
             this.textBox3.TabIndex = 15;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(253, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Enregistrer";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
@@ -200,11 +194,26 @@
             this.textBox1.Size = new System.Drawing.Size(343, 27);
             this.textBox1.TabIndex = 7;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(247, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 49);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Enregistrer";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(8, 265);
+            this.groupBox2.Location = new System.Drawing.Point(8, 268);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(514, 100);
             this.groupBox2.TabIndex = 7;

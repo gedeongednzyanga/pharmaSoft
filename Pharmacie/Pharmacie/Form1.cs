@@ -69,19 +69,27 @@ namespace Pharmacie
             panel_container.Controls.Add(fournisseur);
             panel_container.Show();
         }
+        void ShowAgent(object formA)
+        {
+            Agents agents = formA as Agents;
+            agents.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(agents);
+            panel_container.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowProduit(new Produit());
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ShowAchat(new Approvisionnement());
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ShowFournisseur(new Fournisseur());
+           
         }
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
@@ -211,6 +219,48 @@ namespace Pharmacie
             
                     hover_label(lab_achat);
           
+        }
+
+        private void label3_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowProduit(new Produit());
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowAchat(new Approvisionnement());
+        }
+
+        private void label15_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowFournisseur(new Fournisseur());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_MouseClick(object sender, MouseEventArgs e)
+        {
+            Produit_Form frmp = new Produit_Form();
+            frmp.ShowDialog();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            ShowAgent(new Agents());
+        }
+
+        private void label18_MouseClick(object sender, MouseEventArgs e)
+        {
+            Agent_Form frma = new Agent_Form();
+            frma.ShowDialog();
         }
     }
 }

@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.accueil = new System.Windows.Forms.GroupBox();
+            this.configuration = new System.Windows.Forms.GroupBox();
+            this.bunifuSeparator5 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.inventaire = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -45,6 +47,9 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.accueil = new System.Windows.Forms.GroupBox();
             this.label29 = new System.Windows.Forms.Label();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label28 = new System.Windows.Forms.Label();
@@ -87,9 +92,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lab_agent = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,16 +102,11 @@
             this.panel_container = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.configuration = new System.Windows.Forms.GroupBox();
-            this.bunifuSeparator5 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.configuration.SuspendLayout();
+            this.inventaire.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.accueil.SuspendLayout();
-            this.inventaire.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel_medicament.SuspendLayout();
@@ -118,68 +115,84 @@
             this.panel_fourni.SuspendLayout();
             this.panel_agent.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel_container.SuspendLayout();
-            this.configuration.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.accueil);
             this.panel1.Controls.Add(this.configuration);
             this.panel1.Controls.Add(this.inventaire);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.accueil);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 69);
             this.panel1.TabIndex = 0;
             // 
-            // label21
+            // configuration
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(929, 9);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 21);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "User";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(892, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // accueil
-            // 
-            this.accueil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.configuration.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.accueil.Controls.Add(this.label29);
-            this.accueil.Controls.Add(this.bunifuSeparator2);
-            this.accueil.Controls.Add(this.label28);
-            this.accueil.Controls.Add(this.label27);
-            this.accueil.Controls.Add(this.label26);
-            this.accueil.Controls.Add(this.bunifuSeparator1);
-            this.accueil.Controls.Add(this.label25);
-            this.accueil.Controls.Add(this.label24);
-            this.accueil.Controls.Add(this.label23);
-            this.accueil.Controls.Add(this.label22);
-            this.accueil.ForeColor = System.Drawing.Color.Black;
-            this.accueil.Location = new System.Drawing.Point(3, 3);
-            this.accueil.Name = "accueil";
-            this.accueil.Size = new System.Drawing.Size(873, 63);
-            this.accueil.TabIndex = 0;
-            this.accueil.TabStop = false;
+            this.configuration.Controls.Add(this.bunifuSeparator5);
+            this.configuration.Controls.Add(this.label39);
+            this.configuration.Controls.Add(this.label44);
+            this.configuration.Controls.Add(this.label45);
+            this.configuration.ForeColor = System.Drawing.Color.Black;
+            this.configuration.Location = new System.Drawing.Point(3, 1);
+            this.configuration.Name = "configuration";
+            this.configuration.Size = new System.Drawing.Size(873, 63);
+            this.configuration.TabIndex = 15;
+            this.configuration.TabStop = false;
+            // 
+            // bunifuSeparator5
+            // 
+            this.bunifuSeparator5.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator5.LineThickness = 1;
+            this.bunifuSeparator5.Location = new System.Drawing.Point(215, 15);
+            this.bunifuSeparator5.Name = "bunifuSeparator5";
+            this.bunifuSeparator5.Size = new System.Drawing.Size(10, 40);
+            this.bunifuSeparator5.TabIndex = 12;
+            this.bunifuSeparator5.Transparency = 100;
+            this.bunifuSeparator5.Vertical = true;
+            // 
+            // label39
+            // 
+            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Image = ((System.Drawing.Image)(resources.GetObject("label39.Image")));
+            this.label39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label39.Location = new System.Drawing.Point(116, 14);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 40);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "Config. Server";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label44
+            // 
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Image = ((System.Drawing.Image)(resources.GetObject("label44.Image")));
+            this.label44.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label44.Location = new System.Drawing.Point(5, 16);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(33, 36);
+            this.label44.TabIndex = 5;
+            this.label44.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label45
+            // 
+            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Image = ((System.Drawing.Image)(resources.GetObject("label45.Image")));
+            this.label45.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label45.Location = new System.Drawing.Point(38, 14);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(72, 40);
+            this.label45.TabIndex = 4;
+            this.label45.Text = "Utilisateur";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // inventaire
             // 
@@ -321,6 +334,51 @@
             this.label37.TabIndex = 4;
             this.label37.Text = "Inventaire";
             this.label37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(929, 9);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 21);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "User";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(892, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // accueil
+            // 
+            this.accueil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.accueil.Controls.Add(this.label29);
+            this.accueil.Controls.Add(this.bunifuSeparator2);
+            this.accueil.Controls.Add(this.label28);
+            this.accueil.Controls.Add(this.label27);
+            this.accueil.Controls.Add(this.label26);
+            this.accueil.Controls.Add(this.bunifuSeparator1);
+            this.accueil.Controls.Add(this.label25);
+            this.accueil.Controls.Add(this.label24);
+            this.accueil.Controls.Add(this.label23);
+            this.accueil.Controls.Add(this.label22);
+            this.accueil.ForeColor = System.Drawing.Color.Black;
+            this.accueil.Location = new System.Drawing.Point(3, 0);
+            this.accueil.Name = "accueil";
+            this.accueil.Size = new System.Drawing.Size(873, 63);
+            this.accueil.TabIndex = 0;
+            this.accueil.TabStop = false;
             // 
             // label29
             // 
@@ -478,7 +536,7 @@
             this.panel_medicament.Controls.Add(this.lab_medicament);
             this.panel_medicament.Location = new System.Drawing.Point(3, 3);
             this.panel_medicament.Name = "panel_medicament";
-            this.panel_medicament.Size = new System.Drawing.Size(204, 35);
+            this.panel_medicament.Size = new System.Drawing.Size(204, 124);
             this.panel_medicament.TabIndex = 2;
             this.panel_medicament.MouseEnter += new System.EventHandler(this.panel_medicament_MouseEnter);
             this.panel_medicament.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
@@ -510,6 +568,7 @@
             this.label3.Size = new System.Drawing.Size(132, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Liste médicament";
+            this.label3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label3_MouseClick);
             // 
             // label2
             // 
@@ -520,6 +579,8 @@
             this.label2.Size = new System.Drawing.Size(73, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nouveau";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label2_MouseClick);
             // 
             // lab_medicament
             // 
@@ -545,7 +606,7 @@
             this.panel_achat.Controls.Add(this.label6);
             this.panel_achat.Controls.Add(this.label7);
             this.panel_achat.Controls.Add(this.lab_achat);
-            this.panel_achat.Location = new System.Drawing.Point(3, 44);
+            this.panel_achat.Location = new System.Drawing.Point(3, 133);
             this.panel_achat.Name = "panel_achat";
             this.panel_achat.Size = new System.Drawing.Size(204, 35);
             this.panel_achat.TabIndex = 1;
@@ -589,6 +650,8 @@
             this.label7.Size = new System.Drawing.Size(95, 21);
             this.label7.TabIndex = 5;
             this.label7.Text = "Entrée Stock";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label7_MouseClick);
             // 
             // lab_achat
             // 
@@ -612,7 +675,7 @@
             this.panel_sortie.Controls.Add(this.label10);
             this.panel_sortie.Controls.Add(this.label11);
             this.panel_sortie.Controls.Add(this.lab_sortie);
-            this.panel_sortie.Location = new System.Drawing.Point(3, 85);
+            this.panel_sortie.Location = new System.Drawing.Point(3, 174);
             this.panel_sortie.Name = "panel_sortie";
             this.panel_sortie.Size = new System.Drawing.Size(204, 145);
             this.panel_sortie.TabIndex = 0;
@@ -677,7 +740,7 @@
             this.panel_fourni.Controls.Add(this.label14);
             this.panel_fourni.Controls.Add(this.label15);
             this.panel_fourni.Controls.Add(this.lab_fournisseur);
-            this.panel_fourni.Location = new System.Drawing.Point(3, 236);
+            this.panel_fourni.Location = new System.Drawing.Point(3, 325);
             this.panel_fourni.Name = "panel_fourni";
             this.panel_fourni.Size = new System.Drawing.Size(206, 145);
             this.panel_fourni.TabIndex = 3;
@@ -718,9 +781,10 @@
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(31, 44);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 21);
+            this.label15.Size = new System.Drawing.Size(128, 21);
             this.label15.TabIndex = 10;
-            this.label15.Text = "Sortie Facture";
+            this.label15.Text = "Nos fournisseurs";
+            this.label15.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label15_MouseClick);
             // 
             // lab_fournisseur
             // 
@@ -742,7 +806,7 @@
             this.panel_agent.Controls.Add(this.label18);
             this.panel_agent.Controls.Add(this.label19);
             this.panel_agent.Controls.Add(this.lab_agent);
-            this.panel_agent.Location = new System.Drawing.Point(3, 387);
+            this.panel_agent.Location = new System.Drawing.Point(3, 476);
             this.panel_agent.Name = "panel_agent";
             this.panel_agent.Size = new System.Drawing.Size(204, 145);
             this.panel_agent.TabIndex = 4;
@@ -773,9 +837,10 @@
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(31, 74);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(105, 21);
+            this.label18.Size = new System.Drawing.Size(126, 21);
             this.label18.TabIndex = 11;
-            this.label18.Text = "Sortie Service";
+            this.label18.Text = "Ajouter un agent";
+            this.label18.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label18_MouseClick);
             // 
             // label19
             // 
@@ -783,9 +848,10 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(31, 44);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(105, 21);
+            this.label19.Size = new System.Drawing.Size(88, 21);
             this.label19.TabIndex = 10;
-            this.label19.Text = "Sortie Facture";
+            this.label19.Text = "Nos agents";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // lab_agent
             // 
@@ -798,39 +864,6 @@
             this.lab_agent.Size = new System.Drawing.Size(92, 25);
             this.lab_agent.TabIndex = 9;
             this.lab_agent.Text = "    Agents";
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(340, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 31);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Fournisseur";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(340, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 31);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Achat";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(340, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Produit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -891,9 +924,6 @@
             // 
             // panel_container
             // 
-            this.panel_container.Controls.Add(this.button3);
-            this.panel_container.Controls.Add(this.button2);
-            this.panel_container.Controls.Add(this.button1);
             this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_container.Location = new System.Drawing.Point(216, 93);
             this.panel_container.Name = "panel_container";
@@ -910,80 +940,6 @@
             this.timer2.Interval = 10;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // configuration
-            // 
-            this.configuration.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.configuration.Controls.Add(this.label1);
-            this.configuration.Controls.Add(this.bunifuSeparator5);
-            this.configuration.Controls.Add(this.label39);
-            this.configuration.Controls.Add(this.label44);
-            this.configuration.Controls.Add(this.label45);
-            this.configuration.ForeColor = System.Drawing.Color.Black;
-            this.configuration.Location = new System.Drawing.Point(3, 1);
-            this.configuration.Name = "configuration";
-            this.configuration.Size = new System.Drawing.Size(873, 63);
-            this.configuration.TabIndex = 15;
-            this.configuration.TabStop = false;
-            // 
-            // bunifuSeparator5
-            // 
-            this.bunifuSeparator5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator5.LineThickness = 1;
-            this.bunifuSeparator5.Location = new System.Drawing.Point(215, 15);
-            this.bunifuSeparator5.Name = "bunifuSeparator5";
-            this.bunifuSeparator5.Size = new System.Drawing.Size(10, 40);
-            this.bunifuSeparator5.TabIndex = 12;
-            this.bunifuSeparator5.Transparency = 100;
-            this.bunifuSeparator5.Vertical = true;
-            // 
-            // label39
-            // 
-            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Image = ((System.Drawing.Image)(resources.GetObject("label39.Image")));
-            this.label39.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label39.Location = new System.Drawing.Point(116, 14);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(91, 40);
-            this.label39.TabIndex = 11;
-            this.label39.Text = "Config. Server";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label44
-            // 
-            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Image = ((System.Drawing.Image)(resources.GetObject("label44.Image")));
-            this.label44.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label44.Location = new System.Drawing.Point(5, 16);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(33, 36);
-            this.label44.TabIndex = 5;
-            this.label44.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label45
-            // 
-            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Image = ((System.Drawing.Image)(resources.GetObject("label45.Image")));
-            this.label45.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label45.Location = new System.Drawing.Point(38, 14);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(72, 40);
-            this.label45.TabIndex = 4;
-            this.label45.Text = "Utilisateur";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,13 +951,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PharmaSoft";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.configuration.ResumeLayout(false);
+            this.inventaire.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.accueil.ResumeLayout(false);
-            this.inventaire.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_medicament.ResumeLayout(false);
@@ -1016,9 +973,6 @@
             this.panel_agent.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel_container.ResumeLayout(false);
-            this.configuration.ResumeLayout(false);
-            this.configuration.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1035,9 +989,6 @@
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
         private System.Windows.Forms.Panel panel_container;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel_achat;
         private System.Windows.Forms.Panel panel_sortie;
@@ -1101,7 +1052,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label1;
     }
 }
 
