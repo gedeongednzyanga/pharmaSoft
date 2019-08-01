@@ -16,14 +16,14 @@ namespace PharmacieUtilities
 
             try
             {
-                ThoughtWorks.QRCode.Codec.QRCodeEncoder objQRCode = new ThoughtWorks.QRCode.Codec.QRCodeEncoder();
-                Image imgImage;
-                objQRCode.QRCodeEncodeMode = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ENCODE_MODE.BYTE;
-                objQRCode.QRCodeScale = 4;
-                objQRCode.QRCodeVersion = 7;
-                objQRCode.QRCodeErrorCorrect = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ERROR_CORRECTION.L;
-                imgImage = objQRCode.Encode(data);
-                pic_box.Image = imgImage;
+                //ThoughtWorks.QRCode.Codec.QRCodeEncoder objQRCode = new ThoughtWorks.QRCode.Codec.QRCodeEncoder();
+                //Image imgImage;
+                //objQRCode.QRCodeEncodeMode = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ENCODE_MODE.BYTE;
+                //objQRCode.QRCodeScale = 4;
+                //objQRCode.QRCodeVersion = 7;
+                //objQRCode.QRCodeErrorCorrect = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ERROR_CORRECTION.L;
+                //imgImage = objQRCode.Encode(data);
+                //pic_box.Image = imgImage;
             }
             catch (Exception ex)
             {

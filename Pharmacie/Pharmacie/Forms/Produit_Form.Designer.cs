@@ -228,18 +228,18 @@
             // 
             // button2
             // 
-            //this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            //this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            //this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.button2.ForeColor = System.Drawing.Color.White;
-            //this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            //this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.button2.Location = new System.Drawing.Point(247, 30);
-            //this.button2.Name = "button2";
-            //this.button2.Size = new System.Drawing.Size(154, 49);
-            //this.button2.TabIndex = 4;
-            //this.button2.Text = "Enregistrer";
-            //this.button2.UseVisualStyleBackColor = false;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(247, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 49);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Nouveau";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
