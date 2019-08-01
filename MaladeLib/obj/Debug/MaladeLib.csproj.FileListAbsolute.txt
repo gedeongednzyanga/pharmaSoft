@@ -1,1 +1,10 @@
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\obj\Debug\MaladeLib.csprojResolveAssemblyReference.cache
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\MaladeLib.dll.config
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\MaladeLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\MaladeLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\ManageSingleConnexion.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\ParametreConnexionLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\ManageSingleConnexion.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\bin\Debug\ParametreConnexionLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\obj\Debug\MaladeLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\MaladeLib\obj\Debug\MaladeLib.pdb

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{11DFA61C-FE11-4F15-B2E4-EB7699D3E5E5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PharmacieUtilities</RootNamespace>
     <AssemblyName>PharmacieUtilities</AssemblyName>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,7 +47,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="ThoughtWorks.QRCode">
-      <HintPath>..\..\..\..\ThoughtWorks.QRCode.dll</HintPath>
+      <HintPath>F:\Programmes\DLL FILES\DLL\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

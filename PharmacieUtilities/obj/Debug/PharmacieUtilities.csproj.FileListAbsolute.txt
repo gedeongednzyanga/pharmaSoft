@@ -1,1 +1,11 @@
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\obj\Debug\PharmacieUtilities.csprojResolveAssemblyReference.cache
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\PharmacieUtilities.dll.config
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\PharmacieUtilities.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\PharmacieUtilities.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ManageSingleConnexion.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ParametreConnexionLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ThoughtWorks.QRCode.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ManageSingleConnexion.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ParametreConnexionLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\obj\Debug\PharmacieUtilities.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\obj\Debug\PharmacieUtilities.pdb

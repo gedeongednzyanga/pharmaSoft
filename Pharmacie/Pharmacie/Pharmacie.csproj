@@ -255,6 +255,18 @@
     <Content Include="Icons\Profil_git.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AgentLib\AgentLib.csproj">
+      <Project>{a1774274-bc07-4a5d-a6b1-b6f6b41dc85a}</Project>
+      <Name>AgentLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ApprovisionnementLib\ApprovisionnementLib.csproj">
+      <Project>{bee16d93-b43e-4133-9799-6dd7424885af}</Project>
+      <Name>ApprovisionnementLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MaladeLib\MaladeLib.csproj">
+      <Project>{938d40a9-1234-4caa-a5d1-1052fb8f62cd}</Project>
+      <Name>MaladeLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ManageSingleConnexion\ManageSingleConnexion.csproj">
       <Project>{faf6cc16-c486-4351-a191-0a744e6f4880}</Project>
       <Name>ManageSingleConnexion</Name>
@@ -263,9 +275,17 @@
       <Project>{e0fe350e-c3e1-43da-a402-763aa5fd5502}</Project>
       <Name>ParametreConnexionLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\PharmacieUtilities\PharmacieUtilities.csproj">
+      <Project>{11dfa61c-fe11-4f15-b2e4-eb7699d3e5e5}</Project>
+      <Name>PharmacieUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ProduitLib\ProduitLib.csproj">
       <Project>{49f5b67d-bf1c-4ae8-8145-0a8f6c83675b}</Project>
       <Name>ProduitLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SortieLib\SortieLib.csproj">
+      <Project>{9a395ec1-97b2-488b-8cd0-42b109baa387}</Project>
+      <Name>SortieLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

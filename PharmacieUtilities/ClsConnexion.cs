@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PharmacieUtilities
 {
@@ -33,16 +34,16 @@ namespace PharmacieUtilities
 
                 ImplementeConnexion.Instance.Initialise(connexion, connectionType);
                 ImplementeConnexion.Instance.Conn.Open();
-                //MessageBox.Show("Connection Succefully !!!", "Succefully", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Connection Succefully !!!", "Succefully", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             catch (InvalidOperationException ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 ClsGetdatas.GetInstance().Testeconne = 0;
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 ClsGetdatas.GetInstance().Testeconne = 0;
             }
             //catch (MySql.Data.MySqlClient.MySqlException ex)

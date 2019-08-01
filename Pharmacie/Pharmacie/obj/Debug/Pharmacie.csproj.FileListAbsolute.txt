@@ -661,3 +661,20 @@ D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.csproj.GenerateResource.Cache
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.exe.licenses
 >>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\AgentLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ApprovisionnementLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\MaladeLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ManageSingleConnexion.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ParametreConnexionLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\PharmacieUtilities.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ProduitLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\SortieLib.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ThoughtWorks.QRCode.dll
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\AgentLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ApprovisionnementLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\MaladeLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ManageSingleConnexion.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ParametreConnexionLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\PharmacieUtilities.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\ProduitLib.pdb
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\bin\Debug\SortieLib.pdb
