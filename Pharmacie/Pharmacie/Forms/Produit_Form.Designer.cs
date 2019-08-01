@@ -31,29 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produit_Form));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-=======
+
+            //this.textBox3 = new System.Windows.Forms.TextBox();
+            //this.comboBox2 = new System.Windows.Forms.ComboBox();
+            //this.comboBox1 = new System.Windows.Forms.ComboBox();
+            //this.textBox2 = new System.Windows.Forms.TextBox();
+
             this.stockTxt = new System.Windows.Forms.TextBox();
             this.categCombo = new System.Windows.Forms.ComboBox();
             this.formeCombo = new System.Windows.Forms.ComboBox();
             this.dosageTxt = new System.Windows.Forms.TextBox();
->>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-=======
+
+            //this.textBox1 = new System.Windows.Forms.TextBox();
+            //this.button2 = new System.Windows.Forms.Button();
+
             this.designationTxt = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
->>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
+
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,12 +75,11 @@
             this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 3;
             this.button1.Text = "Nouveau";
-<<<<<<< HEAD
+
             this.button1.UseVisualStyleBackColor = false;
-=======
+
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
             // 
             // groupBox1
             // 
@@ -112,9 +110,9 @@
             this.stockTxt.Size = new System.Drawing.Size(343, 27);
             this.stockTxt.TabIndex = 15;
             // 
-<<<<<<< HEAD
+
             // comboBox2
-=======
+
             // categCombo
             // 
             this.categCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,7 +124,7 @@
             this.categCombo.SelectedIndexChanged += new System.EventHandler(this.categCombo_SelectedIndexChanged);
             // 
             // formeCombo
->>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
+
             // 
             this.formeCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formeCombo.FormattingEnabled = true;
@@ -230,29 +228,29 @@
             // 
             // button2
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(247, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 49);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Enregistrer";
-            this.button2.UseVisualStyleBackColor = false;
+            //this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            //this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            //this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.button2.ForeColor = System.Drawing.Color.White;
+            //this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            //this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.button2.Location = new System.Drawing.Point(247, 30);
+            //this.button2.Name = "button2";
+            //this.button2.Size = new System.Drawing.Size(154, 49);
+            //this.button2.TabIndex = 4;
+            //this.button2.Text = "Enregistrer";
+            //this.button2.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
-<<<<<<< HEAD
-            this.groupBox2.Controls.Add(this.button2);
+
+            //this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(8, 268);
-=======
+
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Location = new System.Drawing.Point(8, 265);
->>>>>>> e4e0215c705da461b8c30bc4c4e0e490bcce9124
+
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(514, 100);
             this.groupBox2.TabIndex = 7;
