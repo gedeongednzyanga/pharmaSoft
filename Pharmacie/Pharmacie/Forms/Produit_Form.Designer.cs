@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produit_Form));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNouveau = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.stockTxt = new System.Windows.Forms.TextBox();
             this.categCombo = new System.Windows.Forms.ComboBox();
@@ -41,7 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.designationTxt = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,21 +51,21 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnNouveau
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(93, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Nouveau";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnNouveau.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnNouveau.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnNouveau.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNouveau.ForeColor = System.Drawing.Color.White;
+            this.btnNouveau.Image = ((System.Drawing.Image)(resources.GetObject("btnNouveau.Image")));
+            this.btnNouveau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNouveau.Location = new System.Drawing.Point(173, 19);
+            this.btnNouveau.Name = "btnNouveau";
+            this.btnNouveau.Size = new System.Drawing.Size(136, 49);
+            this.btnNouveau.TabIndex = 4;
+            this.btnNouveau.Text = "Nouveau";
+            this.btnNouveau.UseVisualStyleBackColor = false;
+            this.btnNouveau.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -90,6 +90,7 @@
             // 
             // stockTxt
             // 
+            this.stockTxt.Enabled = false;
             this.stockTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockTxt.Location = new System.Drawing.Point(152, 168);
             this.stockTxt.Name = "stockTxt";
@@ -98,6 +99,8 @@
             // 
             // categCombo
             // 
+            this.categCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.categCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.categCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categCombo.FormattingEnabled = true;
             this.categCombo.Location = new System.Drawing.Point(152, 134);
@@ -108,8 +111,25 @@
             // 
             // formeCombo
             // 
+            this.formeCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.formeCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.formeCombo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formeCombo.FormattingEnabled = true;
+            this.formeCombo.Items.AddRange(new object[] {
+            "Buvable",
+            "Capsile",
+            "Comprimé",
+            "Gellule",
+            "Goutte",
+            "Ovule",
+            "Pastille",
+            "Sachet",
+            "Spray",
+            "Sirop",
+            "Suppo",
+            "Suspension",
+            "Usage externe",
+            "Autre..."});
             this.formeCombo.Location = new System.Drawing.Point(152, 98);
             this.formeCombo.Name = "formeCombo";
             this.formeCombo.Size = new System.Drawing.Size(343, 25);
@@ -196,25 +216,29 @@
             this.designationTxt.Size = new System.Drawing.Size(343, 27);
             this.designationTxt.TabIndex = 7;
             // 
-            // btnSave
+            // btnEnregistrer
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(253, 28);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(176, 50);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Enregistrer";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnEnregistrer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEnregistrer.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnEnregistrer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregistrer.ForeColor = System.Drawing.Color.White;
+            this.btnEnregistrer.Image = ((System.Drawing.Image)(resources.GetObject("btnEnregistrer.Image")));
+            this.btnEnregistrer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnregistrer.Location = new System.Drawing.Point(326, 18);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(147, 50);
+            this.btnEnregistrer.TabIndex = 4;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = false;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.btnNouveau);
+            this.groupBox2.Controls.Add(this.btnEnregistrer);
             this.groupBox2.Location = new System.Drawing.Point(8, 265);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(514, 100);
+            this.groupBox2.Size = new System.Drawing.Size(514, 87);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
@@ -261,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(531, 381);
+            this.ClientSize = new System.Drawing.Size(531, 357);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -281,10 +305,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNouveau;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox designationTxt;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

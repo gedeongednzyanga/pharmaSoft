@@ -26,7 +26,7 @@ namespace Pharmacie.Forms
         }
         void ChargementComboCategorie()
         {
-            dn.chargeCombo(categCombo, "designationprod", "categorie");
+            dn.chargeCombo(categCombo, "designationcat", "categorie");
         }
 
         private void label2_Click_1(object sender, EventArgs e)

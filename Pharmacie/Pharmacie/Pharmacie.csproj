@@ -107,11 +107,29 @@
     <Compile Include="Forms\Approvisionnement_Form.Designer.cs">
       <DependentUpon>Approvisionnement_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Categorie_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Categorie_Form.Designer.cs">
+      <DependentUpon>Categorie_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Configuration_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configuration_Form.Designer.cs">
+      <DependentUpon>Configuration_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Malade_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Malade_Form.Designer.cs">
+      <DependentUpon>Malade_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Produit_Form.cs">
       <SubType>Form</SubType>
@@ -124,6 +142,12 @@
     </Compile>
     <Compile Include="Forms\Repports.Designer.cs">
       <DependentUpon>Repports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Service_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Service_Form.Designer.cs">
+      <DependentUpon>Service_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +175,18 @@
     <Compile Include="User_Controls\Produit.Designer.cs">
       <DependentUpon>Produit.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\Sortie_Facture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Sortie_Facture.Designer.cs">
+      <DependentUpon>Sortie_Facture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Sortie_Service.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Sortie_Service.Designer.cs">
+      <DependentUpon>Sortie_Service.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,14 +196,26 @@
     <EmbeddedResource Include="Forms\Approvisionnement_Form.resx">
       <DependentUpon>Approvisionnement_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Categorie_Form.resx">
+      <DependentUpon>Categorie_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Configuration_Form.resx">
+      <DependentUpon>Configuration_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Malade_Form.resx">
+      <DependentUpon>Malade_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produit_Form.resx">
       <DependentUpon>Produit_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Repports.resx">
       <DependentUpon>Repports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Service_Form.resx">
+      <DependentUpon>Service_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -190,6 +238,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Produit.resx">
       <DependentUpon>Produit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Sortie_Facture.resx">
+      <DependentUpon>Sortie_Facture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Sortie_Service.resx">
+      <DependentUpon>Sortie_Service.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -214,11 +268,15 @@
     <Content Include="Icons\icons8_Back_Arrow_25px.png" />
     <Content Include="Icons\icons8_Back_To_25px.png" />
     <Content Include="Icons\icons8_Buy_20px_1.png" />
+    <Content Include="Icons\icons8_Cancel_25px_2.png" />
     <Content Include="Icons\icons8_Close_Window_25px.png" />
     <Content Include="Icons\icons8_Compact_Camera_25px.png" />
     <Content Include="Icons\icons8_customer_45px_1.png" />
+    <Content Include="Icons\icons8_Database_Administrator.ico" />
+    <Content Include="Icons\icons8_Database_Administrator_100px.png" />
     <Content Include="Icons\icons8_Database_Administrator_20px.png" />
     <Content Include="Icons\icons8_Database_Administrator_25px.png" />
+    <Content Include="Icons\icons8_Database_Administrator_30px.png" />
     <Content Include="Icons\icons8_Delete_20px_1.png" />
     <Content Include="Icons\icons8_Delete_25px.png" />
     <Content Include="Icons\icons8_Delete_25px_1.png" />
@@ -231,7 +289,10 @@
     <Content Include="Icons\icons8_Filter_25px_1.png" />
     <Content Include="Icons\icons8_Home_20px.png" />
     <Content Include="Icons\icons8_Home_25px_2.png" />
+    <Content Include="Icons\icons8_Home_25px_3.png" />
+    <Content Include="Icons\icons8_Male_User_104px.png" />
     <Content Include="Icons\icons8_Office_Phone_30px.png" />
+    <Content Include="Icons\icons8_Ok_25px_1.png" />
     <Content Include="Icons\icons8_Person_25px.png" />
     <Content Include="Icons\icons8_Phone_28px.png" />
     <Content Include="Icons\icons8_Phone_30px.png" />
@@ -248,6 +309,7 @@
     <Content Include="Icons\icons8_Search_20px_2.png" />
     <Content Include="Icons\icons8_Sell_Stock_25px.png" />
     <Content Include="Icons\icons8_SMS_30px.png" />
+    <Content Include="Icons\icons8_Sneeze_25px.png" />
     <Content Include="Icons\icons8_User_25px.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_20px_1.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_25px.png" />

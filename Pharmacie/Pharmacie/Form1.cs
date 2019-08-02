@@ -16,10 +16,20 @@ namespace Pharmacie
     {
         int t1 = 35;
         int t2 = 35;
+
+        Approvisionnement approvisionnement = new Approvisionnement();
+        Produit produit = new Produit();
+
+        Produit_Form frmp = new Produit_Form();
+        Approvisionnement_Form frma = new Approvisionnement_Form();
+        Malade_Form frmMalade = new Malade_Form();
+        Agent_Form frmag = new Agent_Form();
+
         public Form1()
         {
             InitializeComponent();
         }
+
         void hover_label(Label label)
         {
             label.Font =new Font(label.Font, FontStyle.Underline);
@@ -29,16 +39,36 @@ namespace Pharmacie
         {
             label.Font = new Font(label.Font, FontStyle.Regular);
         }
+        void hover_label_menu(Label label)
+        {
+            label.ForeColor = Color.Maroon;
+            label.Font = new Font(label.Font, FontStyle.Underline);
+        }
+        void leave_label_menu(Label label)
+        {
+            label.ForeColor =Color.Black;
+            label.Font = new Font(label.Font, FontStyle.Regular);
+        }
+        void enter_label_menu_haut(Label label)
+        {
+            label.BackColor = Color.LightGray;
+            label.Font = new Font(label.Font, FontStyle.Underline);
+        }
+        void leave_label_menu_haut(Label label)
+        {
+            label.BackColor = Color.WhiteSmoke;
+            label.Font = new Font(label.Font, FontStyle.Regular);
+        }
         //void Show(object from)
         //{
-            //if (panel_container.Controls.Count > 0)
-            //    this.panel_container.Controls.RemoveAt(0);
-            //Produit_Form produit = formF as Produit_Form;
-            //produit.TopLevel = false;
-            //produit.Dock = DockStyle.Fill;
-            //this.panel_container.Controls.Add(produit);
-            //this.panel_container.Tag = produit;
-            //produit.Show();
+        //if (panel_container.Controls.Count > 0)
+        //    this.panel_container.Controls.RemoveAt(0);
+        //Produit_Form produit = formF as Produit_Form;
+        //produit.TopLevel = false;
+        //produit.Dock = DockStyle.Fill;
+        //this.panel_container.Controls.Add(produit);
+        //this.panel_container.Tag = produit;
+        //produit.Show();
         //}
         private void Form1_Click(object sender, EventArgs e)
         {
@@ -75,6 +105,22 @@ namespace Pharmacie
             agents.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
             panel_container.Controls.Add(agents);
+            panel_container.Show();
+        }
+        void ShowSortieFactue(object formSF)
+        {
+            Sortie_Facture sortiefacture = formSF as Sortie_Facture;
+            sortiefacture.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(sortiefacture);
+            panel_container.Show();
+        }
+        void ShowSortieService(object formSS)
+        {
+            Sortie_Service sortieService = formSS as Sortie_Service;
+            sortieService.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(sortieService);
             panel_container.Show();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -223,7 +269,7 @@ namespace Pharmacie
 
         private void label3_MouseClick(object sender, MouseEventArgs e)
         {
-            ShowProduit(new Produit());
+            ShowProduit(produit);
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -233,7 +279,7 @@ namespace Pharmacie
 
         private void label7_MouseClick(object sender, MouseEventArgs e)
         {
-            ShowAchat(new Approvisionnement());
+            ShowAchat(approvisionnement);
         }
 
         private void label15_MouseClick(object sender, MouseEventArgs e)
@@ -248,7 +294,6 @@ namespace Pharmacie
 
         private void label2_MouseClick(object sender, MouseEventArgs e)
         {
-            Produit_Form frmp = new Produit_Form();
             frmp.ShowDialog();
         }
 
@@ -259,8 +304,224 @@ namespace Pharmacie
 
         private void label18_MouseClick(object sender, MouseEventArgs e)
         {
-            Agent_Form frma = new Agent_Form();
-            frma.ShowDialog();
+          
+            frmag.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          
+            ShowProduit(produit);
+        }
+
+        private void label11_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowSortieFactue(new Sortie_Facture());
+        }
+
+        private void label10_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowSortieService(new Sortie_Service());
+        }
+
+        private void label1_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            
+            frmMalade.ShowDialog();
+
+        }
+
+        private void label8_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            Service_Form frmService = new Service_Form();
+            frmService.ShowDialog();
+        }
+
+        private void label4_MouseClick(object sender, MouseEventArgs e)
+        {
+            Categorie_Form categorie = new Categorie_Form();
+            categorie.ShowDialog();
+        }
+
+        private void label28_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel_container.Parent.Contains(produit)){
+                frmp.ShowDialog();
+            }else if (panel_container.Parent.Contains(approvisionnement)){
+                frma.ShowDialog();
+            }
+        }
+
+        private void lab_nouveau_MouseHover(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name)
+            {
+                case "lab_nouveau":
+                    hover_label_menu(lab_nouveau);
+                    break;
+                case "label3":
+                    hover_label_menu(label3);
+                    break;
+                case "label4":
+                    hover_label_menu(label4);
+                    break;
+                case "label5":
+                    hover_label_menu(label5);
+                    break;
+                case "label6":
+                    hover_label_menu(label6);
+                    break;
+                case "label7":
+                    hover_label_menu(label7);
+                    break;
+                case "label9":
+                    hover_label_menu(label9);
+                    break;
+                case "label10":
+                    hover_label_menu(label10);
+                    break;
+                case "label11":
+                    hover_label_menu(label11);
+                    break;
+                case "label13":
+                    hover_label_menu(label13);
+                    break;
+                case "label14":
+                    hover_label_menu(label14);
+                    break;
+                case "label15":
+                    hover_label_menu(label15);
+                    break;
+                case "label17":
+                    hover_label_menu(label17);
+                    break;
+                case "label18":
+                    hover_label_menu(label18);
+                    break;
+                case "label19":
+                    hover_label_menu(label19);
+                    break;
+            }
+        }
+
+        private void lab_nouveau_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name)
+            {
+                case "lab_nouveau":
+                    leave_label_menu(lab_nouveau);
+                    break;
+                case "label3":
+                    leave_label_menu(label3);
+                    break;
+                case "label4":
+                    leave_label_menu(label4);
+                    break;
+                case "label5":
+                    leave_label_menu(label5);
+                    break;
+                case "label6":
+                    leave_label_menu(label6);
+                    break;
+                case "label7":
+                    leave_label_menu(label7);
+                    break;
+                case "label9":
+                    leave_label_menu(label9);
+                    break;
+                case "label10":
+                    leave_label_menu(label10);
+                    break;
+                case "label11":
+                    leave_label_menu(label11);
+                    break;
+                case "label13":
+                    leave_label_menu(label13);
+                    break;
+                case "label14":
+                    leave_label_menu(label14);
+                    break;
+                case "label15":
+                    leave_label_menu(label15);
+                    break;
+                case "label17":
+                    leave_label_menu(label17);
+                    break;
+                case "label18":
+                    leave_label_menu(label18);
+                    break;
+                case "label19":
+                    leave_label_menu(label19);
+                    break;
+            }
+        }
+
+        private void label22_MouseEnter(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name)
+            {
+                case "label28":
+                    enter_label_menu_haut(label28);
+                    break;
+                case "label22":
+                    enter_label_menu_haut(label22);
+                    break;
+                case "label24":
+                    enter_label_menu_haut(label24);
+                    break;
+                case "label25":
+                    enter_label_menu_haut(label25);
+                    break;
+                case "label26":
+                    enter_label_menu_haut(label26);
+                    break;
+                case "label27":
+                    enter_label_menu_haut(label27);
+                    break;
+                case "label29":
+                    enter_label_menu_haut(label29);
+                    break;
+                case "label1":
+                    enter_label_menu_haut(label1);
+                    break;
+                case "label8":
+                    enter_label_menu_haut(label8);
+                    break;
+            }
+        }
+
+        private void label28_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name)
+            {
+                case "label28":
+                    leave_label_menu_haut(label28);
+                    break;
+                case "label22":
+                    leave_label_menu_haut(label22);
+                    break;
+                case "label24":
+                    leave_label_menu_haut(label24);
+                    break;
+                case "label25":
+                    leave_label_menu_haut(label25);
+                    break;
+                case "label26":
+                    leave_label_menu_haut(label26);
+                    break;
+                case "label27":
+                    leave_label_menu_haut(label27);
+                    break;
+                case "label29":
+                    leave_label_menu_haut(label29);
+                    break;
+                case "label1":
+                    leave_label_menu_haut(label1);
+                    break;
+                case "label8":
+                    leave_label_menu_haut(label8);
+                    break;
+            }
         }
     }
 }
