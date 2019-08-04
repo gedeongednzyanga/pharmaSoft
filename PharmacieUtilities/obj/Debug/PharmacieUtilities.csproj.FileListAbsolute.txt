@@ -9,3 +9,13 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUti
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\bin\Debug\ParametreConnexionLib.pdb
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\obj\Debug\PharmacieUtilities.dll
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\PharmacieUtilities\obj\Debug\PharmacieUtilities.pdb
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\PharmacieUtilities.dll.config
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\PharmacieUtilities.dll
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\PharmacieUtilities.pdb
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\ParametreConnexionLib.dll
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\bin\Debug\ParametreConnexionLib.pdb
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\obj\Debug\PharmacieUtilities.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\obj\Debug\PharmacieUtilities.dll
+D:\DAVID\PROJETBDD\Pharma\PharmacieUtilities\obj\Debug\PharmacieUtilities.pdb

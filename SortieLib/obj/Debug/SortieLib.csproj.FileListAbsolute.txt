@@ -8,3 +8,13 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\SortieLib\bi
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\SortieLib\bin\Debug\ParametreConnexionLib.pdb
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\SortieLib\obj\Debug\SortieLib.dll
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\SortieLib\obj\Debug\SortieLib.pdb
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\SortieLib.dll.config
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\SortieLib.dll
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\SortieLib.pdb
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\ParametreConnexionLib.dll
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\Pharma\SortieLib\bin\Debug\ParametreConnexionLib.pdb
+D:\DAVID\PROJETBDD\Pharma\SortieLib\obj\Debug\SortieLib.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\Pharma\SortieLib\obj\Debug\SortieLib.dll
+D:\DAVID\PROJETBDD\Pharma\SortieLib\obj\Debug\SortieLib.pdb

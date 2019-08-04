@@ -33,6 +33,7 @@ namespace Pharmacie.Forms
             MessageBox.Show("Connexion établie", "Message Serveur", MessageBoxButtons.OK, MessageBoxIcon.Information);
             frm.Show();
             frmg.ShowDialog();
+            this.Hide();
         }
         void ChargerServer()
         {

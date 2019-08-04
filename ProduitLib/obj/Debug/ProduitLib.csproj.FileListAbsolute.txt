@@ -8,3 +8,13 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ProduitLib\b
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ProduitLib\bin\Debug\ParametreConnexionLib.pdb
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ProduitLib\obj\Debug\ProduitLib.dll
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ProduitLib\obj\Debug\ProduitLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ProduitLib.dll.config
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ProduitLib.dll
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ProduitLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ParametreConnexionLib.dll
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\bin\Debug\ParametreConnexionLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\obj\Debug\ProduitLib.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\obj\Debug\ProduitLib.dll
+D:\DAVID\PROJETBDD\Pharma\ProduitLib\obj\Debug\ProduitLib.pdb

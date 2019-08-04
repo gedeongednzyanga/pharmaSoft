@@ -31,18 +31,23 @@ namespace Pharmacie.Forms
 
         private void label2_Click_1(object sender, EventArgs e)
         {
+            InitialiserChamps();
             this.Close();
+        }
+        void InitialiserChamps()
+        {
+            designationTxt.Clear();
+            dosageTxt.Clear();
+            formeCombo.SelectedIndex = -1;
+            categCombo.SelectedIndex = -1;
+            stockTxt.Text = "0";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                designationTxt.Clear();
-                dosageTxt.Clear();
-                formeCombo.SelectedIndex = -1;
-                categCombo.SelectedIndex = -1;
-                stockTxt.Text = "0";
+                InitialiserChamps();
 
                 IProduit pr = new Produit();
                 id = pr.Nouveau();
@@ -65,7 +70,7 @@ namespace Pharmacie.Forms
 
         private void categCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dn.retourId("idcat", "categorie", "designationcat", categCombo.Text);
+          idCateg =  dn.retourId("idcat", "categorie", "designationcat", categCombo.Text);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -93,7 +98,7 @@ namespace Pharmacie.Forms
 
                     medicament.Enregistrer(medicament);
 
-                    MessageBox.Show("Enregistrement reussi svp !!!", "Reussite", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Enregistrement reussi !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
             }

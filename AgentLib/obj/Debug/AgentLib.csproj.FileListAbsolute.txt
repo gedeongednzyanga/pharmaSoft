@@ -8,3 +8,13 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\AgentLib\bin
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\AgentLib\bin\Debug\ParametreConnexionLib.pdb
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\AgentLib\obj\Debug\AgentLib.dll
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\AgentLib\obj\Debug\AgentLib.pdb
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\AgentLib.dll.config
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\AgentLib.dll
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\AgentLib.pdb
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\ParametreConnexionLib.dll
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\Pharma\AgentLib\bin\Debug\ParametreConnexionLib.pdb
+D:\DAVID\PROJETBDD\Pharma\AgentLib\obj\Debug\AgentLib.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\Pharma\AgentLib\obj\Debug\AgentLib.dll
+D:\DAVID\PROJETBDD\Pharma\AgentLib\obj\Debug\AgentLib.pdb
