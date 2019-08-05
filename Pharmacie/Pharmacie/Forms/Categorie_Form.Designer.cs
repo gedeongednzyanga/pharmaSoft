@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.designationTxt = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnNouveau = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.designationTxt = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,35 +54,22 @@
             this.panel2.Size = new System.Drawing.Size(420, 292);
             this.panel2.TabIndex = 1;
             // 
-            // btnSupprimer
+            // groupBox7
             // 
-            this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(316, 52);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(89, 35);
-            this.btnSupprimer.TabIndex = 22;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            // 
-            // btnEnregistrer
-            // 
-            this.btnEnregistrer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnregistrer.Location = new System.Drawing.Point(221, 52);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(89, 35);
-            this.btnEnregistrer.TabIndex = 21;
-            this.btnEnregistrer.Text = "Enregistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = true;
-            // 
-            // btnNouveau
-            // 
-            this.btnNouveau.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNouveau.Location = new System.Drawing.Point(126, 52);
-            this.btnNouveau.Name = "btnNouveau";
-            this.btnNouveau.Size = new System.Drawing.Size(89, 35);
-            this.btnNouveau.TabIndex = 20;
-            this.btnNouveau.Text = "Nouveau";
-            this.btnNouveau.UseVisualStyleBackColor = true;
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.Controls.Add(this.btnSupprimer);
+            this.groupBox7.Controls.Add(this.designationTxt);
+            this.groupBox7.Controls.Add(this.listBox1);
+            this.groupBox7.Controls.Add(this.btnEnregistrer);
+            this.groupBox7.Controls.Add(this.btnNouveau);
+            this.groupBox7.Location = new System.Drawing.Point(3, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(414, 277);
+            this.groupBox7.TabIndex = 17;
+            this.groupBox7.TabStop = false;
             // 
             // label12
             // 
@@ -98,6 +85,17 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Désignation";
             // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.Location = new System.Drawing.Point(316, 52);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(89, 35);
+            this.btnSupprimer.TabIndex = 22;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
             // designationTxt
             // 
             this.designationTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,22 +104,36 @@
             this.designationTxt.Size = new System.Drawing.Size(279, 27);
             this.designationTxt.TabIndex = 19;
             // 
-            // groupBox7
+            // listBox1
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox7.Controls.Add(this.label12);
-            this.groupBox7.Controls.Add(this.btnSupprimer);
-            this.groupBox7.Controls.Add(this.designationTxt);
-            this.groupBox7.Controls.Add(this.listBox1);
-            this.groupBox7.Controls.Add(this.btnEnregistrer);
-            this.groupBox7.Controls.Add(this.btnNouveau);
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(414, 286);
-            this.groupBox7.TabIndex = 17;
-            this.groupBox7.TabStop = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(4, 94);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(405, 186);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregistrer.Location = new System.Drawing.Point(221, 52);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(89, 35);
+            this.btnEnregistrer.TabIndex = 21;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
+            // btnNouveau
+            // 
+            this.btnNouveau.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNouveau.Location = new System.Drawing.Point(126, 52);
+            this.btnNouveau.Name = "btnNouveau";
+            this.btnNouveau.Size = new System.Drawing.Size(89, 35);
+            this.btnNouveau.TabIndex = 20;
+            this.btnNouveau.Text = "Nouveau";
+            this.btnNouveau.UseVisualStyleBackColor = true;
+            this.btnNouveau.Click += new System.EventHandler(this.btnNouveau_Click);
             // 
             // panel1
             // 
@@ -161,14 +173,6 @@
             this.label1.Size = new System.Drawing.Size(174, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Catégorie produit";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(4, 94);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(405, 186);
-            this.listBox1.TabIndex = 0;
             // 
             // Categorie_Form
             // 

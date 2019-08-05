@@ -9,3 +9,13 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Approvisionn
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ApprovisionnementLib\bin\Debug\ParametreConnexionLib.pdb
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ApprovisionnementLib\obj\Debug\ApprovisionnementLib.dll
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ApprovisionnementLib\obj\Debug\ApprovisionnementLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ApprovisionnementLib.dll.config
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ApprovisionnementLib.dll
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ApprovisionnementLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ManageSingleConnexion.dll
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ParametreConnexionLib.dll
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ManageSingleConnexion.pdb
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\bin\Debug\ParametreConnexionLib.pdb
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\obj\Debug\ApprovisionnementLib.csprojResolveAssemblyReference.cache
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\obj\Debug\ApprovisionnementLib.dll
+D:\DAVID\PROJETBDD\Pharma\ApprovisionnementLib\obj\Debug\ApprovisionnementLib.pdb

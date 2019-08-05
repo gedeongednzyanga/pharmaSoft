@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProduitLib
 {
@@ -67,6 +68,36 @@ namespace ProduitLib
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, id));
                 cmd.ExecuteNonQuery();
             }
+        }
+        public List<Categorie> AllCategorie()
+        {
+            List<Categorie> lst = new List<Categorie>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_CATEGORIE";
+                cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetCategorie(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
+
+        private Categorie GetCategorie(IDataReader rd)
+        {
+            Categorie categ = new Categorie();
+
+            categ.Id = Convert.ToInt32(rd["Numéro"].ToString());
+            categ.Designation = rd["Catégorie"].ToString();
+            
+
+            return categ;
         }
 
     }

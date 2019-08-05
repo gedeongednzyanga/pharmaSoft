@@ -90,7 +90,6 @@
             // 
             // stockTxt
             // 
-            this.stockTxt.Enabled = false;
             this.stockTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockTxt.Location = new System.Drawing.Point(152, 168);
             this.stockTxt.Name = "stockTxt";
