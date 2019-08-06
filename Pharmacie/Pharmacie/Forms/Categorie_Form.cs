@@ -66,7 +66,7 @@ namespace Pharmacie.Forms
             {
                 Categorie cat = new Categorie();
 
-                if(idCateg <= 0 || designationTxt.Text == "")
+                if (idCateg <= 0 || designationTxt.Text == "")
                 {
                     MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MaladeLib
 {
@@ -54,8 +55,10 @@ namespace MaladeLib
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@sexe", 1, DbType.String, Sex == Sexe.Féminin ? "F" : "M"));
 
                     cmd.ExecuteNonQuery();
-                    
-                }
+
+                    MessageBox.Show("Enregistrement reussie", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
            
         }
         public void Supprimer(int id)
@@ -70,6 +73,8 @@ namespace MaladeLib
 
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, id));
                 cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Suppression reussie", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         //A Revoir, c'est une liste des médicaments
@@ -98,7 +103,7 @@ namespace MaladeLib
             mal.Id = Convert.ToInt32(rd["Numéro"].ToString());
             mal.Noms = rd["Malade"].ToString();
             mal.Sex = rd["Sexe"].ToString().Equals("M") ? Sexe.Masculin : Sexe.Féminin;
-            mal.NumOrdo = rd["[Ordonance Numéro]"].ToString();
+            mal.NumOrdo = rd["Ordonance"].ToString();
             mal.Maladie = rd["maladie"].ToString();
 
             return mal;

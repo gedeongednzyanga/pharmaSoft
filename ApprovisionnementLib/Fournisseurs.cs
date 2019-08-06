@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ParametreConnexionLib;
+using System.Windows.Forms;
 
 namespace ApprovisionnementLib
 {
@@ -15,6 +16,8 @@ namespace ApprovisionnementLib
         public string Nom { get; set; }
         public string Adresse { get; set; }
         public string Contact { get; set; }
+        public string TypePersonne { get; set; }
+        public string Email { get; set; }
         public int Nouveau()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -48,11 +51,16 @@ namespace ApprovisionnementLib
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@noms", 100, DbType.String, Nom));
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@adresse", 100, DbType.String, Adresse));
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@contact", 100, DbType.String, Contact));
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@typepersonne", 30, DbType.String, TypePersonne));
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@email", 30, DbType.String, Email));
 
                     cmd.ExecuteNonQuery();
-                    
-                }
-            
+
+                    MessageBox.Show("Enregistrement reussie", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+
         }
         public void Supprimer(int id)
         {
@@ -65,6 +73,9 @@ namespace ApprovisionnementLib
 
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, Id));
                 cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Suppression reussie", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
         public List<Fournisseurs> Fournisseur()
@@ -74,7 +85,7 @@ namespace ApprovisionnementLib
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-                cmd.CommandText = "procedure de selection";
+                cmd.CommandText = "SELECT_FOURNISSEUR";
                 cmd.CommandType = CommandType.StoredProcedure;
                 IDataReader rd = cmd.ExecuteReader();
                 while (rd.Read())
