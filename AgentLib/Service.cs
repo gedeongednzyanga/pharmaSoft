@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AgentLib
 {
@@ -33,7 +34,7 @@ namespace AgentLib
             }
             return Id;
         }
-        public  void Enregistrer()
+        public  void Enregistrer(Service service)
         {
            
            
@@ -49,9 +50,12 @@ namespace AgentLib
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@responsable", 100, DbType.String, Responsable));
 
                     cmd.ExecuteNonQuery();
-                    
-                }
-           
+
+                MessageBox.Show("Enregistrement reussie", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+
         }
         public void Supprimer(int id)
         {
@@ -64,6 +68,9 @@ namespace AgentLib
 
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, id));
                 cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Suppression reussie", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
         public List<Service> AllServices()

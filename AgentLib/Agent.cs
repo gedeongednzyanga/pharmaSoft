@@ -6,15 +6,22 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace AgentLib
 {
     public class Agent : IAgent
     {
         public string Adresse { get; set; }
-        
+
 
         public string Contact { get; set; }
+
+        public string Email { get; set; }
+
+        public string Fonction { get; set; }
 
         public int Id { get; set; }
 
@@ -23,6 +30,8 @@ namespace AgentLib
         public string Noms { get; set; }
 
         public string PassWord { get; set; }
+
+        public Image Photo { get; set; }
 
         public string Pseudo { get; set; }
         public Sexe Sex { get; set; }
@@ -49,30 +58,46 @@ namespace AgentLib
 
         public void Enregistrer(IAgent agent)
         {
-           
-            
-                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
-                    ImplementeConnexion.Instance.Conn.Open();
-                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
-                {
-                    cmd.CommandText = "INSERT_AGENT";
-                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, Id));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@noms", 100, DbType.String, Noms));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@adresse", 100, DbType.String, Adresse));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@contact", 100, DbType.String, Contact));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pseudo", 100, DbType.String, Pseudo));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@password", 50, DbType.String, PassWord));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@niveau", 10, DbType.String, Niveau));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@sexe", 1, DbType.String, Sex == Sexe.Masculin ? "M" : "F"));
 
-                    cmd.ExecuteNonQuery();
-                   
-                }
-           
-            
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "INSERT_AGENT";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, Id));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@noms", 100, DbType.String, Noms));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@adresse", 100, DbType.String, Adresse));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@contact", 100, DbType.String, Contact));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pseudo", 100, DbType.String, Pseudo));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@password", 50, DbType.String, PassWord));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@nivau", 10, DbType.String, Niveau));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@sexe", 1, DbType.String, Sex == Sexe.Masculin ? "M" : "F"));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@email", 30, DbType.String, Email));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@fonction", 30, DbType.String, Fonction));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@photo", int.MaxValue, DbType.Binary, ConverttoByteImage(Photo)));
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Enregistrement reussi !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+
         }
+        private byte[] ConverttoByteImage(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            Bitmap bmpImage = new Bitmap(img);
+            byte[] bytImage;
+            bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            bytImage = ms.ToArray();
+            ms.Close();
+            return bytImage;
+        }
+
 
         public int Nouveau()
         {
@@ -152,6 +177,6 @@ namespace AgentLib
 
             return ag;
         }
-        
+
     }
 }

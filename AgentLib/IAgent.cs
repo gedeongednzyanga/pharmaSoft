@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace AgentLib
         string PassWord { get; set; }
         string Niveau { get; set; }
         Sexe Sex { get; set; }
+        string Email { get; set; }
+        string Fonction { get; set; }
+        Image Photo { get; set; }
         int Nouveau();
         void Enregistrer(IAgent agent);
         void Supprimer(int id);
