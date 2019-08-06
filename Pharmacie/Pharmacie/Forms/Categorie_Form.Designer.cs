@@ -186,6 +186,7 @@
             this.Name = "Categorie_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Categorie_Form";
+            this.Load += new System.EventHandler(this.Categorie_Form_Load_1);
             this.panel2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();

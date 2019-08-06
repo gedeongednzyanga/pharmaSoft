@@ -47,9 +47,10 @@ namespace Pharmacie.Forms
         {
             try
             {
-                ListViewItem element = new ListViewItem();
+                //ListViewItem element = new ListViewItem();
                 Categorie categ = new Categorie();
-                categ.AllCategorie();
+                listBox1.DataSource= categ.AllCategorie();
+
             }
             catch (Exception)
             {
@@ -76,7 +77,7 @@ namespace Pharmacie.Forms
 
                     cat.Enregistrer(cat);
 
-                    listBox1.Items.Add(designationTxt.Text);
+                    //listBox1.Items.Add(designationTxt.Text);
 
                     MessageBox.Show("Enregistrement reussi !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -90,8 +91,8 @@ namespace Pharmacie.Forms
 
         private void Categorie_Form_Load(object sender, EventArgs e)
         {
-            //ChargementListBox();
-            
+            ChargementListBox();
+
 
         }
 
@@ -115,6 +116,11 @@ namespace Pharmacie.Forms
         {
            idCateg = dn.retourId("idcat", "categorie", "designationcat", listBox1.SelectedItem.ToString());
             designationTxt.Text = listBox1.SelectedItem.ToString();
+        }
+
+        private void Categorie_Form_Load_1(object sender, EventArgs e)
+        {
+            ChargementListBox();
         }
     }
 }

@@ -61,7 +61,7 @@ namespace ProduitLib
             prod.Categorie = rd["Catégorie"].ToString();
             prod.Dosage = rd["Dosage"].ToString();
             prod.Forme = rd["Forme"].ToString();
-            prod.QteStock = Convert.ToInt32(rd["[Quantité en Stock]"].ToString());
+            prod.QteStock = Convert.ToInt32(rd["Quantité en Stock"].ToString());
             
             return prod;
         }

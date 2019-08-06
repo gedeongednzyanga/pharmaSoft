@@ -169,11 +169,11 @@
     <Compile Include="User_Controls\Fournisseur.Designer.cs">
       <DependentUpon>Fournisseur.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Controls\Produit.cs">
+    <Compile Include="User_Controls\Produit_userC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User_Controls\Produit.Designer.cs">
-      <DependentUpon>Produit.cs</DependentUpon>
+    <Compile Include="User_Controls\Produit_userC.Designer.cs">
+      <DependentUpon>Produit_userC.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\Sortie_Facture.cs">
       <SubType>UserControl</SubType>
@@ -236,8 +236,8 @@
     <EmbeddedResource Include="User_Controls\Fournisseur.resx">
       <DependentUpon>Fournisseur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\Produit.resx">
-      <DependentUpon>Produit.cs</DependentUpon>
+    <EmbeddedResource Include="User_Controls\Produit_userC.resx">
+      <DependentUpon>Produit_userC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Sortie_Facture.resx">
       <DependentUpon>Sortie_Facture.cs</DependentUpon>

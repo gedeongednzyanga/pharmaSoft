@@ -31,7 +31,7 @@ namespace Pharmacie.Forms
             ImplementeConnexion.Instance.Initialise(cx, connexionType);
             ImplementeConnexion.Instance.Conn.Open();
             MessageBox.Show("Connexion établie", "Message Serveur", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            frm.Show();
+            //frm.Show();
             frmg.ShowDialog();
             this.Hide();
         }

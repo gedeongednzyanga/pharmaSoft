@@ -12,10 +12,25 @@ namespace Pharmacie.Forms
 {
     public partial class Login_Form : Form
     {
+        public delegate void SendId(Login_Form login);
+        public Form1 form1;
+        public delegate void Sendata(string text);
+
+
         public Login_Form()
         {
             InitializeComponent();
         }
+
+        public void FundForm1(Form1 form1)
+        {
+            this.form1 = form1;
+        }
+        //public void FundDataForm1(string data)
+        //{
+        //    textBox1.Text = data;
+        //}
+
 
         private void label4_MouseClick(object sender, MouseEventArgs e)
         {
@@ -24,11 +39,23 @@ namespace Pharmacie.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            frm.lab_user.Visible = false;
-            frm.lab_user.Text = this.textBox1.Text.Trim();
-            frm.lab_user.Visible = true;
-            this.Close();
+
+            var form = new Form1();
+            SendId sendId = new SendId(form.Fundform_Login);
+            sendId(this);
+            form.Show();
+            
+            //Form1 frm = new Form1();
+            //frm.lab_user.Visible = false;
+            //frm.lab_user.Text = this.textBox1.Text.Trim();
+            //frm.lab_user.Visible = true;
+            //this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Sendata senddata = new Sendata(form1.FundDataLogin);
+            senddata(textBox1.Text);
         }
     }
 }

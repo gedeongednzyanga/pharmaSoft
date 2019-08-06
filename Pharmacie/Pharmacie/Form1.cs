@@ -17,8 +17,14 @@ namespace Pharmacie
         int t1 = 35;
         int t2 = 35;
 
+        public Login_Form login;
+        public delegate void SendId(Form1 form1);
+        public delegate void SendDate(string text);
+
+
+
         Approvisionnement approvisionnement = new Approvisionnement();
-        Produit produit = new Produit();
+        Produit_userC produit = new Produit_userC();
 
         Produit_Form frmp = new Produit_Form();
         Approvisionnement_Form frma = new Approvisionnement_Form();
@@ -29,6 +35,19 @@ namespace Pharmacie
         {
             InitializeComponent();
         }
+
+
+        public void Fundform_Login(Login_Form login)
+        {
+            this.login = login;
+        }
+        public void FundDataLogin(string data)
+        {
+            lab_user.Text = data;
+        }
+
+
+
 
         void hover_label(Label label)
         {
@@ -77,7 +96,7 @@ namespace Pharmacie
         }
         void ShowProduit(object formF)
         {
-            Produit produit = formF as Produit;
+            Produit_userC produit = formF as Produit_userC;
             produit.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
             panel_container.Controls.Add(produit);
@@ -310,7 +329,8 @@ namespace Pharmacie
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            SendId sendId = new SendId(login.FundForm1);
+            sendId(this);
             ShowProduit(produit);
         }
 
