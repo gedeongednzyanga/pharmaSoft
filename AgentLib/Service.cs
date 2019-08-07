@@ -36,8 +36,6 @@ namespace AgentLib
         }
         public  void Enregistrer(Service service)
         {
-           
-           
                 if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                     ImplementeConnexion.Instance.Conn.Open();
                 using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())

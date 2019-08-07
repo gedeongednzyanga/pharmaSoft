@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ManageSingleConnexion;
+using Pharmacie.Classes;
+using ApprovisionnementLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -7,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ManageSingleConnexion;
 
 namespace Pharmacie.User_Controls
 {
@@ -118,9 +120,7 @@ namespace Pharmacie.User_Controls
                     fournisseur.TypePersonne = comboBox1.Text;
                     fournisseur.Adresse = textBox3.Text;
                     fournisseur.Contact = textBox4.Text;
-
                     fournisseur.Email = textBox5.Text;
-
                     fournisseur.Enregistrer(fournisseur);
 
                     InitialiseChamps();
