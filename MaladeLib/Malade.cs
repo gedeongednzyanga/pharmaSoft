@@ -105,7 +105,6 @@ namespace MaladeLib
             mal.Sex = rd["Sexe"].ToString().Equals("M") ? Sexe.Masculin : Sexe.Féminin;
             mal.NumOrdo = rd["Ordonance"].ToString();
             mal.Maladie = rd["maladie"].ToString();
-
             return mal;
         }
     }

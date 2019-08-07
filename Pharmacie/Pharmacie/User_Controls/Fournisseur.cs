@@ -117,10 +117,10 @@ namespace Pharmacie.User_Controls
                 {
                     fournisseur.Id = idFournisseur;
                     fournisseur.Nom = textBox2.Text;
-                    //fournisseur.TypePersonne = comboBox1.Text;
+                    fournisseur.TypePersonne = comboBox1.Text.ToString();
                     fournisseur.Adresse = textBox3.Text;
                     fournisseur.Contact = textBox4.Text;
-                    //fournisseur.Email = textBox5.Text;
+                    fournisseur.Email = textBox5.Text;
                     fournisseur.Enregistrer(fournisseur);
 
                     InitialiseChamps();

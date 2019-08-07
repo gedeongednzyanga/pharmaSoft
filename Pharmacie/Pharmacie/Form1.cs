@@ -17,9 +17,9 @@ namespace Pharmacie
         int t1 = 35;
         int t2 = 35;
 
-        public Login_Form login;
-        public delegate void SendId(Form1 form1);
-        public delegate void SendDate(string text);
+        //public Login_Form login;
+        //public delegate void SendId(Form1 form1);
+        //public delegate void SendDate(string text);
 
 
 
@@ -37,14 +37,14 @@ namespace Pharmacie
         }
 
 
-        public void Fundform_Login(Login_Form login)
-        {
-            this.login = login;
-        }
-        public void FundDataLogin(string data)
-        {
-            lab_user.Text = data;
-        }
+        //public void Fundform_Login(Login_Form login)
+        //{
+        //    this.login = login;
+        //}
+        //public void FundDataLogin(string data)
+        //{
+        //    lab_user.Text = data;
+        //}
 
 
 
@@ -329,8 +329,6 @@ namespace Pharmacie
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SendId sendId = new SendId(login.FundForm1);
-            sendId(this);
             ShowProduit(produit);
         }
 
