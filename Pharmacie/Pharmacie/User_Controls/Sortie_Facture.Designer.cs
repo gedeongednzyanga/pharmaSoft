@@ -56,7 +56,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(722, 18);
+            this.label2.Location = new System.Drawing.Point(740, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 21);
             this.label2.TabIndex = 28;
@@ -79,7 +79,7 @@
             "Octobre",
             "Novembre",
             "Decembre"});
-            this.comboBox1.Location = new System.Drawing.Point(776, 21);
+            this.comboBox1.Location = new System.Drawing.Point(794, 20);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 27;
