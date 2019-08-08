@@ -513,3 +513,5 @@ D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.csproj.GenerateResource.Cache
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.exe.licenses
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.Produit_userC.resources
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Sortie_Facture_Form.resources
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Sortie_Service_Form.resources

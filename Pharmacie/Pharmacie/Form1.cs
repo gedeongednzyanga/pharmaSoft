@@ -25,12 +25,15 @@ namespace Pharmacie
 
         Approvisionnement approvisionnement = new Approvisionnement();
         Produit_userC produit = new Produit_userC();
+        Sortie_Facture sortiefacture = new Sortie_Facture();
+        Sortie_Service sortieservice = new Sortie_Service();
 
         Produit_Form frmp = new Produit_Form();
         Approvisionnement_Form frma = new Approvisionnement_Form();
         Malade_Form frmMalade = new Malade_Form();
         Agent_Form frmag = new Agent_Form();
-
+        Sortie_Facture_Form frmsf = new Sortie_Facture_Form();
+        Sortie_Service_Form frmss = new Sortie_Service_Form();
         public Form1()
         {
             InitializeComponent();
@@ -334,12 +337,12 @@ namespace Pharmacie
 
         private void label11_MouseClick(object sender, MouseEventArgs e)
         {
-            ShowSortieFactue(new Sortie_Facture());
+            ShowSortieFactue(sortiefacture);
         }
 
         private void label10_MouseClick(object sender, MouseEventArgs e)
         {
-            ShowSortieService(new Sortie_Service());
+            ShowSortieService(sortieservice);
         }
 
         private void label1_MouseClick_1(object sender, MouseEventArgs e)
@@ -367,6 +370,14 @@ namespace Pharmacie
                 frmp.ShowDialog();
             }else if (panel_container.Parent.Contains(approvisionnement)){
                 frma.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(sortiefacture))
+            {
+                frmsf.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(sortieservice))
+            {
+                frmss.ShowDialog();
             }
         }
 

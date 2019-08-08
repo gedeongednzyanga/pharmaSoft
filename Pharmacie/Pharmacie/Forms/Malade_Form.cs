@@ -70,7 +70,6 @@ namespace Pharmacie.Forms
                     mal.Sex = formeCombo.Text.Equals(Sexe.Masculin.ToString()) ? Sexe.Masculin : Sexe.Féminin;
                     mal.NumOrdo = dosageTxt.Text;
                     mal.Maladie = stockTxt.Text;
-
                     mal.Enregistrer(mal);
 
                     InitialseChamps();
