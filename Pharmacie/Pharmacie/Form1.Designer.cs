@@ -123,9 +123,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.inventaire);
             this.panel1.Controls.Add(this.accueil);
             this.panel1.Controls.Add(this.configuration);
-            this.panel1.Controls.Add(this.inventaire);
             this.panel1.Controls.Add(this.lab_user);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -307,6 +307,7 @@
             this.label24.TabIndex = 6;
             this.label24.Text = "Modifier";
             this.label24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label24.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label24_MouseClick);
             this.label24.MouseEnter += new System.EventHandler(this.label22_MouseEnter);
             this.label24.MouseLeave += new System.EventHandler(this.label28_MouseLeave);
             // 
@@ -414,9 +415,9 @@
             this.inventaire.Controls.Add(this.label36);
             this.inventaire.Controls.Add(this.label37);
             this.inventaire.ForeColor = System.Drawing.Color.Black;
-            this.inventaire.Location = new System.Drawing.Point(3, 2);
+            this.inventaire.Location = new System.Drawing.Point(0, 0);
             this.inventaire.Name = "inventaire";
-            this.inventaire.Size = new System.Drawing.Size(873, 63);
+            this.inventaire.Size = new System.Drawing.Size(876, 63);
             this.inventaire.TabIndex = 14;
             this.inventaire.TabStop = false;
             // 
@@ -591,6 +592,8 @@
             // 
             // panel_medicament
             // 
+            this.panel_medicament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_medicament.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_medicament.Controls.Add(this.groupBox2);
             this.panel_medicament.Controls.Add(this.label4);
@@ -599,14 +602,14 @@
             this.panel_medicament.Controls.Add(this.lab_medicament);
             this.panel_medicament.Location = new System.Drawing.Point(3, 3);
             this.panel_medicament.Name = "panel_medicament";
-            this.panel_medicament.Size = new System.Drawing.Size(204, 124);
+            this.panel_medicament.Size = new System.Drawing.Size(204, 135);
             this.panel_medicament.TabIndex = 2;
             this.panel_medicament.MouseEnter += new System.EventHandler(this.panel_medicament_MouseEnter);
             this.panel_medicament.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(35, 126);
+            this.groupBox2.Location = new System.Drawing.Point(35, 123);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(147, 4);
             this.groupBox2.TabIndex = 4;
@@ -669,29 +672,30 @@
             this.lab_medicament.Size = new System.Drawing.Size(148, 25);
             this.lab_medicament.TabIndex = 0;
             this.lab_medicament.Text = "    Médicaments";
-            this.lab_medicament.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseClick);
+            this.lab_medicament.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
             this.lab_medicament.MouseEnter += new System.EventHandler(this.lab_medicament_MouseEnter);
             this.lab_medicament.MouseLeave += new System.EventHandler(this.lab_medicament_MouseLeave);
             this.lab_medicament.MouseHover += new System.EventHandler(this.lab_medicament_MouseHover);
             // 
             // panel_achat
             // 
+            this.panel_achat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_achat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_achat.Controls.Add(this.groupBox3);
             this.panel_achat.Controls.Add(this.label5);
             this.panel_achat.Controls.Add(this.label6);
             this.panel_achat.Controls.Add(this.label7);
             this.panel_achat.Controls.Add(this.lab_achat);
-            this.panel_achat.Location = new System.Drawing.Point(3, 133);
+            this.panel_achat.Location = new System.Drawing.Point(3, 144);
             this.panel_achat.Name = "panel_achat";
-            this.panel_achat.Size = new System.Drawing.Size(204, 142);
+            this.panel_achat.Size = new System.Drawing.Size(204, 135);
             this.panel_achat.TabIndex = 1;
             this.panel_achat.MouseEnter += new System.EventHandler(this.panel_achat_MouseEnter);
             this.panel_achat.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(35, 130);
+            this.groupBox3.Location = new System.Drawing.Point(35, 124);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(147, 4);
             this.groupBox3.TabIndex = 8;
@@ -753,7 +757,7 @@
             this.lab_achat.Size = new System.Drawing.Size(201, 25);
             this.lab_achat.TabIndex = 4;
             this.lab_achat.Text = "    Approvisionnement";
-            this.lab_achat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label8_MouseClick);
+            this.lab_achat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
             // 
             // panel_sortie
             // 
@@ -763,16 +767,16 @@
             this.panel_sortie.Controls.Add(this.label10);
             this.panel_sortie.Controls.Add(this.label11);
             this.panel_sortie.Controls.Add(this.lab_sortie);
-            this.panel_sortie.Location = new System.Drawing.Point(3, 281);
+            this.panel_sortie.Location = new System.Drawing.Point(3, 285);
             this.panel_sortie.Name = "panel_sortie";
-            this.panel_sortie.Size = new System.Drawing.Size(204, 145);
+            this.panel_sortie.Size = new System.Drawing.Size(204, 135);
             this.panel_sortie.TabIndex = 0;
             this.panel_sortie.MouseEnter += new System.EventHandler(this.panel_medicament_MouseEnter);
             this.panel_sortie.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
             // 
             // groupBox4
             // 
-            this.groupBox4.Location = new System.Drawing.Point(35, 133);
+            this.groupBox4.Location = new System.Drawing.Point(35, 124);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(147, 4);
             this.groupBox4.TabIndex = 13;
@@ -784,7 +788,7 @@
             this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label9.Location = new System.Drawing.Point(33, 104);
+            this.label9.Location = new System.Drawing.Point(33, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 21);
             this.label9.TabIndex = 12;
@@ -798,7 +802,7 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label10.Location = new System.Drawing.Point(31, 74);
+            this.label10.Location = new System.Drawing.Point(31, 71);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(105, 21);
             this.label10.TabIndex = 11;
@@ -813,7 +817,7 @@
             this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label11.Location = new System.Drawing.Point(31, 44);
+            this.label11.Location = new System.Drawing.Point(31, 43);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 21);
             this.label11.TabIndex = 10;
@@ -833,6 +837,7 @@
             this.lab_sortie.Size = new System.Drawing.Size(203, 25);
             this.lab_sortie.TabIndex = 9;
             this.lab_sortie.Text = "    Sortie médicaments";
+            this.lab_sortie.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
             // 
             // panel_fourni
             // 
@@ -842,16 +847,16 @@
             this.panel_fourni.Controls.Add(this.label14);
             this.panel_fourni.Controls.Add(this.label15);
             this.panel_fourni.Controls.Add(this.lab_fournisseur);
-            this.panel_fourni.Location = new System.Drawing.Point(3, 432);
+            this.panel_fourni.Location = new System.Drawing.Point(3, 426);
             this.panel_fourni.Name = "panel_fourni";
-            this.panel_fourni.Size = new System.Drawing.Size(206, 145);
+            this.panel_fourni.Size = new System.Drawing.Size(204, 135);
             this.panel_fourni.TabIndex = 3;
             this.panel_fourni.MouseEnter += new System.EventHandler(this.panel_medicament_MouseEnter);
             this.panel_fourni.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
             // 
             // groupBox5
             // 
-            this.groupBox5.Location = new System.Drawing.Point(35, 133);
+            this.groupBox5.Location = new System.Drawing.Point(35, 124);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(147, 4);
             this.groupBox5.TabIndex = 13;
@@ -863,7 +868,7 @@
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label13.Location = new System.Drawing.Point(33, 104);
+            this.label13.Location = new System.Drawing.Point(33, 100);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 21);
             this.label13.TabIndex = 12;
@@ -877,7 +882,7 @@
             this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label14.Location = new System.Drawing.Point(31, 74);
+            this.label14.Location = new System.Drawing.Point(31, 71);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(105, 21);
             this.label14.TabIndex = 11;
@@ -891,7 +896,7 @@
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label15.Location = new System.Drawing.Point(31, 44);
+            this.label15.Location = new System.Drawing.Point(31, 43);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(128, 21);
             this.label15.TabIndex = 10;
@@ -911,6 +916,7 @@
             this.lab_fournisseur.Size = new System.Drawing.Size(139, 25);
             this.lab_fournisseur.TabIndex = 9;
             this.lab_fournisseur.Text = "    Fournisseurs";
+            this.lab_fournisseur.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
             // 
             // panel_agent
             // 
@@ -920,16 +926,16 @@
             this.panel_agent.Controls.Add(this.label18);
             this.panel_agent.Controls.Add(this.label19);
             this.panel_agent.Controls.Add(this.lab_agent);
-            this.panel_agent.Location = new System.Drawing.Point(3, 583);
+            this.panel_agent.Location = new System.Drawing.Point(3, 567);
             this.panel_agent.Name = "panel_agent";
-            this.panel_agent.Size = new System.Drawing.Size(204, 145);
+            this.panel_agent.Size = new System.Drawing.Size(204, 135);
             this.panel_agent.TabIndex = 4;
             this.panel_agent.MouseEnter += new System.EventHandler(this.panel_medicament_MouseEnter);
             this.panel_agent.MouseLeave += new System.EventHandler(this.panel_achat_MouseLeave);
             // 
             // groupBox6
             // 
-            this.groupBox6.Location = new System.Drawing.Point(35, 133);
+            this.groupBox6.Location = new System.Drawing.Point(35, 124);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(147, 4);
             this.groupBox6.TabIndex = 13;
@@ -941,7 +947,7 @@
             this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label17.Location = new System.Drawing.Point(33, 104);
+            this.label17.Location = new System.Drawing.Point(33, 100);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 21);
             this.label17.TabIndex = 12;
@@ -955,7 +961,7 @@
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label18.Location = new System.Drawing.Point(31, 74);
+            this.label18.Location = new System.Drawing.Point(31, 70);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(126, 21);
             this.label18.TabIndex = 11;
@@ -970,7 +976,7 @@
             this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label19.Location = new System.Drawing.Point(31, 44);
+            this.label19.Location = new System.Drawing.Point(31, 40);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 21);
             this.label19.TabIndex = 10;
@@ -990,6 +996,7 @@
             this.lab_agent.Size = new System.Drawing.Size(92, 25);
             this.lab_agent.TabIndex = 9;
             this.lab_agent.Text = "    Agents";
+            this.lab_agent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
             // 
             // menuStrip1
             // 

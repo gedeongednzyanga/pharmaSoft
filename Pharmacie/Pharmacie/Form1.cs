@@ -15,18 +15,20 @@ namespace Pharmacie
     public partial class Form1 : Form
     {
         int t1 = 35;
-        int t2 = 35;
+        int t2 = 135;
+        //int t3 = 135;
 
         //public Login_Form login;
         //public delegate void SendId(Form1 form1);
         //public delegate void SendDate(string text);
-
+        Panel pane = new Panel();
 
 
         Approvisionnement approvisionnement = new Approvisionnement();
         Produit_userC produit = new Produit_userC();
         Sortie_Facture sortiefacture = new Sortie_Facture();
         Sortie_Service sortieservice = new Sortie_Service();
+        Agents agents = new Agents();
 
         Produit_Form frmp = new Produit_Form();
         Approvisionnement_Form frma = new Approvisionnement_Form();
@@ -34,11 +36,33 @@ namespace Pharmacie
         Agent_Form frmag = new Agent_Form();
         Sortie_Facture_Form frmsf = new Sortie_Facture_Form();
         Sortie_Service_Form frmss = new Sortie_Service_Form();
+        
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        void Slide_Pane(Panel panel)
+        {
+            if (panel.Height == 35)
+            {
+                panel.Size = new Size(panel.Width, t1);
+                timer1.Start();
+            }
+            else{ panel.Height = 35;
+            }
+        }
+        
+        //void Slide_PaneUp(Panel panel)
+        //{
+        //    if (panel.Height == 35)
+        //    {
+        //        panel.Size = new Size(panel.Width, t1);
+        //        timer1.Start();
+        //    }
+        //    else { panel.Height = 35; }
+        //}
 
         //public void Fundform_Login(Login_Form login)
         //{
@@ -162,46 +186,36 @@ namespace Pharmacie
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
         {
-           
-            if (panel_medicament.Height == 35)
-            {
-                this.panel_medicament.Size = new Size(this.panel_medicament.Width, t1);
-                timer1.Start();
-            }
-            else { panel_medicament.Height = 35; }
-               
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (t1 > 140)
+            if (t1 > 134)
             {
                 timer1.Stop();
             }
-            else {
+            else{
                 this.panel_medicament.Size = new Size(this.panel_medicament.Width, t1);
-                t1 += 15; }
+                t1 += 15;
+            }
         }
 
         private void label8_MouseClick(object sender, MouseEventArgs e)
         {
-            if (panel_achat.Height == 35)
-            {
-                this.panel_achat.Size = new Size(this.panel_achat.Width, t2);
-                timer2.Start();
-            }
-            else { this.panel_achat.Height = 35; }
-     
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (t2 > 140)
+            if (t2 < 35)
             {
                 timer2.Stop();
             }
-            else { this.panel_achat.Size = new Size(this.panel_achat.Width, t2);
-                t2 += 15;
+            else
+            {
+                this.panel_medicament.Size = new Size(this.panel_medicament.Width, t2);
+                t2 -= 15;
             }
         }
 
@@ -321,7 +335,7 @@ namespace Pharmacie
 
         private void label19_Click(object sender, EventArgs e)
         {
-            ShowAgent(new Agents());
+            ShowAgent(agents);
         }
 
         private void label18_MouseClick(object sender, MouseEventArgs e)
@@ -370,14 +384,12 @@ namespace Pharmacie
                 frmp.ShowDialog();
             }else if (panel_container.Parent.Contains(approvisionnement)){
                 frma.ShowDialog();
-            }
-            else if (panel_container.Parent.Contains(sortiefacture))
-            {
+            }else if (panel_container.Parent.Contains(sortiefacture)){
                 frmsf.ShowDialog();
-            }
-            else if (panel_container.Parent.Contains(sortieservice))
-            {
+            }else if (panel_container.Parent.Contains(sortieservice)){
                 frmss.ShowDialog();
+            } else if (panel_container.Parent.Contains(agents)){
+                frmag.ShowDialog();
             }
         }
 
@@ -550,6 +562,51 @@ namespace Pharmacie
                 case "label8":
                     leave_label_menu_haut(label8);
                     break;
+            }
+        }
+
+        private void lab_fournisseur_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+        private void lab_medicament_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void lab_medicament_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            switch (((Control)sender).Name)
+            {
+                case "lab_medicament":
+                    Slide_Pane(this.panel_medicament);
+                    break;
+                case "lab_achat":
+                    Slide_Pane(this.panel_achat);
+                    break;
+                case "lab_sortie":
+                    Slide_Pane(this.panel_sortie);
+                    break;
+                case "lab_fournisseur":
+                    Slide_Pane(this.panel_fourni);
+                    break;
+                case "lab_agent":
+                    Slide_Pane(this.panel_agent);
+                    break;
+            }
+        }
+
+        private void label24_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel_container.Parent.Contains(produit)){
+                frmp.ShowDialog();
+            }else if (panel_container.Parent.Contains(approvisionnement)){
+                frma.ShowDialog();
+            }else if (panel_container.Parent.Contains(sortiefacture)){
+                frmsf.ShowDialog();
+            }else if (panel_container.Parent.Contains(sortieservice)){
+                frmss.ShowDialog();
+            }else if (panel_container.Parent.Contains(agents)){
+                frmag.ShowDialog();
             }
         }
     }

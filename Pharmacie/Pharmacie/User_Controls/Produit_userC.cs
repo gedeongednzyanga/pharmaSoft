@@ -18,9 +18,13 @@ namespace Pharmacie.User_Controls
         {
             InitializeComponent();
         }
-        private void Charger_Produit()
+        //void RefreshData(Malade mal)
+        //{
+        //    dataGridView1.DataSource = mal.AllMalade();
+        //}
+        private void Charger_Produit(Produit produit)
         {
-            Produit produit = new Produit();
+            //Produit produit = new Produit();
             dataGridView1.DataSource= produit.AllProduits();
 
         }
@@ -31,7 +35,7 @@ namespace Pharmacie.User_Controls
 
         private void Produit_Load(object sender, EventArgs e)
         {
-            Charger_Produit();
+            Charger_Produit(new Produit());
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)

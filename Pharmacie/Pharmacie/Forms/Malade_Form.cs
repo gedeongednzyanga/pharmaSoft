@@ -76,8 +76,6 @@ namespace Pharmacie.Forms
 
                     RefreshData(new Malade());
                 }
-
-
             }
             catch (Exception ex)
             {
