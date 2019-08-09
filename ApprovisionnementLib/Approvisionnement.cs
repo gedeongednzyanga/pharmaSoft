@@ -13,7 +13,7 @@ namespace ApprovisionnementLib
     {
         public int Id { get; set; }
         public DateTime DateApprov { get; set; }
-        public int UserSession { get; set; }
+        public string UserSession { get; set; }
         public int Ref_Fourni { get; set; }
         public int Nouveau()
         {

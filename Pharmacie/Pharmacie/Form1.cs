@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pharmacie.Forms;
 using Pharmacie.User_Controls;
+using Pharmacie.Classes;
 
 namespace Pharmacie
 {
@@ -332,6 +333,12 @@ namespace Pharmacie
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PubCon.testFile();
+
+            Login_Form frm = new Login_Form();
+            frm.ShowDialog();
+
+
             ShowProduit(produit);
         }
 

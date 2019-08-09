@@ -1,7 +1,10 @@
 ﻿using ManageSingleConnexion;
+using ParametreConnexionLib;
+using PharmacieUtilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +14,16 @@ namespace Pharmacie.Classes
 {
     public class DynamicClasses
     {
+        SqlDataReader dr = null;
+        public static DynamicClasses _intance = null;
+
+        public static DynamicClasses GetInstance()
+        {
+            if (_intance == null)
+                _intance = new DynamicClasses();
+            return _intance;
+        }
+
         public void chargeCombo(ComboBox cmb, string nomChamp, string nomTable)
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -53,5 +66,56 @@ namespace Pharmacie.Classes
             }
             return identifiant;
         }
+
+        public int loginTest(string nom, string password)
+        {
+            int count = 0;
+            string username = "";
+            string niveau = "";
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SP_Login";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pseudo", 50, DbType.String, nom));
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pass", 200, DbType.String, password));
+                    SqlCommand comande = (SqlCommand)cmd;
+                    dr = comande.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        niveau = dr["niveau_acces"].ToString();
+                        username = dr["noms"].ToString();
+                        count += 1;
+                    }
+                    if (count == 1)
+                    {
+                        MessageBox.Show("La connection a reussie !!!!!!");
+                        UserSession.GetInstance().AccessLevel = niveau;
+                        UserSession.GetInstance().UserName = username;
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Echec de Connexion");
+                    }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dr.Close();
+            }
+            return count;
+        }
+
     }
 }
