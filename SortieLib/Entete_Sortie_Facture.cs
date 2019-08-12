@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SortieLib
 {
@@ -15,7 +16,7 @@ namespace SortieLib
 
         public int Ref { get; set; }
 
-        public int UserSession { get; set; }
+        public string UserSession { get; set; }
 
         public void Enregistrer(IEntete_Sortie entete)
         {
@@ -33,7 +34,7 @@ namespace SortieLib
                     cmd.ExecuteNonQuery();
                     
 
-                    //MessageBox.Show("Enregistrement reussi svp !!!", "Reussite", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    
                 }
            
         }
