@@ -306,19 +306,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNouveau;
+        public System.Windows.Forms.Button btnNouveau;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox designationTxt;
-        private System.Windows.Forms.Button btnEnregistrer;
+        public System.Windows.Forms.TextBox designationTxt;
+        public System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox dosageTxt;
-        private System.Windows.Forms.ComboBox formeCombo;
-        private System.Windows.Forms.ComboBox categCombo;
-        private System.Windows.Forms.TextBox stockTxt;
+        public System.Windows.Forms.TextBox dosageTxt;
+        public System.Windows.Forms.ComboBox formeCombo;
+        public System.Windows.Forms.ComboBox categCombo;
+        public System.Windows.Forms.TextBox stockTxt;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

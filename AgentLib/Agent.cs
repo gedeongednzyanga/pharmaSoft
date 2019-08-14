@@ -15,24 +15,14 @@ namespace AgentLib
     public class Agent : IAgent
     {
         public string Adresse { get; set; }
-
-
         public string Contact { get; set; }
-
         public string Email { get; set; }
-
         public string Fonction { get; set; }
-
         public int Id { get; set; }
-
         public string Niveau { get; set; }
-
         public string Noms { get; set; }
-
         public string PassWord { get; set; }
-
         public Image Photo { get; set; }
-
         public string Pseudo { get; set; }
         public Sexe Sex { get; set; }
 
@@ -173,7 +163,11 @@ namespace AgentLib
             ag.Adresse = rd["Adresse"].ToString();
             ag.Contact = rd["Contact"].ToString();
             ag.Pseudo = rd["Pseudo"].ToString();
-            ag.Niveau = rd["[Niveau d'accès]"].ToString();
+            ag.Niveau = rd["Niveau d'accès"].ToString();
+            ag.Fonction = rd["fonction"].ToString();
+            ag.PassWord = rd["Mot de passe"].ToString();
+            ag.Email = rd["email"].ToString();
+
 
             return ag;
         }

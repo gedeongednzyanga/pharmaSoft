@@ -139,7 +139,7 @@ namespace SortieLib
             detailsortie.Pu = Convert.ToDecimal(rd["PU"].ToString());
             detailsortie.Pt = Convert.ToDecimal(rd["PT"].ToString());
             detailsortie.Malade = rd["Service"].ToString();
-            detailsortie.Date_sortie = Convert.ToDateTime(rd["[Date de sortie]"].ToString());
+            detailsortie.Date_sortie = Convert.ToDateTime(rd["Date de sortie"].ToString());
             
             
 

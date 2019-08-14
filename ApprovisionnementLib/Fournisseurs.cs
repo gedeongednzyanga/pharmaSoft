@@ -105,7 +105,7 @@ namespace ApprovisionnementLib
             fourni.Adresse = rd["Adresse"].ToString();
             fourni.Contact = rd["Contact"].ToString();
             fourni.TypePersonne = rd["TypePersonne"].ToString();
-
+            fourni.Email = rd["Email"].ToString();
             return fourni;
         }
 

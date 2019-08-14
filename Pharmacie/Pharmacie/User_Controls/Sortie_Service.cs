@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SortieLib;
 
 namespace Pharmacie.User_Controls
 {
@@ -15,6 +16,16 @@ namespace Pharmacie.User_Controls
         public Sortie_Service()
         {
             InitializeComponent();
+        }
+
+        private void Sortie_Service_Load(object sender, EventArgs e)
+        {
+            RefreshData(new Detail_sortie_service());
+        }
+        void RefreshData(IDetails_Sortie detail)
+        {
+
+            dataGridView1.DataSource = detail.DetailsSorties();
         }
     }
 }

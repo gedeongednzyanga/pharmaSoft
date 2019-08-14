@@ -19,7 +19,6 @@ namespace SortieLib
         public int Quantite { get; set; }
         public int Ref_Entete { get; set; }
         public int Ref_Produit { get; set; }
-       
         public string Produit { get; set; }
         public string Dosage { get; set; }
         public string Malade { get; set; }
@@ -152,7 +151,8 @@ namespace SortieLib
             detailsortie.Quantite = Convert.ToInt32(rd["Quantité"].ToString());
             detailsortie.Pu = Convert.ToDecimal(rd["PU"].ToString());
             detailsortie.Pt = Convert.ToDecimal(rd["PT"].ToString());
-            detailsortie.Date_sortie = Convert.ToDateTime(rd["[Date de sortie]"].ToString());
+            detailsortie.Date_sortie = Convert.ToDateTime(rd["Date de sortie"].ToString());
+            detailsortie.Malade = rd["Malade"].ToString();
             
 
 
