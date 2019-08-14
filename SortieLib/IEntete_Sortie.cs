@@ -10,7 +10,7 @@ namespace SortieLib
     {
         int Id { get; set; }
         int Ref { get; set; }
-        int UserSession { get; set; }
+        string UserSession { get; set; }
         int Nouveau();
         void Enregistrer(IEntete_Sortie entete);
         void Supprimer(int id);

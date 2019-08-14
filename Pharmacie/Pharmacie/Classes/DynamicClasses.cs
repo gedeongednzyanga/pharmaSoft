@@ -66,6 +66,27 @@ namespace Pharmacie.Classes
             }
             return identifiant;
         }
+        public int retourStock(string champStock, string nomTable, string champCondition, string valeur)
+        {
+            int identifiant = 0;
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = @"select " + champStock + " from " + nomTable + " where " + champCondition + " = '" + valeur + "'";
+
+                IDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    identifiant = int.Parse(rd[champStock].ToString());
+                }
+                rd.Close();
+                rd.Dispose();
+                cmd.Dispose();
+            }
+            return identifiant;
+        }
 
         public int loginTest(string nom, string password)
         {

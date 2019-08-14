@@ -17,6 +17,7 @@ namespace ApprovisionnementLib
         int RefApprov { get; set; }
         string Produit { get; set; }
         decimal Pt { get; set; }
+        string Fournisseur { get; set; }
         DateTime DateEntree { get; set; }
         int Nouveau();
         void Enregistrer(IDetail_approv approv);

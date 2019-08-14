@@ -9,7 +9,7 @@ using System.Data;
 using ParametreConnexionLib;
 
 using System.IO;
-
+using System.Windows.Forms;
 
 namespace ApprovisionnementLib
 {
@@ -25,6 +25,7 @@ namespace ApprovisionnementLib
         public string Produit { get; set; }
         public decimal Pt { get; set; }
         public DateTime DateEntree { get; set; }
+        public string Fournisseur { get; set; }
         //Fonction qui affiche la liste de toutes les details des approvisionnements
         public List<IDetail_approv> Approvisionnements()
         {
@@ -64,10 +65,10 @@ namespace ApprovisionnementLib
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@refapprov", 20, DbType.Int32, RefApprov));
 
                     cmd.ExecuteNonQuery();
-                   
 
-                    //MessageBox.Show("Enregistrement reussi svp !!!", "Reussite", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                }
+
+                    MessageBox.Show("Enregistrement reussie !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             
 
            
@@ -136,12 +137,12 @@ namespace ApprovisionnementLib
             detailappro.Id = Convert.ToInt32(rd["Numéro"].ToString());
             detailappro.Produit = rd["Produit"].ToString();
             detailappro.Quantite = Convert.ToInt32(rd["Quantité"].ToString());
-            detailappro.Pu = Convert.ToDecimal(rd["[P.U]"].ToString());
-            detailappro.Pt = Convert.ToDecimal(rd["[P.T]"].ToString());
-            detailappro.DateFabric = Convert.ToDateTime(rd["[Date Fabrication]"].ToString());
-            detailappro.DateExpiration = Convert.ToDateTime(rd["[Date Expiration],"].ToString());
-            detailappro.RefProduit = Convert.ToInt32(rd["Fournisseur"].ToString());
-            detailappro.DateEntree = DateTime.Parse(rd["[Date Entrée]"].ToString());
+            detailappro.Pu = Convert.ToDecimal(rd["P.U"].ToString());
+            detailappro.Pt = Convert.ToDecimal(rd["P.T"].ToString());
+            detailappro.DateFabric = Convert.ToDateTime(rd["Date Fabrication"].ToString());
+            detailappro.DateExpiration = Convert.ToDateTime(rd["Date Expiration"].ToString());
+            detailappro.Fournisseur = rd["Fournisseur"].ToString();
+            detailappro.DateEntree = DateTime.Parse(rd["Date Entrée"].ToString());
 
             return detailappro;
         }

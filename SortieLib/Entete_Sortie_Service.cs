@@ -15,7 +15,7 @@ namespace SortieLib
 
         public int Ref { get; set; }
 
-        public int UserSession { get; set; }
+        public string UserSession { get; set; }
 
         public void Enregistrer(IEntete_Sortie entete)
 
