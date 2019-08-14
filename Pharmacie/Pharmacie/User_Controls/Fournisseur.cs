@@ -69,10 +69,59 @@ namespace Pharmacie.User_Controls
                 dataGridView1.Rows[n].Cells[5].Value = "100";
             }
         }
+        void doubleclic_grid()
+        {
+            try
+            {
+                int i;
+                i = dataGridView1.CurrentRow.Index;
 
+
+                idFournisseur = Convert.ToInt32(dataGridView1["Id", i].Value.ToString());
+                textBox2.Text = dataGridView1["Noms", i].Value.ToString();
+                comboBox1.Text = dataGridView1["Type", i].Value.ToString();
+                textBox3.Text = dataGridView1["Adresse", i].Value.ToString();
+                textBox4.Text = dataGridView1["Contact", i].Value.ToString();
+                textBox5.Text = dataGridView1["Email", i].Value.ToString();
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+        void clic_grid()
+        {
+            try
+            {
+                int i;
+                i = dataGridView1.CurrentRow.Index;
+
+
+                idFournisseur = Convert.ToInt32(dataGridView1["Id", i].Value.ToString());
+                label13.Text = dataGridView1["Noms", i].Value.ToString();
+                label14.Text = dataGridView1["Type", i].Value.ToString();
+                textBox6.Text = dataGridView1["Adresse", i].Value.ToString();
+                label15.Text = dataGridView1["Email", i].Value.ToString() + ", " + dataGridView1["Contact", i].Value.ToString();
+                //textBox5.Text = dataGridView1["Email", i].Value.ToString();
+                label16.Text = dataGridView1["Contact", i].Value.ToString();
+                label17.Text = dataGridView1["Email", i].Value.ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
         private void Fournisseur_Load(object sender, EventArgs e)
         {
-            LoadData();
+            RefreshData(new Fournisseurs());
+        }
+        void RefreshData(Fournisseurs fourni)
+        {
+            dataGridView1.DataSource = fourni.Fournisseur();
         }
         void InitialiseChamps()
         {
@@ -172,6 +221,16 @@ namespace Pharmacie.User_Controls
         private void button3_Click(object sender, EventArgs e)
         {
             DeleteData();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            clic_grid();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            doubleclic_grid();
         }
     }
 }

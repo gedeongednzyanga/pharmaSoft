@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+
+using System.Drawing;
+using System.IO;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +19,9 @@ namespace Pharmacie.Classes
     public class DynamicClasses
     {
         SqlDataReader dr = null;
+
+        SqlDataAdapter dt = null;
+
         public static DynamicClasses _intance = null;
 
         public static DynamicClasses GetInstance()
@@ -22,6 +29,37 @@ namespace Pharmacie.Classes
             if (_intance == null)
                 _intance = new DynamicClasses();
             return _intance;
+        }
+
+        public void retreivePhoto(string ChampPhoto, string nomTable, string ChampCode, string Valeur, PictureBox pic)
+        {
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT " + ChampPhoto + " from " + nomTable + " WHERE  " + ChampCode + " = " + Valeur + "";
+                    dt = new SqlDataAdapter((SqlCommand)cmd);
+                    Object resultat = cmd.ExecuteScalar();
+                    if (DBNull.Value == (resultat))
+                    {
+                    }
+                    else
+                    {
+                        Byte[] buffer = (Byte[])resultat;
+                        MemoryStream ms = new MemoryStream(buffer);
+                        Image image = Image.FromStream(ms);
+                        pic.Image = image;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
 
         public void chargeCombo(ComboBox cmb, string nomChamp, string nomTable)

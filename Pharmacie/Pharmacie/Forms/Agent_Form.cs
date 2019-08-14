@@ -15,7 +15,7 @@ namespace Pharmacie.Forms
     public partial class Agent_Form : Form
     {
         Label lab_photo =new Label();
-        int idAgent = 0;
+        public int idAgent = 0;
         public Agent_Form()
         {
             InitializeComponent();

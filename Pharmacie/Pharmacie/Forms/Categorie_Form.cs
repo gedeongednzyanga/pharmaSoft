@@ -43,13 +43,11 @@ namespace Pharmacie.Forms
                 throw;
             }
         }
-        void ChargementListBox()
+        void ChargementListBox(Categorie categ)
         {
             try
             {
-                //ListViewItem element = new ListViewItem();
-                Categorie categ = new Categorie();
-                listBox1.DataSource= categ.AllCategorie();
+                dataGridView1.DataSource= categ.AllCategorie();
 
             }
             catch (Exception)
@@ -91,7 +89,7 @@ namespace Pharmacie.Forms
 
         private void Categorie_Form_Load(object sender, EventArgs e)
         {
-            ChargementListBox();
+            ChargementListBox(new Categorie());
 
 
         }
@@ -112,15 +110,15 @@ namespace Pharmacie.Forms
             
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           idCateg = dn.retourId("idcat", "categorie", "designationcat", listBox1.SelectedItem.ToString());
-            designationTxt.Text = listBox1.SelectedItem.ToString();
-        }
+        //private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //   //idCateg = dn.retourId("idcat", "categorie", "designationcat", listBox1.SelectedItem.ToString());
+        //   // designationTxt.Text = listBox1.SelectedItem.ToString();
+        //}
 
-        private void Categorie_Form_Load_1(object sender, EventArgs e)
-        {
-            ChargementListBox();
-        }
+        //private void Categorie_Form_Load_1(object sender, EventArgs e)
+        //{
+        //    ChargementListBox();
+        //}
     }
 }

@@ -18,20 +18,77 @@ namespace Pharmacie.User_Controls
         {
             InitializeComponent();
         }
-        private void Charger_Produit()
+        //void RefreshData(Malade mal)
+        //{
+        //    dataGridView1.DataSource = mal.AllMalade();
+        //}
+        private void Charger_Produit(Produit produit)
         {
-            Produit produit = new Produit();
+            //Produit produit = new Produit();
             dataGridView1.DataSource= produit.AllProduits();
 
         }
+        void clic_grid()
+        {
+            try
+            {
+                int i;
+                i = dataGridView1.CurrentRow.Index;
+
+
+                //txtid.Text = dataGridView1["ColId", i].Value.ToString();
+                lab_designation.Text = dataGridView1["Designation", i].Value.ToString();
+                lab_categorie.Text = dataGridView1["Categ", i].Value.ToString();
+                lab_dosage.Text = dataGridView1["Dosage", i].Value.ToString();
+                lab_forme.Text = dataGridView1["Forme", i].Value.ToString();
+                label8.Text = dataGridView1["Qte", i].Value.ToString();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+        void doubleclic_grid()
+        {
+            try
+            {
+                Produit_Form frm = new Produit_Form();
+                int i;
+                i = dataGridView1.CurrentRow.Index;
+
+                frm.id = Convert.ToInt32(dataGridView1["Numero", i].Value.ToString());
+                frm.designationTxt.Text = dataGridView1["Designation", i].Value.ToString();
+                frm.categCombo.Text = dataGridView1["Categ", i].Value.ToString();
+                frm.dosageTxt.Text = dataGridView1["Dosage", i].Value.ToString();
+                frm.formeCombo.Text = dataGridView1["Forme", i].Value.ToString();
+                frm.stockTxt.Text = dataGridView1["Qte", i].Value.ToString();
+                frm.idCateg =Convert.ToInt32(dataGridView1["RefCateg", i].Value.ToString());
+                frm.btnEnregistrer.Text = "Modifier";
+                frm.btnNouveau.Enabled = false;
+               
+
+                
+                frm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Charger_Produit(new Produit());
         }
 
         private void Produit_Load(object sender, EventArgs e)
         {
-            Charger_Produit();
+            Charger_Produit(new Produit());
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
@@ -84,6 +141,16 @@ namespace Pharmacie.User_Controls
             panel1.Controls.Clear();
             panel1.Controls.Add(this.groupBox2);
             panel1.Show();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            clic_grid();
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            doubleclic_grid();
         }
     }
 }

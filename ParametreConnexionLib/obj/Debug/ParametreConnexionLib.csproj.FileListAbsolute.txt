@@ -6,6 +6,5 @@ C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\ParametreCon
 D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\bin\Debug\ParametreConnexionLib.dll.config
 D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\bin\Debug\ParametreConnexionLib.dll
 D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\bin\Debug\ParametreConnexionLib.pdb
-D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\obj\Debug\ParametreConnexionLib.csprojResolveAssemblyReference.cache
 D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\obj\Debug\ParametreConnexionLib.dll
 D:\DAVID\PROJETBDD\Pharma\ParametreConnexionLib\obj\Debug\ParametreConnexionLib.pdb

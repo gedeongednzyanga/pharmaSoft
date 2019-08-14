@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pharmacie.Forms;
+using ApprovisionnementLib;
 
 namespace Pharmacie.User_Controls
 {
@@ -75,7 +76,12 @@ namespace Pharmacie.User_Controls
 
         private void Approvisionnement_Load(object sender, EventArgs e)
         {
-            LoadData();
+            RefreshData(new Detail_Approv());
+        }
+        void RefreshData(IDetail_approv detail)
+        {
+            
+            dataGridView1.DataSource = detail.Approvisionnements();
         }
     }
 }
