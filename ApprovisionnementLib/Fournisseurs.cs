@@ -102,10 +102,10 @@ namespace ApprovisionnementLib
             Fournisseurs fourni = new Fournisseurs();
             fourni.Id = Convert.ToInt32(rd["Numéro"].ToString());
             fourni.Nom = rd["Fournisseur"].ToString();
-            fourni.Adresse = rd["[Adresse complète]"].ToString();
+            fourni.Adresse = rd["Adresse"].ToString();
             fourni.Contact = rd["Contact"].ToString();
-            
-
+            fourni.TypePersonne = rd["TypePersonne"].ToString();
+            fourni.Email = rd["Email"].ToString();
             return fourni;
         }
 

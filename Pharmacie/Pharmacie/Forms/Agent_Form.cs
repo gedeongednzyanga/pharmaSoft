@@ -15,7 +15,7 @@ namespace Pharmacie.Forms
     public partial class Agent_Form : Form
     {
         Label lab_photo =new Label();
-        int idAgent = 0;
+        public int idAgent = 0;
         public Agent_Form()
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace Pharmacie.Forms
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
-            comboBox1.SelectedIndex = -1;
+            textBox7.Clear();
             comboBox2.SelectedIndex = -1;
             pictureBox2.Image = null;
 
@@ -89,7 +89,7 @@ namespace Pharmacie.Forms
             {
                 IAgent agent = new Agent();
 
-                if (idAgent == 0 || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || comboBox1.Text == "" || comboBox2.Text == "")
+                if (idAgent == 0 || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || comboBox2.Text == "")
                 {
                     MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }
@@ -104,7 +104,7 @@ namespace Pharmacie.Forms
                     agent.Fonction = textBox6.Text;
                     agent.Pseudo = textBox5.Text;
                     agent.Niveau = comboBox2.Text;
-                    agent.PassWord = comboBox1.Text;
+                    agent.PassWord = textBox7.Text;
                     agent.Photo = pictureBox2.Image;
 
                     agent.Enregistrer(agent);

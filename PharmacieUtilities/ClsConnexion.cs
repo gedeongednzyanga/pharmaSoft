@@ -34,7 +34,7 @@ namespace PharmacieUtilities
 
                 ImplementeConnexion.Instance.Initialise(connexion, connectionType);
                 ImplementeConnexion.Instance.Conn.Open();
-                MessageBox.Show("Connection Succefully !!!", "Succefully", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("Connection Succefully !!!", "Succefully", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             catch (InvalidOperationException ex)
             {

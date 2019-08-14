@@ -1,9 +1,11 @@
 ﻿using ManageSingleConnexion;
+using PharmacieUtilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +15,7 @@ namespace Pharmacie.Forms
 {
     public partial class Configuration_Form : Form
     {
-        ConnexionType connexionType;
+        ConnexionType connexionType = new ConnexionType();
         public Configuration_Form()
         {
             InitializeComponent();
@@ -21,19 +23,27 @@ namespace Pharmacie.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            Login_Form frmg = new Login_Form();
-            Connexion cx = new Connexion();
-            cx.Serveur = comboBox2.Text;
-            cx.Database = textBox1.Text;
-            cx.User = textBox2.Text;
-            cx.Password = textBox3.Text;
-            ImplementeConnexion.Instance.Initialise(cx, connexionType);
-            ImplementeConnexion.Instance.Conn.Open();
-            MessageBox.Show("Connexion établie", "Message Serveur", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            frm.Show();
-            frmg.ShowDialog();
-            this.Hide();
+            try
+            {
+                if (comboBox2.Text != "" && textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+                {
+                    File.WriteAllText(ClsConstantes.Table.serveur, comboBox2.Text.ToString());
+                    File.WriteAllText(ClsConstantes.Table.database, textBox1.Text.ToString());
+                    File.WriteAllText(ClsConstantes.Table.user, textBox2.Text.ToString());
+                    File.WriteAllText(ClsConstantes.Table.password, textBox3.Text.ToString());
+                    ClsGetdatas.GetInstance().Testeconne = 1;
+                    this.Close();
+                    ClsConnexion.GetInstance().connecter();
+                }
+                else
+                {
+                    MessageBox.Show("Completez tous les champ !!!", "Saisie Obligatoire", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         void ChargerServer()
         {
@@ -75,7 +85,7 @@ namespace Pharmacie.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
     }
 }

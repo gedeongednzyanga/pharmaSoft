@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SortieLib
 {
@@ -18,7 +19,6 @@ namespace SortieLib
         public int Quantite { get; set; }
         public int Ref_Entete { get; set; }
         public int Ref_Produit { get; set; }
-       
         public string Produit { get; set; }
         public string Dosage { get; set; }
         public string Malade { get; set; }
@@ -75,15 +75,15 @@ namespace SortieLib
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, Id));
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@quantite", 10, DbType.Int32, Quantite));
                     cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pu", 10, DbType.Decimal, Pu));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@refprod", 30, DbType.Date, Date_sortie));
-                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@refentete", 5, DbType.Int32, Ref_Produit));
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@refprod", 4, DbType.Int32, Ref_Produit));
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@refentete", 5, DbType.Int32, Ref_Entete));
 
 
                     cmd.ExecuteNonQuery();
-                    
 
-                    //MessageBox.Show("Enregistrement reussi svp !!!", "Reussite", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                }
+
+                    MessageBox.Show("Enregistrement reussie !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             
 
         }
@@ -151,7 +151,8 @@ namespace SortieLib
             detailsortie.Quantite = Convert.ToInt32(rd["Quantité"].ToString());
             detailsortie.Pu = Convert.ToDecimal(rd["PU"].ToString());
             detailsortie.Pt = Convert.ToDecimal(rd["PT"].ToString());
-            detailsortie.Date_sortie = Convert.ToDateTime(rd["[Date de sortie]"].ToString());
+            detailsortie.Date_sortie = Convert.ToDateTime(rd["Date de sortie"].ToString());
+            detailsortie.Malade = rd["Malade"].ToString();
             
 
 

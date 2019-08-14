@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pharmacie.Classes;
+using PharmacieUtilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,17 +41,21 @@ namespace Pharmacie.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                PubCon.testlog = DynamicClasses.GetInstance().loginTest(textBox1.Text, textBox2.Text);
 
-            //var form = new Form1();
-            //SendId sendId = new SendId(form.Fundform_Login);
-            //sendId(this);
-            //form.Show();
+               
 
-            Form1 frm = new Form1();
-            frm.lab_user.Visible = false;
-            frm.lab_user.Text = this.textBox1.Text.Trim();
-            frm.lab_user.Visible = true;
-            this.Close();
+                if (PubCon.testlog == 1)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

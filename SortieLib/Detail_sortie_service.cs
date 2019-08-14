@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SortieLib
 {
@@ -66,10 +67,10 @@ namespace SortieLib
 
 
                     cmd.ExecuteNonQuery();
-                    
 
-                    //MessageBox.Show("Enregistrement reussi svp !!!", "Reussite", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                }
+
+                    MessageBox.Show("Enregistrement reussie !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
            
         }
 
@@ -138,7 +139,7 @@ namespace SortieLib
             detailsortie.Pu = Convert.ToDecimal(rd["PU"].ToString());
             detailsortie.Pt = Convert.ToDecimal(rd["PT"].ToString());
             detailsortie.Malade = rd["Service"].ToString();
-            detailsortie.Date_sortie = Convert.ToDateTime(rd["[Date de sortie]"].ToString());
+            detailsortie.Date_sortie = Convert.ToDateTime(rd["Date de sortie"].ToString());
             
             
 

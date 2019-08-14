@@ -15,24 +15,14 @@ namespace AgentLib
     public class Agent : IAgent
     {
         public string Adresse { get; set; }
-
-
         public string Contact { get; set; }
-
         public string Email { get; set; }
-
         public string Fonction { get; set; }
-
         public int Id { get; set; }
-
         public string Niveau { get; set; }
-
         public string Noms { get; set; }
-
         public string PassWord { get; set; }
-
         public Image Photo { get; set; }
-
         public string Pseudo { get; set; }
         public Sexe Sex { get; set; }
 
@@ -72,7 +62,7 @@ namespace AgentLib
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@adresse", 100, DbType.String, Adresse));
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@contact", 100, DbType.String, Contact));
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@pseudo", 100, DbType.String, Pseudo));
-                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@password", 50, DbType.String, PassWord));
+                cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@password", 200, DbType.String, PassWord));
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@nivau", 10, DbType.String, Niveau));
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@sexe", 1, DbType.String, Sex == Sexe.Masculin ? "M" : "F"));
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@email", 30, DbType.String, Email));
@@ -173,7 +163,11 @@ namespace AgentLib
             ag.Adresse = rd["Adresse"].ToString();
             ag.Contact = rd["Contact"].ToString();
             ag.Pseudo = rd["Pseudo"].ToString();
-            ag.Niveau = rd["[Niveau d'accès]"].ToString();
+            ag.Niveau = rd["Niveau d'accès"].ToString();
+            ag.Fonction = rd["fonction"].ToString();
+            ag.PassWord = rd["Mot de passe"].ToString();
+            ag.Email = rd["email"].ToString();
+
 
             return ag;
         }

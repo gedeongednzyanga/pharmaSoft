@@ -16,8 +16,8 @@ namespace Pharmacie.Forms
 {
     public partial class Produit_Form : Form
     {
-        int id = 0;
-        int idCateg = 0;
+        public int id = 0;
+        public int idCateg = 0;
 
         DynamicClasses dn = new DynamicClasses();
         public Produit_Form()
@@ -83,7 +83,7 @@ namespace Pharmacie.Forms
             {
                 IProduit medicament = new Produit();
 
-                if (id == 0 || designationTxt.Text == "" || dosageTxt.Text == "" || formeCombo.SelectedIndex == -1 || categCombo.SelectedIndex == -1 || Convert.ToInt32(stockTxt.Text) <= 0)
+                if (id == 0 || designationTxt.Text == "" || dosageTxt.Text == "" || formeCombo.SelectedIndex == -1 || categCombo.Text == "" || Convert.ToInt32(stockTxt.Text) <= 0)
                 {
                     MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }
@@ -118,6 +118,11 @@ namespace Pharmacie.Forms
                         ImplementeConnexion.Instance.Conn.Close();
                 }
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
