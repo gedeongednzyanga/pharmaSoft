@@ -45,8 +45,6 @@ namespace Pharmacie.Forms
             {
                 PubCon.testlog = DynamicClasses.GetInstance().loginTest(textBox1.Text, textBox2.Text);
 
-               
-
                 if (PubCon.testlog == 1)
                 {
                     this.Close();

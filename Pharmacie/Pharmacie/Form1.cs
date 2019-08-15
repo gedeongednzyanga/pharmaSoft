@@ -348,7 +348,6 @@ namespace Pharmacie
         private void Form1_Load(object sender, EventArgs e)
         {
             PubCon.testFile();
-
             Login_Form frm = new Login_Form();
             frm.ShowDialog();
 
