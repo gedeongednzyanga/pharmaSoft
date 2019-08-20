@@ -23,6 +23,7 @@ namespace Pharmacie.Forms
         public Login_Form()
         {
             InitializeComponent();
+            textBox1.Focus();
         }
 
         public void FundForm1(Form1 form1)
@@ -69,6 +70,7 @@ namespace Pharmacie.Forms
 
         private void Login_Form_Load(object sender, EventArgs e)
         {
+           
             //SendId sendId = new SendId(form1.Fundform_Login);
             //sendId(this);
         }

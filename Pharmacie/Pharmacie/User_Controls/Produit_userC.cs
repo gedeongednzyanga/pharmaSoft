@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pharmacie.Forms;
 using ApprovisionnementLib;
+using Pharmacie.Reports;
 
 namespace Pharmacie.User_Controls
 {

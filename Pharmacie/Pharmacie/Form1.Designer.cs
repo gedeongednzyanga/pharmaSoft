@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.inventaire = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -105,7 +106,6 @@
             this.panel_container = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.inventaire.SuspendLayout();
             this.accueil.SuspendLayout();
@@ -125,8 +125,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.inventaire);
             this.panel1.Controls.Add(this.accueil);
+            this.panel1.Controls.Add(this.inventaire);
             this.panel1.Controls.Add(this.configuration);
             this.panel1.Controls.Add(this.lab_user);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -135,6 +135,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 69);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(906, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Déconnexion";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // inventaire
             // 
@@ -296,7 +310,7 @@
             this.accueil.Controls.Add(this.label23);
             this.accueil.Controls.Add(this.label22);
             this.accueil.ForeColor = System.Drawing.Color.Black;
-            this.accueil.Location = new System.Drawing.Point(3, 0);
+            this.accueil.Location = new System.Drawing.Point(0, 0);
             this.accueil.Name = "accueil";
             this.accueil.Size = new System.Drawing.Size(847, 63);
             this.accueil.TabIndex = 0;
@@ -1077,20 +1091,6 @@
             // 
             this.timer2.Interval = 10;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(906, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Déconnexion";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // Form1
             // 

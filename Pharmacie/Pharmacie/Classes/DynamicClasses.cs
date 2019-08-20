@@ -158,7 +158,7 @@ namespace Pharmacie.Classes
                     }
                     else
                     {
-                        MessageBox.Show("Echec de Connexion");
+                        MessageBox.Show("Echec de Connexion.", "Message Serveur...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
