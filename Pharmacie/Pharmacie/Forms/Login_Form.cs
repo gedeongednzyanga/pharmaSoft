@@ -14,9 +14,10 @@ namespace Pharmacie.Forms
 {
     public partial class Login_Form : Form
     {
+        public Form1 form1;
         //public delegate void SendId(Login_Form login);
-        //public Form1 form1;
-        //public delegate void Sendata(string text);
+        public delegate void Sendata(string text);
+        
 
 
         public Login_Form()
@@ -24,15 +25,19 @@ namespace Pharmacie.Forms
             InitializeComponent();
         }
 
-        //public void FundForm1(Form1 form1)
-        //{
-        //    this.form1 = form1;
-        //}
-        //public void FundDataForm1(string data)
-        //{
-        //    textBox1.Text = data;
-        //}
-
+        public void FundForm1(Form1 form1)
+        {
+            this.form1 = form1;
+        }
+        public void FundDataForm1(string data)
+        {
+            textBox1.Text = data;
+        }
+        void Envoyer()
+        {
+            Sendata send = new Sendata(form1.FundDataLogin);
+            send(UserSession.GetInstance().UserName);
+        }
 
         private void label4_MouseClick(object sender, MouseEventArgs e)
         {
@@ -44,7 +49,7 @@ namespace Pharmacie.Forms
             try
             {
                 PubCon.testlog = DynamicClasses.GetInstance().loginTest(textBox1.Text, textBox2.Text);
-
+                Envoyer();
                 if (PubCon.testlog == 1)
                 {
                     this.Close();
@@ -60,6 +65,12 @@ namespace Pharmacie.Forms
         {
             //Sendata senddata = new Sendata(form1.FundDataLogin);
             //senddata(textBox1.Text);
+        }
+
+        private void Login_Form_Load(object sender, EventArgs e)
+        {
+            //SendId sendId = new SendId(form1.Fundform_Login);
+            //sendId(this);
         }
     }
 }

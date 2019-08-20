@@ -119,7 +119,6 @@ namespace ProduitLib
             {
                 cmd.CommandText = "SELECT_ONE_PRODUIT";
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, id));
 
                 IDataReader dr = cmd.ExecuteReader();

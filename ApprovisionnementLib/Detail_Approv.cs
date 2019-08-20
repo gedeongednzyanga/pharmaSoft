@@ -69,8 +69,6 @@ namespace ApprovisionnementLib
 
                     MessageBox.Show("Enregistrement reussie !!!", "Reussite", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
-
            
         }
         //Fonction de recuperation du LastId 
@@ -94,22 +92,21 @@ namespace ApprovisionnementLib
             return Id;
         }
         //Fonction de recuperation des détails concernant un produit 
-        public IDetail_approv OneProduiDetail(int id)
+        public List<IDetail_approv> OneProduiDetail(int id)
         {
-            IDetail_approv detailapprov = new Detail_Approv();
+            List<IDetail_approv> detailapprov = new List<IDetail_approv>();
+           // IDetail_approv detailapprov = new Detail_Approv();
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-                cmd.CommandText = "SELECT_ONE_PRODUIT_DETAILS";
+                cmd.CommandText = "SELECT_ONE_PRODUIT_DETAILS ";
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@id", 4, DbType.Int32, id));
-
                 IDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    detailapprov = GetDetailApprov(dr);
+                    detailapprov.Add(GetDetailApprov(dr));
                 }
                 dr.Dispose();
             }

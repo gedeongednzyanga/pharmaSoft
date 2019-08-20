@@ -18,12 +18,22 @@ namespace Pharmacie.Forms
     {
         public int id = 0;
         public int idCateg = 0;
-
+   
         DynamicClasses dn = new DynamicClasses();
+
         public Produit_Form()
         {
             InitializeComponent();
         }
+        //public Produit_Form(int code_prod, string produit, string dosage, string forme, string categorie, int stock_pro)
+        //{
+        //    this.code_prod = code_prod; this.produit = produit; this.dosage = dosage; this.forme = forme;
+        //    this.categorie = categorie; this.stock_pro = stock_pro;
+        //    InitializeComponent();
+        //    //id = this.code_prod; designationTxt.Text = this.produit; dosageTxt.Text = this.dosage;
+        //    //formeCombo.Text = this.forme; categCombo.Text = this.categorie;
+        //    //stockTxt.Text = this.stock_pro.ToString();
+        //}
         void ChargementComboCategorie()
         {
             dn.chargeCombo(categCombo, "designationcat", "categorie");

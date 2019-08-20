@@ -19,9 +19,9 @@ namespace Pharmacie
         int t2 = 135;
         //int t3 = 135;
 
-        //public Login_Form login;
-        //public delegate void SendId(Form1 form1);
-        //public delegate void SendDate(string text);
+        public Login_Form login;
+        public delegate void SendId(Form1 form1);
+        ////public delegate void SendDate(string text);
         Panel pane = new Panel();
 
 
@@ -54,7 +54,7 @@ namespace Pharmacie
             else{ panel.Height = 35;
             }
         }
-        
+
         //void Slide_PaneUp(Panel panel)
         //{
         //    if (panel.Height == 35)
@@ -65,18 +65,14 @@ namespace Pharmacie
         //    else { panel.Height = 35; }
         //}
 
-        //public void Fundform_Login(Login_Form login)
-        //{
-        //    this.login = login;
-        //}
-        //public void FundDataLogin(string data)
-        //{
-        //    lab_user.Text = data;
-        //}
-
-
-
-
+        public void Fundform_Login(Login_Form login)
+        {
+            this.login = login;
+        }
+        public void FundDataLogin(string data)
+        {
+            lab_user.Text = data;
+        }
         void hover_label(Label label)
         {
             label.Font =new Font(label.Font, FontStyle.Underline);
@@ -348,9 +344,14 @@ namespace Pharmacie
         private void Form1_Load(object sender, EventArgs e)
         {
             PubCon.testFile();
-            Login_Form frm = new Login_Form();
-            frm.ShowDialog();
-
+            var form = new Login_Form();
+            SendId send = new SendId(form.FundForm1);
+            send(this);
+            form.ShowDialog();
+            //Login_Form frm = new Login_Form();
+            //frm.ShowDialog();
+            //SendId send = new SendId(login.FundForm1);
+            //send(this);
 
             ShowProduit(produit);
         }
@@ -614,6 +615,11 @@ namespace Pharmacie
             }else if (panel_container.Parent.Contains(agents)){
                 frmag.ShowDialog();
             }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+           // new Login_Form().ShowDialog();
         }
     }
 }

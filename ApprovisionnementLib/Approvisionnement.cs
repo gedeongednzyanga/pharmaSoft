@@ -61,7 +61,6 @@ namespace ApprovisionnementLib
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-
                 cmd.CommandText = "DELETE_APPROVISIONNEMENT";
                 cmd.CommandType = CommandType.StoredProcedure;
 

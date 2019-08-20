@@ -313,6 +313,7 @@
     <Content Include="Icons\icons8_Home_25px_2.png" />
     <Content Include="Icons\icons8_Home_25px_3.png" />
     <Content Include="Icons\icons8_Male_User_104px.png" />
+    <Content Include="Icons\icons8_Male_User_90px.png" />
     <Content Include="Icons\icons8_Office_Phone_30px.png" />
     <Content Include="Icons\icons8_Ok_25px_1.png" />
     <Content Include="Icons\icons8_Person_25px.png" />
@@ -337,6 +338,7 @@
     <Content Include="Icons\icons8_User_Group_Man_Woman_25px.png" />
     <Content Include="Icons\icons8__Message_Filled_30px.png" />
     <Content Include="Icons\Profil_git.jpg" />
+    <Content Include="Images\login_v.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AgentLib\AgentLib.csproj">

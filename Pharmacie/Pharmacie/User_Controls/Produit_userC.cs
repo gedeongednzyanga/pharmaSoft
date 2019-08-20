@@ -9,24 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pharmacie.Forms;
+using ApprovisionnementLib;
 
 namespace Pharmacie.User_Controls
 {
     public partial class Produit_userC : UserControl
     {
+        int code_prod;
         public Produit_userC()
         {
             InitializeComponent();
         }
-        //void RefreshData(Malade mal)
-        //{
-        //    dataGridView1.DataSource = mal.AllMalade();
-        //}
+       
+        private void Get_Detail_Approv(Detail_Approv approv)
+        {
+            dataGridView2.DataSource = approv.OneProduiDetail(code_prod);
+        }
         private void Charger_Produit(Produit produit)
         {
-            //Produit produit = new Produit();
             dataGridView1.DataSource= produit.AllProduits();
-
         }
         void clic_grid()
         {
@@ -34,18 +35,13 @@ namespace Pharmacie.User_Controls
             {
                 int i;
                 i = dataGridView1.CurrentRow.Index;
-
-
-                //txtid.Text = dataGridView1["ColId", i].Value.ToString();
+                code_prod = Convert.ToInt32(dataGridView1["Numero", i].Value.ToString());
                 lab_designation.Text = dataGridView1["Designation", i].Value.ToString();
                 lab_categorie.Text = dataGridView1["Categ", i].Value.ToString();
                 lab_dosage.Text = dataGridView1["Dosage", i].Value.ToString();
                 lab_forme.Text = dataGridView1["Forme", i].Value.ToString();
-                label8.Text = dataGridView1["Qte", i].Value.ToString();
-
-
-
-
+                lab_stock.Text = dataGridView1["Qte", i].Value.ToString();
+                Get_Detail_Approv(new Detail_Approv());
             }
             catch (Exception ex)
             {
@@ -69,11 +65,8 @@ namespace Pharmacie.User_Controls
                 frm.idCateg =Convert.ToInt32(dataGridView1["RefCateg", i].Value.ToString());
                 frm.btnEnregistrer.Text = "Modifier";
                 frm.btnNouveau.Enabled = false;
-               
-
-                
+             
                 frm.ShowDialog();
-
             }
             catch (Exception ex)
             {
@@ -89,23 +82,13 @@ namespace Pharmacie.User_Controls
         private void Produit_Load(object sender, EventArgs e)
         {
             Charger_Produit(new Produit());
+            //LoadData();
+           Get_Detail_Approv(new Detail_Approv());
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int i = dataGridView1.CurrentRow.Index;
-                lab_designation.Text = dataGridView1["Column2", i].Value.ToString();
-                lab_categorie.Text = dataGridView1["Column3", i].Value.ToString();
-                lab_dosage.Text = dataGridView1["Column4", i].Value.ToString();
-                lab_forme.Text = dataGridView1["Column5", i].Value.ToString();
-
-            }
-            catch (Exception)
-            {
-
-            }
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -146,11 +129,39 @@ namespace Pharmacie.User_Controls
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             clic_grid();
+           
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             doubleclic_grid();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+          //  dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //int i = dataGridView1.Columns.IndexOf(Numero);
+                //dataGridView1.Sort(dataGridView1.Columns[i], ListSortDirection.Descending);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Erreur ==> "+ ex.Message,"Erreur ...",  MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }

@@ -102,7 +102,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -300,10 +300,12 @@
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "Numéro";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 83;
             // 
             // Column2
             // 
@@ -314,40 +316,50 @@
             // 
             // Qte
             // 
+            this.Qte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Qte.DataPropertyName = "Quantite";
-            this.Qte.HeaderText = "Quantité en Stock";
+            this.Qte.HeaderText = "Quantité entrée";
             this.Qte.Name = "Qte";
             this.Qte.ReadOnly = true;
+            this.Qte.Width = 118;
             // 
             // Pu
             // 
+            this.Pu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Pu.DataPropertyName = "Pu";
             this.Pu.HeaderText = "Prix unitaire";
             this.Pu.Name = "Pu";
             this.Pu.ReadOnly = true;
+            this.Pu.Width = 97;
             // 
             // RefApprov
             // 
+            this.RefApprov.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.RefApprov.DataPropertyName = "RefApprov";
             this.RefApprov.HeaderText = "RefApprov";
             this.RefApprov.Name = "RefApprov";
             this.RefApprov.ReadOnly = true;
             this.RefApprov.Visible = false;
+            this.RefApprov.Width = 97;
             // 
             // RefProduit
             // 
+            this.RefProduit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.RefProduit.DataPropertyName = "RefProduit";
             this.RefProduit.HeaderText = "RefProduit";
             this.RefProduit.Name = "RefProduit";
             this.RefProduit.ReadOnly = true;
             this.RefProduit.Visible = false;
+            this.RefProduit.Width = 97;
             // 
             // Pt
             // 
+            this.Pt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Pt.DataPropertyName = "Pt";
             this.Pt.HeaderText = "Prix Total";
             this.Pt.Name = "Pt";
             this.Pt.ReadOnly = true;
+            this.Pt.Width = 82;
             // 
             // Four
             // 

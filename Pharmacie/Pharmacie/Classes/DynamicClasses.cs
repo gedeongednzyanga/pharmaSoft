@@ -151,7 +151,7 @@ namespace Pharmacie.Classes
                     }
                     if (count == 1)
                     {
-                        MessageBox.Show("La connection a reussie !!!!!!");
+                        MessageBox.Show("La connection a reussie !!!", "Message Serveur...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserSession.GetInstance().AccessLevel = niveau;
                         UserSession.GetInstance().UserName = username;
                         

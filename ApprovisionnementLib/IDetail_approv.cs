@@ -23,6 +23,6 @@ namespace ApprovisionnementLib
         void Enregistrer(IDetail_approv approv);
         void Supprimer(int id);
         List<IDetail_approv> Approvisionnements();
-        IDetail_approv OneProduiDetail(int id);
+        List<IDetail_approv> OneProduiDetail(int id);
     }
 }
