@@ -172,6 +172,12 @@
       <DependentUpon>Fiche_Stock.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Fiche_Stock_detail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fiche_Stock_detail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="User_Controls\Agents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +264,10 @@
     <EmbeddedResource Include="Reports\Fiche_Stock.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Fiche_Stock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Fiche_Stock_detail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Fiche_Stock_detail.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Agents.resx">
       <DependentUpon>Agents.cs</DependentUpon>

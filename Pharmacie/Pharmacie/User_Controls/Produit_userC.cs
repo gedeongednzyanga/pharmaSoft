@@ -117,14 +117,20 @@ namespace Pharmacie.User_Controls
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            ShowFiche(new Repports());
+            //ShowFiche(new Repports());
+            groupBox_detail.Visible = false;
+            groupBox_Fiche.Visible = true;
+           
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(this.groupBox2);
-            panel1.Show();
+            //panel1.Controls.Clear();
+            //panel1.Controls.Add(this.groupBox2);
+            //panel1.Show();
+            groupBox_Fiche.Visible = false;
+            groupBox_detail.Visible = true;
+
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

@@ -37,13 +37,23 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Forme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Fiche = new System.Windows.Forms.GroupBox();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox_detail = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,18 +91,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dosage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Forme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox_Fiche.SuspendLayout();
+            this.groupBox_detail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -162,6 +166,64 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // Numero
+            // 
+            this.Numero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Numero.DataPropertyName = "Id";
+            this.Numero.HeaderText = "Numéro";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Numero.Width = 83;
+            // 
+            // Designation
+            // 
+            this.Designation.DataPropertyName = "Designation";
+            this.Designation.HeaderText = "Désignation";
+            this.Designation.Name = "Designation";
+            this.Designation.ReadOnly = true;
+            // 
+            // Dosage
+            // 
+            this.Dosage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Dosage.DataPropertyName = "Dosage";
+            this.Dosage.HeaderText = "Dosage";
+            this.Dosage.Name = "Dosage";
+            this.Dosage.ReadOnly = true;
+            this.Dosage.Width = 78;
+            // 
+            // Forme
+            // 
+            this.Forme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Forme.DataPropertyName = "Forme";
+            this.Forme.HeaderText = "Forme";
+            this.Forme.Name = "Forme";
+            this.Forme.ReadOnly = true;
+            this.Forme.Width = 72;
+            // 
+            // Categ
+            // 
+            this.Categ.DataPropertyName = "Categorie";
+            this.Categ.HeaderText = "Catégorie";
+            this.Categ.Name = "Categ";
+            this.Categ.ReadOnly = true;
+            // 
+            // Qte
+            // 
+            this.Qte.DataPropertyName = "QteStock";
+            this.Qte.HeaderText = "Quantité en Stock";
+            this.Qte.Name = "Qte";
+            this.Qte.ReadOnly = true;
+            // 
+            // RefCateg
+            // 
+            this.RefCateg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RefCateg.DataPropertyName = "Ref_Categ";
+            this.RefCateg.HeaderText = "RefCateg";
+            this.RefCateg.Name = "RefCateg";
+            this.RefCateg.ReadOnly = true;
+            this.RefCateg.Visible = false;
             // 
             // button1
             // 
@@ -237,44 +299,83 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox_Fiche);
+            this.panel1.Controls.Add(this.groupBox_detail);
             this.panel1.Location = new System.Drawing.Point(614, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 486);
             this.panel1.TabIndex = 16;
             // 
-            // groupBox2
+            // groupBox_Fiche
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox_Fiche.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.bunifuSeparator2);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.lab_stock);
-            this.groupBox2.Controls.Add(this.lab_forme);
-            this.groupBox2.Controls.Add(this.lab_dosage);
-            this.groupBox2.Controls.Add(this.lab_categorie);
-            this.groupBox2.Controls.Add(this.lab_designation);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.bunifuSeparator1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(7, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(366, 473);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
+            this.groupBox_Fiche.Controls.Add(this.crystalReportViewer1);
+            this.groupBox_Fiche.Controls.Add(this.label18);
+            this.groupBox_Fiche.Location = new System.Drawing.Point(7, 3);
+            this.groupBox_Fiche.Name = "groupBox_Fiche";
+            this.groupBox_Fiche.Size = new System.Drawing.Size(366, 480);
+            this.groupBox_Fiche.TabIndex = 40;
+            this.groupBox_Fiche.TabStop = false;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.DisplayToolbar = false;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(6, 39);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(354, 428);
+            this.crystalReportViewer1.TabIndex = 37;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(139, 10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 21);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "Fiche de Stock";
+            // 
+            // groupBox_detail
+            // 
+            this.groupBox_detail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_detail.Controls.Add(this.dataGridView2);
+            this.groupBox_detail.Controls.Add(this.groupBox3);
+            this.groupBox_detail.Controls.Add(this.label17);
+            this.groupBox_detail.Controls.Add(this.label16);
+            this.groupBox_detail.Controls.Add(this.label15);
+            this.groupBox_detail.Controls.Add(this.bunifuSeparator2);
+            this.groupBox_detail.Controls.Add(this.label14);
+            this.groupBox_detail.Controls.Add(this.label13);
+            this.groupBox_detail.Controls.Add(this.label11);
+            this.groupBox_detail.Controls.Add(this.label12);
+            this.groupBox_detail.Controls.Add(this.label9);
+            this.groupBox_detail.Controls.Add(this.label10);
+            this.groupBox_detail.Controls.Add(this.lab_stock);
+            this.groupBox_detail.Controls.Add(this.lab_forme);
+            this.groupBox_detail.Controls.Add(this.lab_dosage);
+            this.groupBox_detail.Controls.Add(this.lab_categorie);
+            this.groupBox_detail.Controls.Add(this.lab_designation);
+            this.groupBox_detail.Controls.Add(this.label7);
+            this.groupBox_detail.Controls.Add(this.bunifuSeparator1);
+            this.groupBox_detail.Controls.Add(this.label6);
+            this.groupBox_detail.Controls.Add(this.label5);
+            this.groupBox_detail.Controls.Add(this.label4);
+            this.groupBox_detail.Controls.Add(this.label3);
+            this.groupBox_detail.Location = new System.Drawing.Point(7, 4);
+            this.groupBox_detail.Name = "groupBox_detail";
+            this.groupBox_detail.Size = new System.Drawing.Size(366, 480);
+            this.groupBox_detail.TabIndex = 13;
+            this.groupBox_detail.TabStop = false;
             // 
             // dataGridView2
             // 
@@ -328,7 +429,7 @@
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(340, 102);
+            this.dataGridView2.Size = new System.Drawing.Size(340, 109);
             this.dataGridView2.TabIndex = 4;
             // 
             // Column1
@@ -431,7 +532,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Location = new System.Drawing.Point(8, 347);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(352, 120);
+            this.groupBox3.Size = new System.Drawing.Size(352, 127);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
             // 
@@ -523,7 +624,7 @@
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(138, 258);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 29);
+            this.label11.Size = new System.Drawing.Size(86, 36);
             this.label11.TabIndex = 30;
             this.label11.Text = "100";
             // 
@@ -548,7 +649,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(138, 229);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 29);
+            this.label9.Size = new System.Drawing.Size(86, 36);
             this.label9.TabIndex = 28;
             this.label9.Text = "150";
             // 
@@ -573,7 +674,7 @@
             this.lab_stock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_stock.Location = new System.Drawing.Point(138, 201);
             this.lab_stock.Name = "lab_stock";
-            this.lab_stock.Size = new System.Drawing.Size(86, 28);
+            this.lab_stock.Size = new System.Drawing.Size(86, 35);
             this.lab_stock.TabIndex = 26;
             this.lab_stock.Text = "1200";
             // 
@@ -742,65 +843,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Numero
-            // 
-            this.Numero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Numero.DataPropertyName = "Id";
-            this.Numero.HeaderText = "Numéro";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Numero.Width = 83;
-            // 
-            // Designation
-            // 
-            this.Designation.DataPropertyName = "Designation";
-            this.Designation.HeaderText = "Désignation";
-            this.Designation.Name = "Designation";
-            this.Designation.ReadOnly = true;
-            // 
-            // Dosage
-            // 
-            this.Dosage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Dosage.DataPropertyName = "Dosage";
-            this.Dosage.HeaderText = "Dosage";
-            this.Dosage.Name = "Dosage";
-            this.Dosage.ReadOnly = true;
-            this.Dosage.Width = 78;
-            // 
-            // Forme
-            // 
-            this.Forme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Forme.DataPropertyName = "Forme";
-            this.Forme.HeaderText = "Forme";
-            this.Forme.Name = "Forme";
-            this.Forme.ReadOnly = true;
-            this.Forme.Width = 72;
-            // 
-            // Categ
-            // 
-            this.Categ.DataPropertyName = "Categorie";
-            this.Categ.HeaderText = "Catégorie";
-            this.Categ.Name = "Categ";
-            this.Categ.ReadOnly = true;
-            // 
-            // Qte
-            // 
-            this.Qte.DataPropertyName = "QteStock";
-            this.Qte.HeaderText = "Quantité en Stock";
-            this.Qte.Name = "Qte";
-            this.Qte.ReadOnly = true;
-            // 
-            // RefCateg
-            // 
-            this.RefCateg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RefCateg.DataPropertyName = "Ref_Categ";
-            this.RefCateg.HeaderText = "RefCateg";
-            this.RefCateg.Name = "RefCateg";
-            this.RefCateg.ReadOnly = true;
-            this.RefCateg.Visible = false;
-            this.RefCateg.Width = 87;
-            // 
             // Produit_userC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,8 +866,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox_Fiche.ResumeLayout(false);
+            this.groupBox_Fiche.PerformLayout();
+            this.groupBox_detail.ResumeLayout(false);
+            this.groupBox_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -844,7 +888,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox_detail;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -889,5 +933,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qte;
         private System.Windows.Forms.DataGridViewTextBoxColumn RefCateg;
+        private System.Windows.Forms.GroupBox groupBox_Fiche;
+        private System.Windows.Forms.Label label18;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
