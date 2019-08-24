@@ -11,12 +11,14 @@ using System.Windows.Forms;
 using Pharmacie.Forms;
 using ApprovisionnementLib;
 using Pharmacie.Reports;
+using Pharmacie.Classes;
 
 namespace Pharmacie.User_Controls
 {
     public partial class Produit_userC : UserControl
     {
         int code_prod;
+       
         public Produit_userC()
         {
             InitializeComponent();
@@ -82,8 +84,7 @@ namespace Pharmacie.User_Controls
 
         private void Produit_Load(object sender, EventArgs e)
         {
-            Charger_Produit(new Produit());
-            //LoadData();
+           Charger_Produit(new Produit());
            Get_Detail_Approv(new Detail_Approv());
         }
 
@@ -96,12 +97,14 @@ namespace Pharmacie.User_Controls
         {
             try
             {
-                var bd = (BindingSource)dataGridView1.DataSource;
-                var dt = (DataTable)bd.DataSource;
-                dt.DefaultView.RowFilter = string.Format("Désignation Like '{"+ textBox1.Text+ "}%' OR Désignation Like '%{"+ textBox1.Text + "}'", textBox1);
+                //var bd = (BindingSource)dataGridView1.DataSource;
+                //var dt = (DataTable)bd.DataSource;
+               // dataGridView1.FindForm(dataGridView1.Rows.IndexOf( e);
+               
+               (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Designation Like '{0}%' OR Designation Like '%{0}'", textBox1.Text);
                 dataGridView1.Refresh();
-               // (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Désignation Like '{0}%' OR Désignation Like '%{0}'", textBox1.Text);
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Errot"+ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -155,7 +158,16 @@ namespace Pharmacie.User_Controls
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-          //  dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            try
+            {
+                //int i = dataGridView1.Columns.IndexOf(Numero);
+                dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur ==> " + ex.Message, "Erreur ...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -163,10 +175,13 @@ namespace Pharmacie.User_Controls
             try
             {
                 //int i = dataGridView1.Columns.IndexOf(Numero);
-                //dataGridView1.Sort(dataGridView1.Columns[i], ListSortDirection.Descending);
-            }catch(Exception ex)
+               // dataGridView3.Sort(new TriClasse(SortOrder.Descending));
+               // dataGridView1.Sort(new TriClasse(SortOrder.Descending));
+
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Erreur ==> "+ ex.Message,"Erreur ...",  MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                MessageBox.Show("Erreur ==> "+ ex.Message,"Erreur ...",  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
         }
