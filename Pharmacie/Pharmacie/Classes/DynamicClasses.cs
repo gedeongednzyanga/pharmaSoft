@@ -21,6 +21,9 @@ namespace Pharmacie.Classes
         SqlDataReader dr = null;
 
         SqlDataAdapter dt = null;
+        SqlCommand sql = null;
+        SqlConnection con;
+        DataSet ds;
 
         public static DynamicClasses _intance = null;
 
@@ -30,7 +33,19 @@ namespace Pharmacie.Classes
                 _intance = new DynamicClasses();
             return _intance;
         }
-
+        public DataTable recherche_Infromation(string NomTable, string Nom, string Postnom, string Prenom, string recherche)
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            con = (SqlConnection)ImplementeConnexion.Instance.Conn;
+            sql = new SqlCommand("select * from " + NomTable + " WHERE " + Nom + " LIKE '%" + recherche + "%' or " + Postnom + " LIKE '%" + recherche + "%' or " + Prenom + " LIKE '%" + recherche + "%' ", con);
+            dt = null;
+            dt = new SqlDataAdapter(sql);
+            ds = new DataSet();
+            dt.Fill(ds);
+            con.Close();
+            return ds.Tables[0];
+        }
         public void retreivePhoto(string ChampPhoto, string nomTable, string ChampCode, string Valeur, PictureBox pic)
         {
             try

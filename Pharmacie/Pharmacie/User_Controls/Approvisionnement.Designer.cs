@@ -35,6 +35,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefApprov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Four = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateEnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,17 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefApprov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Four = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateEnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateExp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -145,6 +145,95 @@
             this.dataGridView1.Size = new System.Drawing.Size(975, 406);
             this.dataGridView1.TabIndex = 3;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Numéro";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 83;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Produit";
+            this.Column2.HeaderText = "Désignation";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Qte
+            // 
+            this.Qte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Qte.DataPropertyName = "Quantite";
+            this.Qte.HeaderText = "Quantité entrée";
+            this.Qte.Name = "Qte";
+            this.Qte.ReadOnly = true;
+            this.Qte.Width = 118;
+            // 
+            // Pu
+            // 
+            this.Pu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Pu.DataPropertyName = "Pu";
+            this.Pu.HeaderText = "Prix unitaire";
+            this.Pu.Name = "Pu";
+            this.Pu.ReadOnly = true;
+            this.Pu.Width = 97;
+            // 
+            // RefApprov
+            // 
+            this.RefApprov.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RefApprov.DataPropertyName = "RefApprov";
+            this.RefApprov.HeaderText = "RefApprov";
+            this.RefApprov.Name = "RefApprov";
+            this.RefApprov.ReadOnly = true;
+            this.RefApprov.Visible = false;
+            // 
+            // RefProduit
+            // 
+            this.RefProduit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RefProduit.DataPropertyName = "RefProduit";
+            this.RefProduit.HeaderText = "RefProduit";
+            this.RefProduit.Name = "RefProduit";
+            this.RefProduit.ReadOnly = true;
+            this.RefProduit.Visible = false;
+            // 
+            // Pt
+            // 
+            this.Pt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Pt.DataPropertyName = "Pt";
+            this.Pt.HeaderText = "Prix Total";
+            this.Pt.Name = "Pt";
+            this.Pt.ReadOnly = true;
+            this.Pt.Width = 82;
+            // 
+            // Four
+            // 
+            this.Four.DataPropertyName = "Fournisseur";
+            this.Four.HeaderText = "Fournisseur";
+            this.Four.Name = "Four";
+            this.Four.ReadOnly = true;
+            // 
+            // DateEnt
+            // 
+            this.DateEnt.DataPropertyName = "DateEntree";
+            this.DateEnt.HeaderText = "Date d\'entrée";
+            this.DateEnt.Name = "DateEnt";
+            this.DateEnt.ReadOnly = true;
+            // 
+            // DateFab
+            // 
+            this.DateFab.DataPropertyName = "DateFabric";
+            this.DateFab.HeaderText = "Date de fabrication";
+            this.DateFab.Name = "DateFab";
+            this.DateFab.ReadOnly = true;
+            // 
+            // DateExp
+            // 
+            this.DateExp.DataPropertyName = "DateExpiration";
+            this.DateExp.HeaderText = "Date d\'expiration";
+            this.DateExp.Name = "DateExp";
+            this.DateExp.ReadOnly = true;
+            // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -205,6 +294,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(410, 20);
             this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -297,97 +387,6 @@
             this.label6.Size = new System.Drawing.Size(99, 21);
             this.label6.TabIndex = 28;
             this.label6.Text = "1200 flacons";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "Numéro";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 83;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Produit";
-            this.Column2.HeaderText = "Désignation";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Qte
-            // 
-            this.Qte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Qte.DataPropertyName = "Quantite";
-            this.Qte.HeaderText = "Quantité entrée";
-            this.Qte.Name = "Qte";
-            this.Qte.ReadOnly = true;
-            this.Qte.Width = 118;
-            // 
-            // Pu
-            // 
-            this.Pu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Pu.DataPropertyName = "Pu";
-            this.Pu.HeaderText = "Prix unitaire";
-            this.Pu.Name = "Pu";
-            this.Pu.ReadOnly = true;
-            this.Pu.Width = 97;
-            // 
-            // RefApprov
-            // 
-            this.RefApprov.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RefApprov.DataPropertyName = "RefApprov";
-            this.RefApprov.HeaderText = "RefApprov";
-            this.RefApprov.Name = "RefApprov";
-            this.RefApprov.ReadOnly = true;
-            this.RefApprov.Visible = false;
-            this.RefApprov.Width = 97;
-            // 
-            // RefProduit
-            // 
-            this.RefProduit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RefProduit.DataPropertyName = "RefProduit";
-            this.RefProduit.HeaderText = "RefProduit";
-            this.RefProduit.Name = "RefProduit";
-            this.RefProduit.ReadOnly = true;
-            this.RefProduit.Visible = false;
-            this.RefProduit.Width = 97;
-            // 
-            // Pt
-            // 
-            this.Pt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Pt.DataPropertyName = "Pt";
-            this.Pt.HeaderText = "Prix Total";
-            this.Pt.Name = "Pt";
-            this.Pt.ReadOnly = true;
-            this.Pt.Width = 82;
-            // 
-            // Four
-            // 
-            this.Four.DataPropertyName = "Fournisseur";
-            this.Four.HeaderText = "Fournisseur";
-            this.Four.Name = "Four";
-            this.Four.ReadOnly = true;
-            // 
-            // DateEnt
-            // 
-            this.DateEnt.DataPropertyName = "DateEntree";
-            this.DateEnt.HeaderText = "Date d\'entrée";
-            this.DateEnt.Name = "DateEnt";
-            this.DateEnt.ReadOnly = true;
-            // 
-            // DateFab
-            // 
-            this.DateFab.DataPropertyName = "DateFabric";
-            this.DateFab.HeaderText = "Date de fabrication";
-            this.DateFab.Name = "DateFab";
-            this.DateFab.ReadOnly = true;
-            // 
-            // DateExp
-            // 
-            this.DateExp.DataPropertyName = "DateExpiration";
-            this.DateExp.HeaderText = "Date d\'expiration";
-            this.DateExp.Name = "DateExp";
-            this.DateExp.ReadOnly = true;
             // 
             // Approvisionnement
             // 

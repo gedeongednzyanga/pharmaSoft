@@ -45,6 +45,25 @@ namespace AgentLib
             }
             return lst;
         }
+        public List<IAgent> Research(string NomTable, string Champs1, string Champs2, string Champs3, string recherche)
+        {
+            List<IAgent> lst = new List<IAgent>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "select * from " + NomTable + " WHERE " + Champs1 + " LIKE '%" + recherche + "%' or " + Champs2 + " LIKE '%" + recherche + "%' or " + Champs3 + " LIKE '%" + recherche + "%' ";
+                //cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetAgent(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
 
         public void Enregistrer(IAgent agent)
         {

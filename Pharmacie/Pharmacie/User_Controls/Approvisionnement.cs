@@ -34,5 +34,13 @@ namespace Pharmacie.User_Controls
             
             dataGridView1.DataSource = detail.Approvisionnements();
         }
+        void Recherche(Detail_Approv detail)
+        {
+            dataGridView1.DataSource = detail.Research("Affichage_approvisionnement", "Produit", textBox1.Text);
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Recherche(new Detail_Approv());
+        }
     }
 }

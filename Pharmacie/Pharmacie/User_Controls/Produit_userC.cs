@@ -97,18 +97,22 @@ namespace Pharmacie.User_Controls
         {
             try
             {
-                //var bd = (BindingSource)dataGridView1.DataSource;
-                //var dt = (DataTable)bd.DataSource;
-               // dataGridView1.FindForm(dataGridView1.Rows.IndexOf( e);
-               
-               (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Designation Like '{0}%' OR Designation Like '%{0}'", textBox1.Text);
-                dataGridView1.Refresh();
+                recherche(new Produit());
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Errot"+ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        void recherche(Produit produit)
+        {
+
+            dataGridView1.DataSource = produit.Research("Affichage_Produit", "Produit", "Catégorie", "Forme", textBox1.Text);
+        }
+        //private void recherche(Produit produit)
+        //{
+        //    dataGridView1.DataSource = produit.AllProduits();
+        //}
         void ShowFiche(object formR)
         {
             Repports fiche = formR as Repports;

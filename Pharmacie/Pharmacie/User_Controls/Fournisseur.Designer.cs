@@ -35,6 +35,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Noms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,12 +73,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Noms = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -163,6 +163,48 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Numéro";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Noms
+            // 
+            this.Noms.DataPropertyName = "Nom";
+            this.Noms.HeaderText = "Nom Complet";
+            this.Noms.Name = "Noms";
+            this.Noms.ReadOnly = true;
+            // 
+            // Adresse
+            // 
+            this.Adresse.DataPropertyName = "Adresse";
+            this.Adresse.HeaderText = "Adresse";
+            this.Adresse.Name = "Adresse";
+            this.Adresse.ReadOnly = true;
+            // 
+            // Contact
+            // 
+            this.Contact.DataPropertyName = "Contact";
+            this.Contact.HeaderText = "Contact";
+            this.Contact.Name = "Contact";
+            this.Contact.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "TypePersonne";
+            this.Type.HeaderText = "Type de Personne";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // button2
             // 
@@ -358,6 +400,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(410, 20);
             this.textBox1.TabIndex = 27;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox3
             // 
@@ -567,48 +610,6 @@
             this.label6.Size = new System.Drawing.Size(99, 21);
             this.label6.TabIndex = 34;
             this.label6.Text = "Fournisseur :";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Numéro";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Noms
-            // 
-            this.Noms.DataPropertyName = "Nom";
-            this.Noms.HeaderText = "Nom Complet";
-            this.Noms.Name = "Noms";
-            this.Noms.ReadOnly = true;
-            // 
-            // Adresse
-            // 
-            this.Adresse.DataPropertyName = "Adresse";
-            this.Adresse.HeaderText = "Adresse";
-            this.Adresse.Name = "Adresse";
-            this.Adresse.ReadOnly = true;
-            // 
-            // Contact
-            // 
-            this.Contact.DataPropertyName = "Contact";
-            this.Contact.HeaderText = "Contact";
-            this.Contact.Name = "Contact";
-            this.Contact.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "TypePersonne";
-            this.Type.HeaderText = "Type de Personne";
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
             // 
             // Fournisseur
             // 

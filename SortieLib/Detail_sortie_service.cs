@@ -49,7 +49,25 @@ namespace SortieLib
             }
             return lst;
         }
-
+        public List<IDetails_Sortie> Research(string NomTable, string Champs, string recherche)
+        {
+            List<IDetails_Sortie> lst = new List<IDetails_Sortie>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "select * from " + NomTable + " WHERE " + Champs + " LIKE '%" + recherche + "%' ";
+                //cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetailSortie(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         public void Enregistrer(IDetails_Sortie approv)
         {
            
@@ -132,14 +150,14 @@ namespace SortieLib
         private IDetails_Sortie GetDetailSortie(IDataReader rd)
         {
             IDetails_Sortie detailsortie = new Detail_sortie_service();
-            detailsortie.Id = Convert.ToInt32(rd["Numéro"].ToString());
-            detailsortie.Produit = rd["Produit"].ToString();
+            detailsortie.Id = Convert.ToInt32(rd["iddetail"].ToString());
+            detailsortie.Produit = rd["designationprod"].ToString();
             detailsortie.Dosage = rd["Dosage"].ToString();
-            detailsortie.Quantite = Convert.ToInt32(rd["Quantité"].ToString());
+            detailsortie.Quantite = Convert.ToInt32(rd["Quantite"].ToString());
             detailsortie.Pu = Convert.ToDecimal(rd["PU"].ToString());
             detailsortie.Pt = Convert.ToDecimal(rd["PT"].ToString());
-            detailsortie.Malade = rd["Service"].ToString();
-            detailsortie.Date_sortie = Convert.ToDateTime(rd["Date de sortie"].ToString());
+            detailsortie.Malade = rd["designation"].ToString();
+            detailsortie.Date_sortie = Convert.ToDateTime(rd["date_sortie"].ToString());
             
             
 

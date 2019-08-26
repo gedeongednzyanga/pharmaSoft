@@ -97,6 +97,25 @@ namespace ApprovisionnementLib
             }
             return lst;
         }
+        public List<Fournisseurs> Research(string NomTable, string Champs, string recherche)
+        {
+            List<Fournisseurs> lst = new List<Fournisseurs>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "select * from " + NomTable + " WHERE " + Champs + " LIKE '%" + recherche + "%' ";
+                //cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetailFournisseur(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Fournisseurs GetDetailFournisseur(IDataReader rd)
         {
             Fournisseurs fourni = new Fournisseurs();

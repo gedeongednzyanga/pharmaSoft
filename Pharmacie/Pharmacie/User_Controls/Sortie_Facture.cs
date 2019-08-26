@@ -28,5 +28,13 @@ namespace Pharmacie.User_Controls
 
             dataGridView1.DataSource = detail.DetailsSorties();
         }
+        void Cherche(Detail_Sortie_Facture fact)
+        {
+            dataGridView1.DataSource = fact.Research("Affichage_details_sortie_facture", "designationprod", textBox1.Text);
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Cherche(new Detail_Sortie_Facture());
+        }
     }
 }
