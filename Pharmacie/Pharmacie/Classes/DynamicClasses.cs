@@ -161,9 +161,6 @@ namespace Pharmacie.Classes
                         MessageBox.Show("Echec de Connexion.", "Message Serveur...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-
-
             }
             catch (Exception ex)
             {
