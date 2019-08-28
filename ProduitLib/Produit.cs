@@ -131,5 +131,25 @@ namespace ProduitLib
             return prod;
         }
 
+        public List<IProduit> Research(string NomTable, string Champs1, string Champs2, string Champs3, string recherche)
+        {
+            List<IProduit> lst = new List<IProduit>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "select * from " + NomTable + " WHERE " + Champs1 + " LIKE '%" + recherche + "%' or " + Champs2 + " LIKE '%" + recherche + "%' or " + Champs3 + " LIKE '%" + recherche + "%' ";
+                //cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetailProduit(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
+
     }
 }

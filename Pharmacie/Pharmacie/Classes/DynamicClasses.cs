@@ -21,6 +21,9 @@ namespace Pharmacie.Classes
         SqlDataReader dr = null;
 
         SqlDataAdapter dt = null;
+        SqlCommand sql = null;
+        SqlConnection con;
+        DataSet ds;
 
         public static DynamicClasses _intance = null;
 
@@ -30,7 +33,38 @@ namespace Pharmacie.Classes
                 _intance = new DynamicClasses();
             return _intance;
         }
-
+        public DataTable call_report(string nomtable, string ref_champ, string nomchamp)
+        {
+            try
+            {
+                if(ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+                con = (SqlConnection)ImplementeConnexion.Instance.Conn;
+                dt = new SqlDataAdapter("select * from " + nomtable + " where " + ref_champ + " = '" + nomchamp + "'", con);
+                ds = new DataSet();
+                dt.Fill(ds, nomtable);
+                con.Close();
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally { con.Close(); }
+        }
+        public DataTable recherche_Infromation(string NomTable, string Nom, string Postnom, string Prenom, string recherche)
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            con = (SqlConnection)ImplementeConnexion.Instance.Conn;
+            sql = new SqlCommand("select * from " + NomTable + " WHERE " + Nom + " LIKE '%" + recherche + "%' or " + Postnom + " LIKE '%" + recherche + "%' or " + Prenom + " LIKE '%" + recherche + "%' ", con);
+            dt = null;
+            dt = new SqlDataAdapter(sql);
+            ds = new DataSet();
+            dt.Fill(ds);
+            con.Close();
+            return ds.Tables[0];
+        }
         public void retreivePhoto(string ChampPhoto, string nomTable, string ChampCode, string Valeur, PictureBox pic)
         {
             try
@@ -154,7 +188,6 @@ namespace Pharmacie.Classes
                         MessageBox.Show("La connection a reussie !!!", "Message Serveur...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserSession.GetInstance().AccessLevel = niveau;
                         UserSession.GetInstance().UserName = username;
-                        
                     }
                     else
                     {

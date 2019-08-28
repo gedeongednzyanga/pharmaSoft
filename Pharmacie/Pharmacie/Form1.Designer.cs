@@ -740,9 +740,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label6.Location = new System.Drawing.Point(31, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 21);
+            this.label6.Size = new System.Drawing.Size(243, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Historique";
+            this.label6.Text = "Historique E/S (Entrées et Sorties)";
             this.label6.MouseLeave += new System.EventHandler(this.lab_nouveau_MouseLeave);
             this.label6.MouseHover += new System.EventHandler(this.lab_nouveau_MouseHover);
             // 

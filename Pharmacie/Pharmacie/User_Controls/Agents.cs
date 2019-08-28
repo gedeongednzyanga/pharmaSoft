@@ -78,6 +78,11 @@ namespace Pharmacie.User_Controls
             dataGridView1.DataSource = ag.AllAgents();
             
         }
+        void Recherche(Agent ag)
+        {
+            dataGridView1.DataSource = ag.Research("Affichage_Agent", "Agent", "fonction", "pseudo", textBox1.Text);
+
+        }
         void loadPhoto(string chamPhoto, string id, PictureBox pic)
         {
             DynamicClasses dn = new DynamicClasses();
@@ -175,6 +180,11 @@ namespace Pharmacie.User_Controls
         private void button1_Click(object sender, EventArgs e)
         {
             RefreshData(new Agent());
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Recherche(new Agent());
         }
     }
 }

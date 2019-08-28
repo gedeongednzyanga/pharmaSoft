@@ -46,6 +46,25 @@ namespace ApprovisionnementLib
             }
             return lst;
         }
+        public List<IDetail_approv> Research(string NomTable, string Champs, string recherche)
+        {
+            List<IDetail_approv> lst = new List<IDetail_approv>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "select * from " + NomTable + " WHERE " + Champs + " LIKE '%" + recherche + "%' ";
+                //cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetailApprov(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         //Fonction d'enregistrement des details d'approvisionnement
         public void Enregistrer(IDetail_approv approv)
         {

@@ -232,5 +232,13 @@ namespace Pharmacie.User_Controls
         {
             doubleclic_grid();
         }
+        void Recherche(Fournisseurs four)
+        {
+            dataGridView1.DataSource = four.Research("Affichage_Fournisseur", "Fournisseur", textBox1.Text);
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Recherche(new Fournisseurs());
+        }
     }
 }

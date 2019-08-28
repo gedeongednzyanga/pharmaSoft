@@ -97,40 +97,45 @@ namespace Pharmacie.User_Controls
         {
             try
             {
-                //var bd = (BindingSource)dataGridView1.DataSource;
-                //var dt = (DataTable)bd.DataSource;
-               // dataGridView1.FindForm(dataGridView1.Rows.IndexOf( e);
-               
-               (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Designation Like '{0}%' OR Designation Like '%{0}'", textBox1.Text);
-                dataGridView1.Refresh();
+                recherche(new Produit());
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Errot"+ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        void recherche(Produit produit)
+        {
+
+            dataGridView1.DataSource = produit.Research("Affichage_Produit", "Produit", "Catégorie", "Forme", textBox1.Text);
+        }
+        //private void recherche(Produit produit)
+        //{
+        //    dataGridView1.DataSource = produit.AllProduits();
+        //}
         void ShowFiche(object formR)
         {
             Repports fiche = formR as Repports;
             fiche.TopLevel = false;
             fiche.Dock = DockStyle.Fill;
+            fiche.crystalReportViewer1.ReportSource = new Fiche_Stock_detail();
+            fiche.crystalReportViewer1.Refresh();
             panel1.Controls.Clear();
             panel1.Controls.Add(fiche);
             panel1.Show();
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            //ShowFiche(new Repports());
             groupBox_detail.Visible = false;
             groupBox_Fiche.Visible = true;
-           
+            Fiche_Stock_detail fiche = new Fiche_Stock_detail();
+            fiche.SetDataSource(DynamicClasses.GetInstance().call_report("Affichage_Mouvement_Stock", "designationprod", lab_designation.Text.Trim()));
+            crystalReportViewer1.ReportSource = fiche;
+            crystalReportViewer1.Refresh();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            //panel1.Controls.Clear();
-            //panel1.Controls.Add(this.groupBox2);
-            //panel1.Show();
             groupBox_Fiche.Visible = false;
             groupBox_detail.Visible = true;
 
@@ -184,6 +189,26 @@ namespace Pharmacie.User_Controls
                 MessageBox.Show("Erreur ==> "+ ex.Message,"Erreur ...",  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            Repports rep = new Repports();
+            Fiche_Stock fiche_stock = new Fiche_Stock();
+            fiche_stock.SetDataSource(DynamicClasses.GetInstance().call_report("Affichage_Mouvement_Stock", "designationprod", lab_designation.Text.Trim()));
+            rep.crystalReportViewer1.ReportSource = fiche_stock;
+            rep.crystalReportViewer1.Refresh();
+            rep.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Repports rep = new Repports();
+            Liste_ProduitPv liste_prod = new Liste_ProduitPv();
+            //fiche_stock.SetDataSource(DynamicClasses.GetInstance().call_report("Affichage_Mouvement_Stock", "designationprod", lab_designation.Text.Trim()));
+            rep.crystalReportViewer1.ReportSource = liste_prod;
+            rep.crystalReportViewer1.Refresh();
+            rep.Show();
         }
     }
 }
