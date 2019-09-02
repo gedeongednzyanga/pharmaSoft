@@ -9,6 +9,9 @@ namespace Pharmacie.Classes
 {
     class TriClasse : System.Collections.IComparer
     {
+        public static TriClasse _instance=null;
+       
+
         private static int sortOrderModifier = 1;
         public TriClasse(SortOrder sortOder)
         {

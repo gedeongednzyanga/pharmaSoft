@@ -95,8 +95,7 @@ namespace ProduitLib
 
             categ.Id = Convert.ToInt32(rd["Numéro"].ToString());
             categ.Designation = rd["Catégorie"].ToString();
-            
-
+           
             return categ;
         }
 

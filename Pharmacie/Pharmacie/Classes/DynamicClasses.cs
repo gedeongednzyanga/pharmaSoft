@@ -7,11 +7,13 @@ using System.Data;
 using System.Data.SqlClient;
 
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Pharmacie.Classes
@@ -24,6 +26,8 @@ namespace Pharmacie.Classes
         SqlCommand sql = null;
         SqlConnection con;
         DataSet ds;
+        //public DataGridPrinter MyDataPrinter;
+
 
         public static DynamicClasses _intance = null;
 
@@ -32,6 +36,28 @@ namespace Pharmacie.Classes
             if (_intance == null)
                 _intance = new DynamicClasses();
             return _intance;
+        }
+
+   
+
+        public DataTable Load_data(string nomtable)
+        {
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                con = (SqlConnection)ImplementeConnexion.Instance.Conn;
+                dt = new SqlDataAdapter("select * from " + nomtable + "", con);
+                ds = new DataSet();
+                dt.Fill(ds, nomtable);
+                con.Close();
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally { con.Close(); }
         }
         public DataTable call_report(string nomtable, string ref_champ, string nomchamp)
         {
@@ -205,6 +231,37 @@ namespace Pharmacie.Classes
             }
             return count;
         }
+        #region IMPRIMER DOCUMENTS
+
+        //public bool Imprimer_Facture(PrintDocument doc_print, DataGridView grid_toprint)
+        //{
+        //    PrintDialog _MyDialog_Print = new PrintDialog();
+        //    _MyDialog_Print.AllowCurrentPage = false;
+        //    _MyDialog_Print.AllowPrintToFile = false;
+        //    _MyDialog_Print.AllowSelection = false;
+        //    _MyDialog_Print.AllowSomePages = false;
+        //    _MyDialog_Print.PrintToFile = false;
+        //    _MyDialog_Print.ShowHelp = false;
+        //    _MyDialog_Print.ShowNetwork = false;
+
+        //    if (_MyDialog_Print.ShowDialog() != DialogResult.OK)
+        //        return false;
+        //    doc_print.DocumentName = "Facture du client";
+        //    doc_print.PrinterSettings = _MyDialog_Print.PrinterSettings;
+        //    doc_print.DefaultPageSettings = _MyDialog_Print.PrinterSettings.DefaultPageSettings;
+        //    doc_print.DefaultPageSettings.Margins = new Margins(40, 40, 40, 40);
+
+        //    if (MessageBox.Show("Voulez-vous que le report soit centré sur la page ?", "Facturation - Center On Page",
+        //        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        //        MyDataPrinter = new DataGridPrinter(grid_toprint, doc_print, true, true, "Facture Du client", new Font("Tahoma", 18,
+        //            FontStyle.Bold, GraphicsUnit.Point), Color.Black, true);
+        //    else
+        //        MyDataPrinter = new DataGridPrinter(grid_toprint, doc_print, false, true, "Facture Du client", new Font("Tahoma", 18,
+        //            FontStyle.Bold, GraphicsUnit.Point), Color.Black, true);
+        //    return true;
+        //}
+        #endregion
 
     }
+
 }

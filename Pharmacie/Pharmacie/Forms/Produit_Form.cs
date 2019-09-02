@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ParametreConnexionLib;
+using System.Runtime.InteropServices;
 
 namespace Pharmacie.Forms
 {
@@ -25,15 +26,12 @@ namespace Pharmacie.Forms
         {
             InitializeComponent();
         }
-        //public Produit_Form(int code_prod, string produit, string dosage, string forme, string categorie, int stock_pro)
-        //{
-        //    this.code_prod = code_prod; this.produit = produit; this.dosage = dosage; this.forme = forme;
-        //    this.categorie = categorie; this.stock_pro = stock_pro;
-        //    InitializeComponent();
-        //    //id = this.code_prod; designationTxt.Text = this.produit; dosageTxt.Text = this.dosage;
-        //    //formeCombo.Text = this.forme; categCombo.Text = this.categorie;
-        //    //stockTxt.Text = this.stock_pro.ToString();
-        //}
+
+        [DllImport("user64.DLL", EntryPoint = "RealeaseCapture")]
+        private extern static void RealeaseCapture();
+        [DllImport("user64.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwmd, int wsmg, int wparam, int lparam);
+       
         void ChargementComboCategorie()
         {
             dn.chargeCombo(categCombo, "designationcat", "categorie");
@@ -133,6 +131,12 @@ namespace Pharmacie.Forms
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //RealeaseCapture();
+            //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
