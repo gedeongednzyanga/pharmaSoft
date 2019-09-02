@@ -215,6 +215,12 @@
     <Compile Include="User_Controls\Fournisseur.Designer.cs">
       <DependentUpon>Fournisseur.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\Historique_ES.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Historique_ES.Designer.cs">
+      <DependentUpon>Historique_ES.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\Inventaire.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Fournisseur.resx">
       <DependentUpon>Fournisseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\Historique_ES.resx">
+      <DependentUpon>Historique_ES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\Inventaire.resx">
       <DependentUpon>Inventaire.cs</DependentUpon>

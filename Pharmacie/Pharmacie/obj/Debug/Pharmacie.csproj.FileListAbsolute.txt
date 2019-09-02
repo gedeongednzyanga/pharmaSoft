@@ -518,3 +518,4 @@ D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Sortie_F
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.Forms.Sortie_Service_Form.resources
 D:\DAVID\PROJETBDD\Pharma\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.Produit_userC.resources
 C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.Inventaire.resources
+C:\Users\GEDEON\Documents\Visual Studio 2015\Projects\PharmacieSoft\Pharmacie\Pharmacie\obj\Debug\Pharmacie.User_Controls.Historique_ES.resources

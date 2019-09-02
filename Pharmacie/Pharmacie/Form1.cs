@@ -38,6 +38,7 @@ namespace Pharmacie
         Agent_Form frmag = new Agent_Form();
         Sortie_Facture_Form frmsf = new Sortie_Facture_Form();
         Sortie_Service_Form frmss = new Sortie_Service_Form();
+        Historique_ES histo = new Historique_ES();
         
 
         public Form1()
@@ -173,6 +174,14 @@ namespace Pharmacie
             inventaire.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
             panel_container.Controls.Add(inventaire);
+            panel_container.Show();
+        }
+        void ShowHistoriqueES(object historic)
+        {
+            Historique_ES historique = historic as Historique_ES;
+            historique.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(historique);
             panel_container.Show();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -634,6 +643,13 @@ namespace Pharmacie
         private void label37_Click(object sender, EventArgs e)
         {
             ShowInventaire(inventory);
+        }
+
+        private void label6_MouseClick(object sender, MouseEventArgs e)
+        {
+            ShowHistoriqueES(histo);
+
+
         }
     }
 }
