@@ -30,6 +30,7 @@ namespace Pharmacie
         Sortie_Facture sortiefacture = new Sortie_Facture();
         Sortie_Service sortieservice = new Sortie_Service();
         Agents agents = new Agents();
+        Inventaire inventory = new Inventaire();
 
         Produit_Form frmp = new Produit_Form();
         Approvisionnement_Form frma = new Approvisionnement_Form();
@@ -164,6 +165,14 @@ namespace Pharmacie
             sortieService.Dock = DockStyle.Fill;
             panel_container.Controls.Clear();
             panel_container.Controls.Add(sortieService);
+            panel_container.Show();
+        }
+        void ShowInventaire(object invent)
+        {
+            Inventaire inventaire = invent as Inventaire;
+            inventaire.Dock = DockStyle.Fill;
+            panel_container.Controls.Clear();
+            panel_container.Controls.Add(inventaire);
             panel_container.Show();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -620,6 +629,11 @@ namespace Pharmacie
         private void label2_Click_1(object sender, EventArgs e)
         {
            // new Login_Form().ShowDialog();
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+            ShowInventaire(inventory);
         }
     }
 }

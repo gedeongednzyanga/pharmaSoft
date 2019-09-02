@@ -93,7 +93,7 @@ namespace Pharmacie.Forms
             {
                 IProduit medicament = new Produit();
 
-                if (id == 0 || designationTxt.Text == "" || dosageTxt.Text == "" || formeCombo.SelectedIndex == -1 || categCombo.Text == "" || Convert.ToInt32(stockTxt.Text) <= 0)
+                if (id == 0 || designationTxt.Text == "" || dosageTxt.Text == "" || formeCombo.SelectedIndex == -1 || categCombo.Text == "" )
                 {
                     MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 }

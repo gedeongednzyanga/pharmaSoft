@@ -49,13 +49,11 @@
             this.inventaire = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.configuration = new System.Windows.Forms.GroupBox();
             this.bunifuSeparator5 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -125,8 +123,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.accueil);
             this.panel1.Controls.Add(this.inventaire);
+            this.panel1.Controls.Add(this.accueil);
             this.panel1.Controls.Add(this.configuration);
             this.panel1.Controls.Add(this.lab_user);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -359,16 +357,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inventaire.Controls.Add(this.label30);
             this.inventaire.Controls.Add(this.bunifuSeparator3);
-            this.inventaire.Controls.Add(this.label31);
             this.inventaire.Controls.Add(this.label32);
             this.inventaire.Controls.Add(this.label33);
             this.inventaire.Controls.Add(this.bunifuSeparator4);
             this.inventaire.Controls.Add(this.label34);
             this.inventaire.Controls.Add(this.label35);
-            this.inventaire.Controls.Add(this.label36);
             this.inventaire.Controls.Add(this.label37);
             this.inventaire.ForeColor = System.Drawing.Color.Black;
-            this.inventaire.Location = new System.Drawing.Point(3, 1);
+            this.inventaire.Location = new System.Drawing.Point(3, 0);
             this.inventaire.Name = "inventaire";
             this.inventaire.Size = new System.Drawing.Size(847, 63);
             this.inventaire.TabIndex = 14;
@@ -397,18 +393,6 @@
             this.bunifuSeparator3.TabIndex = 12;
             this.bunifuSeparator3.Transparency = 100;
             this.bunifuSeparator3.Vertical = true;
-            // 
-            // label31
-            // 
-            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Image = ((System.Drawing.Image)(resources.GetObject("label31.Image")));
-            this.label31.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label31.Location = new System.Drawing.Point(116, 14);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(122, 40);
-            this.label31.TabIndex = 11;
-            this.label31.Text = "Inventaire physique";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label32
             // 
@@ -470,28 +454,18 @@
             this.label35.Text = "Modifier";
             this.label35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // label36
-            // 
-            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Image = ((System.Drawing.Image)(resources.GetObject("label36.Image")));
-            this.label36.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label36.Location = new System.Drawing.Point(5, 16);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(33, 36);
-            this.label36.TabIndex = 5;
-            this.label36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // label37
             // 
             this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.Image = ((System.Drawing.Image)(resources.GetObject("label37.Image")));
             this.label37.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label37.Location = new System.Drawing.Point(38, 14);
+            this.label37.Location = new System.Drawing.Point(8, 12);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(72, 40);
             this.label37.TabIndex = 4;
             this.label37.Text = "Inventaire";
             this.label37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // configuration
             // 
@@ -1191,13 +1165,11 @@
         private System.Windows.Forms.GroupBox inventaire;
         private System.Windows.Forms.Label label30;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator4;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.GroupBox configuration;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator5;
