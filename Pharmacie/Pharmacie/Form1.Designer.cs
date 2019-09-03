@@ -173,7 +173,7 @@
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Image = ((System.Drawing.Image)(resources.GetObject("label30.Image")));
             this.label30.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label30.Location = new System.Drawing.Point(553, 14);
+            this.label30.Location = new System.Drawing.Point(380, 12);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 40);
             this.label30.TabIndex = 13;
@@ -185,7 +185,7 @@
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(255, 15);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(82, 13);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
             this.bunifuSeparator3.Size = new System.Drawing.Size(10, 40);
             this.bunifuSeparator3.TabIndex = 12;
@@ -197,7 +197,7 @@
             this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Image = ((System.Drawing.Image)(resources.GetObject("label32.Image")));
             this.label32.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label32.Location = new System.Drawing.Point(471, 14);
+            this.label32.Location = new System.Drawing.Point(298, 12);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(60, 40);
             this.label32.TabIndex = 10;
@@ -209,7 +209,7 @@
             this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Image = ((System.Drawing.Image)(resources.GetObject("label33.Image")));
             this.label33.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label33.Location = new System.Drawing.Point(405, 14);
+            this.label33.Location = new System.Drawing.Point(232, 12);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(60, 40);
             this.label33.TabIndex = 9;
@@ -221,7 +221,7 @@
             this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(537, 15);
+            this.bunifuSeparator4.Location = new System.Drawing.Point(364, 13);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
             this.bunifuSeparator4.Size = new System.Drawing.Size(10, 40);
             this.bunifuSeparator4.TabIndex = 8;
@@ -233,7 +233,7 @@
             this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Image = ((System.Drawing.Image)(resources.GetObject("label34.Image")));
             this.label34.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label34.Location = new System.Drawing.Point(331, 12);
+            this.label34.Location = new System.Drawing.Point(158, 10);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(68, 40);
             this.label34.TabIndex = 7;
@@ -245,7 +245,7 @@
             this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Image = ((System.Drawing.Image)(resources.GetObject("label35.Image")));
             this.label35.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label35.Location = new System.Drawing.Point(270, 12);
+            this.label35.Location = new System.Drawing.Point(97, 10);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(55, 40);
             this.label35.TabIndex = 6;
