@@ -57,15 +57,15 @@ namespace Pharmacie
             }
         }
 
-        //void Slide_PaneUp(Panel panel)
-        //{
-        //    if (panel.Height == 35)
-        //    {
-        //        panel.Size = new Size(panel.Width, t1);
-        //        timer1.Start();
-        //    }
-        //    else { panel.Height = 35; }
-        //}
+        void Slide_PaneUp(Panel panel)
+        {
+            if (panel.Height == 35)
+            {
+                panel.Size = new Size(panel.Width, t1);
+                timer1.Start();
+            }
+            else { panel.Height = 35; }
+        }
 
         public void Fundform_Login(Login_Form login)
         {
@@ -650,6 +650,61 @@ namespace Pharmacie
             ShowHistoriqueES(histo);
 
 
+        }
+
+        private void label33_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel_container.Parent.Contains(inventory))
+            {
+                inventory.dataGridView1.Sort(inventory.dataGridView1.Columns[1], ListSortDirection.Ascending);
+            }
+            else if (panel_container.Parent.Contains(histo))
+            {
+                histo.dataGridView1.Sort(histo.dataGridView1.Columns[1], ListSortDirection.Ascending);
+            }
+            else if (panel_container.Parent.Contains(sortiefacture))
+            {
+                frmsf.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(sortieservice))
+            {
+                frmss.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(agents))
+            {
+                frmag.ShowDialog();
+            }
+
+
+
+
+
+
+
+        }
+
+        private void label32_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (panel_container.Parent.Contains(inventory))
+            {
+                inventory.dataGridView1.Sort(inventory.dataGridView1.Columns[1], ListSortDirection.Descending);
+            }
+            else if (panel_container.Parent.Contains(histo))
+            {
+                histo.dataGridView1.Sort(histo.dataGridView1.Columns[1], ListSortDirection.Descending);
+            }
+            else if (panel_container.Parent.Contains(sortiefacture))
+            {
+                frmsf.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(sortieservice))
+            {
+                frmss.ShowDialog();
+            }
+            else if (panel_container.Parent.Contains(agents))
+            {
+                frmag.ShowDialog();
+            }
         }
     }
 }

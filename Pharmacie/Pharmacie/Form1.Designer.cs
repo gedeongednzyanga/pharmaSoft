@@ -203,6 +203,7 @@
             this.label32.TabIndex = 10;
             this.label32.Text = "Trier Z-A";
             this.label32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label32.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label32_MouseClick);
             // 
             // label33
             // 
@@ -215,6 +216,7 @@
             this.label33.TabIndex = 9;
             this.label33.Text = "Trier A-Z";
             this.label33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label33.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label33_MouseClick);
             // 
             // bunifuSeparator4
             // 

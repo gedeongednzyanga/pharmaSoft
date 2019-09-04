@@ -213,7 +213,7 @@ namespace Pharmacie.User_Controls
 
         private void button5_Click(object sender, EventArgs e)
         {
-            dataGridView1.Sort(new TriClasse(SortOrder.Ascending));
+          //  Array.Reverse(dataGridView1.Columns["", dataGridView1.Columns.IndexOf[1]);
         }
     }
 }

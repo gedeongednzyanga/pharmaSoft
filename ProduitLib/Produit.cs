@@ -103,6 +103,7 @@ namespace ProduitLib
                 while (rd.Read())
                 {
                     lst.Add(GetDetailProduit(rd));
+                    
                 }
                 rd.Dispose();
                 rd.Close();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using DGVPrinter;
 using ProduitLib;
 using Pharmacie.Classes;
 
@@ -14,6 +15,7 @@ namespace Pharmacie.User_Controls
 {
     public partial class Inventaire : UserControl
     {
+        //int t1 = 13;
         int code_prod;
         int i;
         string dosage, forme;
@@ -23,6 +25,7 @@ namespace Pharmacie.User_Controls
         {
             InitializeComponent();
         }
+        
         void Load_Product ()
         {
             dataGridView1.DataSource = DynamicClasses.GetInstance().Load_data("Affichage_Produit_Pv_Dexpir");
@@ -56,7 +59,7 @@ namespace Pharmacie.User_Controls
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            clic_grid();
+           
         }
 
         private void Qte_physique_TextChanged(object sender, EventArgs e)
@@ -89,9 +92,25 @@ namespace Pharmacie.User_Controls
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        
+        
+
+        private void button5_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(textBox3.Text.Trim());
+            try
+            {
+                //DGVPrinter 
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Erreur " + ex.Message);
+            }
+        }
+
+        
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            clic_grid();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,13 +118,6 @@ namespace Pharmacie.User_Controls
             //dataGridView1.Sort(new TriClasse(SortOrder.Ascending));
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (listBox1.Items.Count > 0)
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-            else
-                return;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
