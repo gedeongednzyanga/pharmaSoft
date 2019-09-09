@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PHARMACIE_SOFTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="produit">
+    <Key>
+      <PropertyRef Name="idproduit" />
+    </Key>
+    <Property Name="idproduit" Type="int" Nullable="false" />
+    <Property Name="designationprod" Type="varchar" MaxLength="100" />
+    <Property Name="dosage" Type="varchar" MaxLength="50" />
+    <Property Name="forme" Type="varchar" MaxLength="50" />
+    <Property Name="quatitestock" Type="int" Nullable="false" />
+    <Property Name="refcategorie" Type="int" />
+    <Property Name="Pu" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PHARMACIE_SOFTModelStoreContainer">
+    <EntitySet Name="produit" EntityType="Self.produit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

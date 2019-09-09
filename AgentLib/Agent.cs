@@ -116,7 +116,6 @@ namespace AgentLib
             {
                 cmd.CommandText = "SELECT MAX(idagent) as Lastid FROM Agent";
                 IDataReader dr = cmd.ExecuteReader();
-
                 if (dr.Read())
                 {
                     if (dr["Lastid"] == DBNull.Value)

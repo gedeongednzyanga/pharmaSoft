@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PHARMACIE_SOFTModelStoreContainer" CdmEntityContainer="PHARMACIE_SOFTEntities1">
+    <EntitySetMapping Name="produit">
+      <EntityTypeMapping TypeName="PHARMACIE_SOFTModel.produit">
+        <MappingFragment StoreEntitySet="produit">
+          <ScalarProperty Name="idproduit" ColumnName="idproduit" />
+          <ScalarProperty Name="designationprod" ColumnName="designationprod" />
+          <ScalarProperty Name="dosage" ColumnName="dosage" />
+          <ScalarProperty Name="forme" ColumnName="forme" />
+          <ScalarProperty Name="quatitestock" ColumnName="quatitestock" />
+          <ScalarProperty Name="refcategorie" ColumnName="refcategorie" />
+          <ScalarProperty Name="Pu" ColumnName="Pu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
