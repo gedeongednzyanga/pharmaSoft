@@ -25,7 +25,7 @@ namespace Pharmacie.Classes
         SqlDataAdapter dt = null;
         SqlCommand sql = null;
         SqlConnection con;
-        DataSet ds;
+       public  DataSet ds;
         //public DataGridPrinter MyDataPrinter;
 
 
@@ -78,6 +78,31 @@ namespace Pharmacie.Classes
             }
             finally { con.Close(); }
         }
+
+        public void call_Rapport(int nomchamp)
+        {
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                con = (SqlConnection)ImplementeConnexion.Instance.Conn;
+                dt = new SqlDataAdapter("SELECT_FICHE_ST", con);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.Add(Parametre.Instance.AjouterParametre(dt.SelectCommand, "@codeprod", 5, DbType.Int32, nomchamp));
+                ds = new DataSet();
+                dt.Fill(ds);
+                con.Close();
+                //return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally { con.Close(); }
+        }
+
+
+
         public DataTable recherche_Infromation(string NomTable, string Nom, string Postnom, string Prenom, string recherche)
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)

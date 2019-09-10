@@ -129,7 +129,9 @@ namespace Pharmacie.User_Controls
             groupBox_detail.Visible = false;
             groupBox_Fiche.Visible = true;
             Fiche_Stock_detail fiche = new Fiche_Stock_detail();
-            fiche.SetDataSource(DynamicClasses.GetInstance().call_report("Affichage_Mouvement_Stock", "designationprod", lab_designation.Text.Trim()));
+            DynamicClasses.GetInstance().call_Rapport(code_prod);
+            fiche.Database.Tables["ConsommationMoyenne"].SetDataSource(DynamicClasses.GetInstance().ds.Tables[0]);
+            fiche.Database.Tables["Affichage_Mouvement_Stock"].SetDataSource(DynamicClasses.GetInstance().ds.Tables[1]);
             crystalReportViewer1.ReportSource = fiche;
             crystalReportViewer1.Refresh();
         }

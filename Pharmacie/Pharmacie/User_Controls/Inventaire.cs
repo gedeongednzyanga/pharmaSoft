@@ -57,7 +57,7 @@ namespace Pharmacie.User_Controls
 
         struct DataParameter
         {
-            public List<produit> listeproduit;
+            public List<string> listeproduit;
             public string filename { get; set; }
         }
         DataParameter _inputParameter;
@@ -131,8 +131,6 @@ namespace Pharmacie.User_Controls
             }
         }
 
-        
-
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             clic_grid();
@@ -140,7 +138,7 @@ namespace Pharmacie.User_Controls
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            List<produit> list = ((DataParameter)e.Argument).listeproduit;
+            List<string> list = ((DataParameter)e.Argument).listeproduit;
             string filename = ((DataParameter)e.Argument).filename;
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
@@ -156,24 +154,24 @@ namespace Pharmacie.User_Controls
             ws.Cells[index, 6] = "Categorie";
             ws.Cells[index, 7] = "Categorie";
             ws.Cells[index, 8] = "Categorie";
-            foreach (produit p in list)
-            {
-                if (!backgroundWorker.CancellationPending)
-                {
-                    backgroundWorker.ReportProgress(index++ * 100 / process);
-                    ws.Cells[index, 1] = p.idproduit.ToString();
-                    ws.Cells[index, 2] = p.designationprod;
-                    ws.Cells[index, 3] = p.dosage;
-                    ws.Cells[index, 4] = p.forme;
-                    ws.Cells[index, 5] = p.quatitestock;
-                    ws.Cells[index, 6] = p.designationprod;
-                    ws.Cells[index, 7] = p.designationprod;
-                    ws.Cells[index, 8] = p.designationprod;
+            //foreach (produit p in list)
+            //{
+            //    if (!backgroundWorker.CancellationPending)
+            //    {
+            //        backgroundWorker.ReportProgress(index++ * 100 / process);
+            //        ws.Cells[index, 1] = p.idproduit.ToString();
+            //        ws.Cells[index, 2] = p.designationprod;
+            //        ws.Cells[index, 3] = p.dosage;
+            //        ws.Cells[index, 4] = p.forme;
+            //        ws.Cells[index, 5] = p.quatitestock;
+            //        ws.Cells[index, 6] = p.designationprod;
+            //        ws.Cells[index, 7] = p.designationprod;
+            //        ws.Cells[index, 8] = p.designationprod;
 
-                }
-            }
-            ws.SaveAs(filename, XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
-            excel.Quit();
+            //    }
+            //}
+            //ws.SaveAs(filename, XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+            //excel.Quit();
         }
 
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -194,42 +192,13 @@ namespace Pharmacie.User_Controls
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //Codes à revoir 
-
-            //_Application excel = new Microsoft.Office.Interop.Excel.Application();
-            //_Workbook wb = excel.Workbooks.Add(Type.Missing);
-            //_Worksheet ws = null;
-            // ws = wb.Sheets["feuil1"];
-            // ws = wb.ActiveSheet();
-            // ws.Name = "Detail";
-            // for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
-            // {
-            //     ws.Cells[i, 1] = dataGridView1.Columns[i - 1].HeaderText;
-            // }
-            // for (int i = 0; i < dataGridView1.Columns.Count; i++)
-            // {
-            //     for (int j = 0; j < dataGridView1.Columns.Count; j++)
-            //     {
-            //         ws.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-            //     }
-            // }
-            // var saveDl = new SaveFileDialog();
-            // saveDl.FileName = "Output";
-            // saveDl.DefaultExt = ".xlsx";
-            // if (saveDl.ShowDialog() == DialogResult.OK)
-            // {
-            //     wb.SaveAs(saveDl.FileName, XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, true, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
-
-            // }
-            // excel.Quit();
-
             if (backgroundWorker.IsBusy)
                 return;
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel workbook|*.xlsx" })
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     _inputParameter.filename = sfd.FileName;
-                    //_inputParameter.listeproduit = produitBindingSource.DataSource as List<produit>;
+                    _inputParameter.listeproduit = dataGridView2.DataSource as List<string>;
                     progressBar1.Minimum = 0;
                     progressBar1.Value = 0;
                     backgroundWorker.RunWorkerAsync(_inputParameter);
