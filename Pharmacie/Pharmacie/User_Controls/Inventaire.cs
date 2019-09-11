@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using DGVPrinter;
-using ProduitLib;
 using Pharmacie.Classes;
+using ProduitLib;
 using System.Threading;
-using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
 using DGVPrinterHelper;
 
 namespace Pharmacie.User_Controls
@@ -55,12 +54,12 @@ namespace Pharmacie.User_Controls
             }
         }
 
-        struct DataParameter
-        {
-            public List<string> listeproduit;
-            public string filename { get; set; }
-        }
-        DataParameter _inputParameter;
+        //struct DataParameter
+        //{
+        //    public List<string> listeproduit;
+        //    public string filename { get; set; }
+        //}
+        //DataParameter _inputParameter;
 
 
 
@@ -138,23 +137,23 @@ namespace Pharmacie.User_Controls
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            List<string> list = ((DataParameter)e.Argument).listeproduit;
-            string filename = ((DataParameter)e.Argument).filename;
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
-            Worksheet ws = (Worksheet)excel.ActiveSheet;
-            excel.Visible = false;
-            int index = 1;
-            int process = list.Count();
-            ws.Cells[index, 1] = "ID";
-            ws.Cells[index, 2] = "Designation";
-            ws.Cells[index, 3] = "Dosage";
-            ws.Cells[index, 4] = "Forme";
-            ws.Cells[index, 5] = "Quantité";
-            ws.Cells[index, 6] = "Categorie";
-            ws.Cells[index, 7] = "Categorie";
-            ws.Cells[index, 8] = "Categorie";
-            //foreach (produit p in list)
+            //List<string> list = ((DataParameter)e.Argument).listeproduit;
+            //string filename = ((DataParameter)e.Argument).filename;
+            //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            //Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
+            //Worksheet ws = (Worksheet)excel.ActiveSheet;
+            //excel.Visible = false;
+            //int index = 1;
+            //int process = list.Count();
+            //ws.Cells[index, 1] = "ID";
+            //ws.Cells[index, 2] = "Designation";
+            //ws.Cells[index, 3] = "Dosage";
+            //ws.Cells[index, 4] = "Forme";
+            //ws.Cells[index, 5] = "Quantité";
+            //ws.Cells[index, 6] = "Categorie";
+            //ws.Cells[index, 7] = "Categorie";
+            //ws.Cells[index, 8] = "Categorie";
+            ////foreach (produit p in list)
             //{
             //    if (!backgroundWorker.CancellationPending)
             //    {
@@ -192,17 +191,37 @@ namespace Pharmacie.User_Controls
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (backgroundWorker.IsBusy)
-                return;
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel workbook|*.xlsx" })
-                if (sfd.ShowDialog() == DialogResult.OK)
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn col in dataGridView2.Columns)
+            {
+                dt.Columns.Add(col.Name);
+            }
+            foreach (DataGridViewRow  row in dataGridView2.Rows)
+            {
+                DataRow drow = dt.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    _inputParameter.filename = sfd.FileName;
-                    _inputParameter.listeproduit = dataGridView2.DataSource as List<string>;
-                    progressBar1.Minimum = 0;
-                    progressBar1.Value = 0;
-                    backgroundWorker.RunWorkerAsync(_inputParameter);
+                    drow[cell.ColumnIndex] = cell.Value;
                 }
+                dt.Rows.Add(drow);
+            }
+            string ExcelPath = "Excel.xlsx";
+            dt.ExportToExcel(ExcelPath);
+
+
+
+
+            //if (backgroundWorker.IsBusy)
+            //    return;
+            //using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel workbook|*.xlsx" })
+            //    if (sfd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        _inputParameter.filename = sfd.FileName;
+            //        _inputParameter.listeproduit = dataGridView2.DataSource as List<string>;
+            //        progressBar1.Minimum = 0;
+            //        progressBar1.Value = 0;
+            //        backgroundWorker.RunWorkerAsync(_inputParameter);
+            //    }
         }
 
         private void button2_Click(object sender, EventArgs e)

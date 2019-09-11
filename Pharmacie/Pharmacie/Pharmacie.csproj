@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\DynamicClasses.cs" />
+    <Compile Include="Classes\My_DataTable_Extensions.cs" />
     <Compile Include="Classes\PubCon.cs" />
     <Compile Include="Classes\TriClasse.cs" />
     <Compile Include="Form1.cs">
