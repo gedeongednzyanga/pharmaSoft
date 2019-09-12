@@ -41,7 +41,7 @@ namespace Pharmacie.Classes
                         excelApp.Quit();
                         MessageBox.Show("Excel file saved");
                     } catch (Exception ex) {
-                        throw new Exception("Export to Excel : Excel file could not be saved! Check filepath.\n" + ex.Message);
+                        MessageBox.Show("Export to Excel : Excel file could not be saved! Check filepath.\n" + ex.Message, "Erreur...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else {

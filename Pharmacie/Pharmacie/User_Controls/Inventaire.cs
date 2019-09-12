@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Pharmacie.Classes;
 using ProduitLib;
 using System.Threading;
+//using iTextSharp.text
+//using iTextSharp.text.pdf
 //using Microsoft.Office.Interop.Excel;
 using DGVPrinterHelper;
 
@@ -53,24 +55,25 @@ namespace Pharmacie.User_Controls
                 MessageBox.Show("Impossible de faire l'inventaire pour ce produit !!!", "Message...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        struct DataParameter
+        {
+            public int progress;
+            public int delay;
+        }
+        private DataParameter _inputparameter;
         //struct DataParameter
         //{
-        //    public List<string> listeproduit;
+        //    public DataTable dt;
         //    public string filename { get; set; }
         //}
         //DataParameter _inputParameter;
 
 
 
-     
+
         private void Inventaire_Load(object sender, EventArgs e)
         {
             Load_Product();
-            //using (PHARMACIE_SOFTEntities1 dbo = new PHARMACIE_SOFTEntities1())
-            //{
-            //    produitBindingSource.DataSource = dbo.produit.ToList();
-            //}
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -134,9 +137,47 @@ namespace Pharmacie.User_Controls
         {
             clic_grid();
         }
+        void ExportExcel()
+        {
+            DataTable dt = new DataTable();
+            while (dt.Columns.Count < dataGridView2.Columns.Count)
+            {
+                foreach (DataGridViewColumn col in dataGridView2.Columns)
+                {
+                    dt.Columns.Add(col.HeaderText.ToString());
+                }
+            }
 
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                DataRow drow = dt.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    drow[cell.ColumnIndex] = cell.Value;
+                }
+                dt.Rows.Add(drow);
+            }
+            string ExcelPath = "Excel.xlsx";
+            dt.ExportToExcel(ExcelPath);
+        }
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            int progress = ((DataParameter)e.Argument).progress;
+            int delay = ((DataParameter)e.Argument).delay;
+            int idex = 1;
+            try
+            {
+                for (int i = 0; i < progress; i++)
+                {
+                    backgroundWorker.ReportProgress(idex++ * 100 / progress, string.Format("Progress data {0}", i));
+                    Thread.Sleep(delay);
+                }
+                ExportExcel();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             //List<string> list = ((DataParameter)e.Argument).listeproduit;
             //string filename = ((DataParameter)e.Argument).filename;
             //Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -189,38 +230,50 @@ namespace Pharmacie.User_Controls
             }
         }
 
+
+        void ExportToPDF (DataTable dt)
+        {
+          //  Document
+        }
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in dataGridView2.Columns)
-            {
-                dt.Columns.Add(col.Name);
-            }
-            foreach (DataGridViewRow  row in dataGridView2.Rows)
-            {
-                DataRow drow = dt.NewRow();
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    drow[cell.ColumnIndex] = cell.Value;
-                }
-                dt.Rows.Add(drow);
-            }
-            string ExcelPath = "Excel.xlsx";
-            dt.ExportToExcel(ExcelPath);
+            //DataTable dt = new DataTable();
+            //while (dt.Columns.Count < dataGridView2.Columns.Count)
+            //{
+            //    foreach (DataGridViewColumn col in dataGridView2.Columns)
+            //    {
+            //        dt.Columns.Add(col.HeaderText.ToString());
+            //    }
+            //}
 
+            //foreach (DataGridViewRow  row in dataGridView2.Rows)
+            //{
+            //    DataRow drow = dt.NewRow();
+            //    foreach (DataGridViewCell cell in row.Cells)
+            //    {
+            //        drow[cell.ColumnIndex] = cell.Value;
+            //    }
+            //    dt.Rows.Add(drow);
+            //}
+            //string ExcelPath = "Excel.xlsx";
+            //dt.ExportToExcel(ExcelPath);
+
+            _inputparameter.delay = 10;
+            _inputparameter.progress = 1200;
+            backgroundWorker.RunWorkerAsync(_inputparameter);
 
 
 
             //if (backgroundWorker.IsBusy)
             //    return;
-            //using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel workbook|*.xlsx" })
+            //using (SaveFileDialog sfd = new SaveFileDialog())
             //    if (sfd.ShowDialog() == DialogResult.OK)
             //    {
-            //        _inputParameter.filename = sfd.FileName;
-            //        _inputParameter.listeproduit = dataGridView2.DataSource as List<string>;
+            //       // _inputParameter.filename = sfd.FileName;
+            //       // _inputParameter.listeproduit = dataGridView2.DataSource as List<string>;
             //        progressBar1.Minimum = 0;
             //        progressBar1.Value = 0;
-            //        backgroundWorker.RunWorkerAsync(_inputParameter);
+            //        backgroundWorker.RunWorkerAsync(_inputparameter);
             //    }
         }
 
@@ -232,7 +285,7 @@ namespace Pharmacie.User_Controls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Add(i + 1, lab_designation.Text.Trim(), dosage, lab_stock.Text.Trim(), Qte_physique.Text.Trim(),
+            dataGridView2.Rows.Add(i + 1, lab_designation.Text.Trim(), dosage, forme,lab_stock.Text.Trim(), Qte_physique.Text.Trim(),
                 lab_ecart.Text.Trim(), pu, pt, expiration.ToShortDateString());
             i = i + 1;
         }
