@@ -396,6 +396,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\icon-buy-32.png" />
+    <Content Include="Icons\icons8_Address_25px_1.png" />
     <Content Include="Icons\icons8_Add_25px_1.png" />
     <Content Include="Icons\icons8_Admin_20px.png" />
     <Content Include="Icons\icons8_Alphabetical_Sorting_25px.png" />
@@ -434,6 +436,7 @@
     <Content Include="Icons\icons8_Microsoft_Excel_25px_1.png" />
     <Content Include="Icons\icons8_Office_Phone_30px.png" />
     <Content Include="Icons\icons8_Ok_25px_1.png" />
+    <Content Include="Icons\icons8_Ok_25px_2.png" />
     <Content Include="Icons\icons8_Open_Box_25px.png" />
     <Content Include="Icons\icons8_PDF_25px.png" />
     <Content Include="Icons\icons8_Person_25px.png" />
@@ -451,9 +454,12 @@
     <Content Include="Icons\icons8_Save_25px_2.png" />
     <Content Include="Icons\icons8_Search_20px_2.png" />
     <Content Include="Icons\icons8_Sell_Stock_25px.png" />
+    <Content Include="Icons\icons8_Shopping_Cart.ico" />
     <Content Include="Icons\icons8_SMS_30px.png" />
     <Content Include="Icons\icons8_Sneeze_25px.png" />
+    <Content Include="Icons\icons8_Supplier_30px.png" />
     <Content Include="Icons\icons8_User_25px.png" />
+    <Content Include="Icons\icons8_User_Group_Man_Man_25px_1.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_20px_1.png" />
     <Content Include="Icons\icons8_User_Group_Man_Woman_25px.png" />
     <Content Include="Icons\icons8__Message_Filled_30px.png" />

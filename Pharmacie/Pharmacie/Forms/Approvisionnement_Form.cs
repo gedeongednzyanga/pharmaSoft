@@ -36,7 +36,7 @@ namespace Pharmacie.Forms
         void RefreshData(Fournisseurs four, IDetail_approv detail)
         {
             dataGridView3.DataSource = four.Fournisseur();
-            dataGridView1.DataSource = detail.Approvisionnements();
+         
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -69,35 +69,11 @@ namespace Pharmacie.Forms
             maskedTextBox1.Clear();
         }
 
-        
-        
-
         private void button2_Click(object sender, EventArgs e)
-
         {
-            //GenererId();
+          
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-
-        //        if(idApprov == 0 || idDetailApprov == 0 || idProduit == 0 || idFournisseur == 0 || comboBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || maskedTextBox2.Text == "" || maskedTextBox1.Text == "")
-
-        //            MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-        //        else
-        //        {
-
-                    
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //}
         void SaveDataApprovisionnement()
         {
             Approvisionnement approv = new Approvisionnement();
@@ -121,9 +97,7 @@ namespace Pharmacie.Forms
             approv.RefApprov = Convert.ToInt32(idApprov);
 
             approv.Enregistrer(approv);
-
         }
-
 
         private void Approvisionnement_Form_Load(object sender, EventArgs e)
         {
@@ -136,9 +110,6 @@ namespace Pharmacie.Forms
             idProduit = dn.retourId("idproduit", "produit", "designationprod", comboBox1.Text);
         }
 
-
-       
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -147,6 +118,7 @@ namespace Pharmacie.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             Ajouter();
+            label8.Text = (dataGridView2.Rows.Count.ToString())+" "+ " médicaments";
         }
         void SaveApprov()
         {
@@ -156,7 +128,10 @@ namespace Pharmacie.Forms
                 Approvisionnement approv = new Approvisionnement();
                 if (idFournisseur == 0)
                 {
+                    label16.Text = "Fournisseur inconnu. Veuillez selectionner le fournisseur dans le tableau à haut.";
+                    label16.Visible = true;
                     MessageBox.Show("Veuillez selectionner le fournisseur dans le tableau à gauche !!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
                 }
                 else if (dataGridView2.Rows.Count == 0)
                     MessageBox.Show("Veuillez ajouter des médicaments dans le tableau !!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -286,6 +261,7 @@ namespace Pharmacie.Forms
                 button4.Enabled = false;
 
                 button2.Enabled = true;
+                button1.Enabled = true;
 
             }
             catch (Exception ex)
@@ -300,6 +276,13 @@ namespace Pharmacie.Forms
             int i;
             i = dataGridView3.CurrentRow.Index;
             idFournisseur = int.Parse(dataGridView3["colN", i].Value.ToString());
+            label10.Text = dataGridView3["dataGridViewTextBoxColumn2", i].Value.ToString();
+            label13.Text = dataGridView3["dataGridViewTextBoxColumn5", i].Value.ToString();
+            label14.Text = dataGridView3["dataGridViewTextBoxColumn3", i].Value.ToString();
+            label16.Visible = true;
+            label16.ForeColor = Color.Black;
+            label16.Text = "Fournisseur séléctionné !!!";
+            pictureBox3.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -311,6 +294,35 @@ namespace Pharmacie.Forms
         {
             SaveApprov();
 
+        }
+
+        private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //try
+            //{
+            //    int i = dataGridView2.CurrentRow.Index;
+                
+            //}
+            //catch (Exception) { }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.Rows.Count > 0)
+            {
+                dataGridView2.Rows.Remove(dataGridView2.SelectedRows[0]);
+                label8.Text = dataGridView2.Rows.Count.ToString() + " médicaments";
+            }
+            else { return; }
+                
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!Char.IsDigit(ch) && ch!=8 && ch != 46){
+                e.Handled = true;
+            }
         }
     }
 }

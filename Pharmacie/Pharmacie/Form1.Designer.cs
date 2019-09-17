@@ -739,14 +739,13 @@
             // 
             // lab_achat
             // 
-            this.lab_achat.AutoSize = true;
             this.lab_achat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lab_achat.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_achat.Image = ((System.Drawing.Image)(resources.GetObject("lab_achat.Image")));
             this.lab_achat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lab_achat.Location = new System.Drawing.Point(3, 8);
             this.lab_achat.Name = "lab_achat";
-            this.lab_achat.Size = new System.Drawing.Size(201, 25);
+            this.lab_achat.Size = new System.Drawing.Size(201, 33);
             this.lab_achat.TabIndex = 4;
             this.lab_achat.Text = "    Approvisionnement";
             this.lab_achat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lab_medicament_MouseClick_1);
